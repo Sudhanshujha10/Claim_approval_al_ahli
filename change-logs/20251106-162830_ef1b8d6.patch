@@ -1,0 +1,10 @@
+diff --git a/README.md b/README.md
+index 631a4d4..1a60301 100644
+--- a/README.md
++++ b/README.md
+@@ -8,4 +8,4 @@
+   Run `npm i` to install the dependencies.
+  
+   Run `npm run dev` to start the development server.
+-   
++  
