@@ -1,0 +1,94 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index 47709fd..e599c74 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -20,6 +20,7 @@ import {
+   RefreshCw
+ } from "lucide-react";
+ import type { Claim } from "./ClaimsTable";
++import PDFViewerModal from "./PDFViewerModal";
+ 
+ interface ClaimDetailProps {
+   claim: Claim;
+@@ -37,6 +38,9 @@ interface ChecklistItem {
+ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+   const [searchQuery, setSearchQuery] = useState("");
+   const [showLowConfidence, setShowLowConfidence] = useState(false);
++  const [viewerOpen, setViewerOpen] = useState(false);
++  const [viewerFile, setViewerFile] = useState<File | string | null>(null);
++  const [viewerContext, setViewerContext] = useState<{ listName: "claim" | "invoice" | "approval"; index: number } | null>(null);
+ 
+   const getStatusColor = (status: string) => {
+     switch (status.toLowerCase()) {
+@@ -94,6 +98,19 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+     { to: "patient@email.com", cc: "", subject: "Claim Status Update", status: "Sent", date: "20/07/2025" },
+   ];
+ 
++  // preview helpers
++  const openPreview = (file: File | string) => {
++    setViewerFile(file);
++    setViewerOpen(true);
++    setViewerContext(null);
++  };
++
++  const openPreviewForChecklist = (listName: "claim" | "invoice" | "approval", index: number, file: File | string) => {
++    setViewerFile(file);
++    setViewerContext({ listName, index });
++    setViewerOpen(true);
++  };
++
+   // handler to mark a checklist item as passed (manual override)
+   const markChecklistPassed = (listName: "claim" | "invoice" | "approval", idx: number) => {
+     if (listName === "claim") {
+@@ -547,6 +564,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
++              <div className="p-2 border-t bg-white">
++                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/claim-form.pdf")}>Preview</Button>
++              </div>
+             </div>
+ 
+             <div className="border rounded-lg overflow-hidden">
+@@ -560,6 +580,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
++              <div className="p-2 border-t bg-white">
++                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/invoice.pdf")}>Preview</Button>
++              </div>
+             </div>
+ 
+             <div className="border rounded-lg overflow-hidden">
+@@ -573,6 +596,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
++              <div className="p-2 border-t bg-white">
++                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/approval.pdf")}>Preview</Button>
++              </div>
+             </div>
+ 
+             <Separator />
+@@ -661,6 +687,21 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+           </div>
+         </div>
+       </div>
++      {/* PDF Viewer Modal */}
++      <PDFViewerModal
++        file={viewerFile}
++        open={viewerOpen}
++        title={`Preview - ${viewerFile instanceof File ? viewerFile.name : "Claim PDF"}`}
++        initialPage={1}
++        initialScale={1.0}
++        onClose={() => setViewerOpen(false)}
++        onMarkPassed={() => {
++          if (viewerContext) {
++            markChecklistPassed(viewerContext.listName, viewerContext.index);
++          }
++          setViewerOpen(false);
++        }}
++      />
+     </div>
+   );
+ }
