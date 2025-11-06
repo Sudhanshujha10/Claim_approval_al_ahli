@@ -152,7 +152,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex">
+      <div className="flex">
         {/* Left Side - Tabs Content */}
         <div className="flex-1">
           <Tabs defaultValue="claim-form" className="p-6">
