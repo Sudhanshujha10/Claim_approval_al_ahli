@@ -1,0 +1,823 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.2.4
+2 info using node@v21.6.2
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 1ms
+9 timing config:load:file:/Users/sudhanshukumarjha/Downloads/QLM Claims Approval/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 0ms
+11 timing config:load:file:/Users/sudhanshukumarjha/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 5ms
+17 timing npm:load:configload Completed in 5ms
+18 timing config:load:flatten Completed in 1ms
+19 timing npm:load:mkdirpcache Completed in 0ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install
+22 verbose argv "install" "--cache" "./.npm-cache" "--no-audit" "--no-fund"
+23 timing npm:load:setTitle Completed in 0ms
+24 timing npm:load:display Completed in 1ms
+25 verbose logfile logs-max:10 dir:/Users/sudhanshukumarjha/Downloads/QLM Claims Approval/.npm-cache/_logs/2025-11-05T12_56_53_680Z-
+26 verbose logfile /Users/sudhanshukumarjha/Downloads/QLM Claims Approval/.npm-cache/_logs/2025-11-05T12_56_53_680Z-debug-0.log
+27 timing npm:load:logFile Completed in 4ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 18ms
+31 timing arborist:ctor Completed in 0ms
+32 silly logfile done cleaning log files
+33 timing arborist:ctor Completed in 0ms
+34 timing idealTree:init Completed in 7ms
+35 timing idealTree:userRequests Completed in 0ms
+36 silly idealTree buildDeps
+37 silly fetch manifest @radix-ui/react-accordion@^1.2.3
+38 silly fetch manifest @radix-ui/react-alert-dialog@^1.1.6
+39 silly fetch manifest @radix-ui/react-aspect-ratio@^1.1.2
+40 silly fetch manifest @radix-ui/react-avatar@^1.1.3
+41 silly fetch manifest @radix-ui/react-checkbox@^1.1.4
+42 silly fetch manifest @radix-ui/react-collapsible@^1.1.3
+43 silly fetch manifest @radix-ui/react-context-menu@^2.2.6
+44 silly fetch manifest @radix-ui/react-dialog@^1.1.6
+45 silly fetch manifest @radix-ui/react-dropdown-menu@^2.1.6
+46 silly fetch manifest @radix-ui/react-hover-card@^1.1.6
+47 silly fetch manifest @radix-ui/react-label@^2.1.2
+48 silly fetch manifest @radix-ui/react-menubar@^1.1.6
+49 silly fetch manifest @radix-ui/react-navigation-menu@^1.2.5
+50 silly fetch manifest @radix-ui/react-popover@^1.1.6
+51 silly fetch manifest @radix-ui/react-progress@^1.1.2
+52 silly fetch manifest @radix-ui/react-radio-group@^1.2.3
+53 silly fetch manifest @radix-ui/react-scroll-area@^1.2.3
+54 silly fetch manifest @radix-ui/react-select@^2.1.6
+55 silly fetch manifest @radix-ui/react-separator@^1.1.2
+56 silly fetch manifest @radix-ui/react-slider@^1.2.3
+57 silly fetch manifest @radix-ui/react-slot@^1.1.2
+58 silly fetch manifest @radix-ui/react-switch@^1.1.3
+59 silly fetch manifest @radix-ui/react-tabs@^1.1.3
+60 silly fetch manifest @radix-ui/react-toggle@^1.1.2
+61 silly fetch manifest @radix-ui/react-toggle-group@^1.1.2
+62 silly fetch manifest @radix-ui/react-tooltip@^1.1.8
+63 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-tooltip 29ms (cache hit)
+64 silly fetch manifest @types/react@*
+65 http fetch GET 200 https://registry.npmjs.org/@types%2freact 5ms (cache hit)
+66 silly fetch manifest @types/react-dom@*
+67 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 8ms (cache hit)
+68 silly fetch manifest react@^18.3.1
+69 http fetch GET 200 https://registry.npmjs.org/react 6ms (cache hit)
+70 silly fetch manifest react-dom@^18.3.1
+71 http fetch GET 200 https://registry.npmjs.org/react-dom 9ms (cache hit)
+72 silly fetch manifest class-variance-authority@^0.7.1
+73 http fetch GET 200 https://registry.npmjs.org/class-variance-authority 4ms (cache hit)
+74 silly fetch manifest clsx@*
+75 http fetch GET 200 https://registry.npmjs.org/clsx 2ms (cache hit)
+76 silly fetch manifest cmdk@^1.1.1
+77 http fetch GET 200 https://registry.npmjs.org/cmdk 1ms (cache hit)
+78 silly fetch manifest embla-carousel-react@^8.6.0
+79 http fetch GET 200 https://registry.npmjs.org/embla-carousel-react 3ms (cache hit)
+80 silly fetch manifest input-otp@^1.4.2
+81 http fetch GET 200 https://registry.npmjs.org/input-otp 2ms (cache hit)
+82 silly fetch manifest lucide-react@^0.487.0
+83 http fetch GET 200 https://registry.npmjs.org/lucide-react 2ms (cache hit)
+84 silly fetch manifest next-themes@^0.4.6
+85 http fetch GET 200 https://registry.npmjs.org/next-themes 2ms (cache hit)
+86 silly fetch manifest react-day-picker@^8.10.1
+87 http fetch GET 200 https://registry.npmjs.org/react-day-picker 1ms (cache hit)
+88 silly fetch manifest date-fns@^2.28.0 || ^3.0.0
+89 http fetch GET 200 https://registry.npmjs.org/date-fns 2ms (cache hit)
+90 silly fetch manifest react-hook-form@^7.55.0
+91 http fetch GET 200 https://registry.npmjs.org/react-hook-form 4ms (cache hit)
+92 silly fetch manifest react-resizable-panels@^2.1.7
+93 http fetch GET 200 https://registry.npmjs.org/react-resizable-panels 10ms (cache hit)
+94 silly fetch manifest recharts@^2.15.2
+95 http fetch GET 200 https://registry.npmjs.org/recharts 3ms (cache hit)
+96 silly fetch manifest sonner@^2.0.3
+97 http fetch GET 200 https://registry.npmjs.org/sonner 1ms (cache hit)
+98 silly fetch manifest tailwind-merge@*
+99 http fetch GET 200 https://registry.npmjs.org/tailwind-merge 2ms (cache hit)
+100 silly fetch manifest vaul@^1.1.2
+101 http fetch GET 200 https://registry.npmjs.org/vaul 1ms (cache hit)
+102 silly fetch manifest @types/node@^20.10.0
+103 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 4ms (cache hit)
+104 silly fetch manifest @vitejs/plugin-react-swc@^3.10.2
+105 http fetch GET 200 https://registry.npmjs.org/@vitejs%2fplugin-react-swc 2ms (cache hit)
+106 silly fetch manifest vite@6.3.5
+107 http fetch GET 200 https://registry.npmjs.org/vite 4ms (cache hit)
+108 silly fetch manifest jiti@>=1.21.0
+109 http fetch GET 200 https://registry.npmjs.org/jiti 3ms (cache hit)
+110 silly fetch manifest less@*
+111 http fetch GET 200 https://registry.npmjs.org/less 1ms (cache hit)
+112 silly fetch manifest lightningcss@^1.21.0
+113 http fetch GET 200 https://registry.npmjs.org/lightningcss 1ms (cache hit)
+114 silly fetch manifest sass@*
+115 http fetch GET 200 https://registry.npmjs.org/sass 1ms (cache hit)
+116 silly fetch manifest sass-embedded@*
+117 http fetch GET 200 https://registry.npmjs.org/sass-embedded 2ms (cache hit)
+118 silly fetch manifest stylus@*
+119 http fetch GET 200 https://registry.npmjs.org/stylus 1ms (cache hit)
+120 silly fetch manifest sugarss@*
+121 http fetch GET 200 https://registry.npmjs.org/sugarss 1ms (cache hit)
+122 silly fetch manifest postcss@^8.3.3
+123 http fetch GET 200 https://registry.npmjs.org/postcss 2ms (cache hit)
+124 silly fetch manifest terser@^5.16.0
+125 http fetch GET 200 https://registry.npmjs.org/terser 2ms (cache hit)
+126 silly fetch manifest tsx@^4.8.1
+127 http fetch GET 200 https://registry.npmjs.org/tsx 1ms (cache hit)
+128 silly fetch manifest yaml@^2.4.2
+129 http fetch GET 200 https://registry.npmjs.org/yaml 1ms (cache hit)
+130 silly placeDep ROOT @radix-ui/react-accordion@ OK for: QLM Claims Approval@0.1.0 want: ^1.2.3
+131 silly placeDep ROOT @radix-ui/react-alert-dialog@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.6
+132 silly placeDep ROOT @radix-ui/react-aspect-ratio@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+133 silly placeDep ROOT @radix-ui/react-avatar@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.3
+134 silly placeDep ROOT @radix-ui/react-checkbox@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.4
+135 silly placeDep ROOT @radix-ui/react-collapsible@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.3
+136 silly placeDep ROOT @radix-ui/react-context-menu@ OK for: QLM Claims Approval@0.1.0 want: ^2.2.6
+137 silly placeDep ROOT @radix-ui/react-dialog@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.6
+138 silly placeDep ROOT @radix-ui/react-dropdown-menu@ OK for: QLM Claims Approval@0.1.0 want: ^2.1.6
+139 silly placeDep ROOT @radix-ui/react-hover-card@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.6
+140 silly placeDep ROOT @radix-ui/react-label@ OK for: QLM Claims Approval@0.1.0 want: ^2.1.2
+141 silly placeDep ROOT @radix-ui/react-menubar@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.6
+142 silly placeDep ROOT @radix-ui/react-navigation-menu@ OK for: QLM Claims Approval@0.1.0 want: ^1.2.5
+143 silly placeDep ROOT @radix-ui/react-popover@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.6
+144 silly placeDep ROOT @radix-ui/react-progress@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+145 silly placeDep ROOT @radix-ui/react-radio-group@ OK for: QLM Claims Approval@0.1.0 want: ^1.2.3
+146 silly placeDep ROOT @radix-ui/react-scroll-area@ OK for: QLM Claims Approval@0.1.0 want: ^1.2.3
+147 silly placeDep ROOT @radix-ui/react-select@ OK for: QLM Claims Approval@0.1.0 want: ^2.1.6
+148 silly placeDep ROOT @radix-ui/react-separator@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+149 silly placeDep ROOT @radix-ui/react-slider@ OK for: QLM Claims Approval@0.1.0 want: ^1.2.3
+150 silly placeDep ROOT @radix-ui/react-slot@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+151 silly placeDep ROOT @radix-ui/react-switch@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.3
+152 silly placeDep ROOT @radix-ui/react-tabs@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.3
+153 silly placeDep ROOT @radix-ui/react-toggle@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+154 silly placeDep ROOT @radix-ui/react-toggle-group@ OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+155 silly placeDep ROOT @radix-ui/react-tooltip@1.2.8 OK for: QLM Claims Approval@0.1.0 want: ^1.1.8
+156 silly placeDep ROOT react@18.3.1 OK for: @radix-ui/react-tooltip@1.2.8 want: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+157 silly placeDep ROOT react-dom@18.3.1 OK for: @radix-ui/react-tooltip@1.2.8 want: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+158 silly fetch manifest @radix-ui/react-id@1.1.1
+159 silly fetch manifest @radix-ui/primitive@1.1.3
+160 silly fetch manifest @radix-ui/react-popper@1.2.8
+161 silly fetch manifest @radix-ui/react-portal@1.1.9
+162 silly fetch manifest @radix-ui/react-context@1.1.2
+163 silly fetch manifest @radix-ui/react-presence@1.1.5
+164 silly fetch manifest @radix-ui/react-primitive@2.1.3
+165 silly fetch manifest @radix-ui/react-compose-refs@1.1.2
+166 silly fetch manifest @radix-ui/react-visually-hidden@1.2.3
+167 silly fetch manifest @radix-ui/react-dismissable-layer@1.1.11
+168 silly fetch manifest @radix-ui/react-use-controllable-state@1.2.2
+169 silly fetch manifest scheduler@^0.23.2
+170 silly fetch manifest loose-envify@^1.1.0
+171 silly placeDep ROOT @types/node@20.19.24 OK for: QLM Claims Approval@0.1.0 want: ^20.10.0
+172 silly fetch manifest undici-types@~6.21.0
+173 silly placeDep ROOT @vitejs/plugin-react-swc@3.11.0 OK for: QLM Claims Approval@0.1.0 want: ^3.10.2
+174 silly placeDep ROOT vite@6.3.5 OK for: @vitejs/plugin-react-swc@3.11.0 want: ^4 || ^5 || ^6 || ^7
+175 silly fetch manifest @swc/core@^1.12.11
+176 silly fetch manifest @rolldown/pluginutils@1.0.0-beta.27
+177 silly fetch manifest fdir@^6.4.4
+178 silly fetch manifest rollup@^4.34.9
+179 silly fetch manifest esbuild@^0.25.0
+180 silly fetch manifest postcss@^8.5.3
+181 silly fetch manifest picomatch@^4.0.2
+182 silly fetch manifest tinyglobby@^0.2.13
+183 silly fetch manifest fsevents@~2.3.3
+184 silly placeDep ROOT class-variance-authority@0.7.1 OK for: QLM Claims Approval@0.1.0 want: ^0.7.1
+185 silly fetch manifest clsx@^2.1.1
+186 silly placeDep ROOT clsx@2.1.1 OK for: QLM Claims Approval@0.1.0 want: *
+187 silly placeDep ROOT cmdk@1.1.1 OK for: QLM Claims Approval@0.1.0 want: ^1.1.1
+188 silly fetch manifest @radix-ui/react-id@^1.1.0
+189 silly fetch manifest @radix-ui/react-primitive@^2.0.2
+190 silly fetch manifest @radix-ui/react-compose-refs@^1.1.1
+191 silly placeDep ROOT embla-carousel-react@8.6.0 OK for: QLM Claims Approval@0.1.0 want: ^8.6.0
+192 silly fetch manifest embla-carousel@8.6.0
+193 silly fetch manifest embla-carousel-reactive-utils@8.6.0
+194 silly placeDep ROOT input-otp@1.4.2 OK for: QLM Claims Approval@0.1.0 want: ^1.4.2
+195 silly placeDep ROOT lucide-react@0.487.0 OK for: QLM Claims Approval@0.1.0 want: ^0.487.0
+196 silly placeDep ROOT next-themes@0.4.6 OK for: QLM Claims Approval@0.1.0 want: ^0.4.6
+197 silly placeDep ROOT react-day-picker@8.10.1 OK for: QLM Claims Approval@0.1.0 want: ^8.10.1
+198 silly placeDep ROOT date-fns@3.6.0 OK for: react-day-picker@8.10.1 want: ^2.28.0 || ^3.0.0
+199 silly placeDep ROOT react-hook-form@7.66.0 OK for: QLM Claims Approval@0.1.0 want: ^7.55.0
+200 silly placeDep ROOT react-resizable-panels@2.1.9 OK for: QLM Claims Approval@0.1.0 want: ^2.1.7
+201 silly placeDep ROOT recharts@2.15.4 OK for: QLM Claims Approval@0.1.0 want: ^2.15.2
+202 silly fetch manifest lodash@^4.17.21
+203 silly fetch manifest react-is@^18.3.1
+204 silly fetch manifest react-smooth@^4.0.4
+205 silly fetch manifest eventemitter3@^4.0.1
+206 silly fetch manifest recharts-scale@^0.4.4
+207 silly fetch manifest tiny-invariant@^1.3.1
+208 silly fetch manifest victory-vendor@^36.6.8
+209 silly placeDep ROOT sonner@2.0.7 OK for: QLM Claims Approval@0.1.0 want: ^2.0.3
+210 silly placeDep ROOT tailwind-merge@3.3.1 OK for: QLM Claims Approval@0.1.0 want: *
+211 silly placeDep ROOT vaul@1.1.2 OK for: QLM Claims Approval@0.1.0 want: ^1.1.2
+212 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2fprimitive 28ms (cache hit)
+213 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-presence 28ms (cache hit)
+214 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-portal 29ms (cache hit)
+215 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-dismissable-layer 30ms (cache hit)
+216 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-primitive 32ms (cache hit)
+217 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-visually-hidden 34ms (cache hit)
+218 http fetch GET 200 https://registry.npmjs.org/@rolldown%2fpluginutils 32ms (cache hit)
+219 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-id 36ms (cache hit)
+220 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-controllable-state 38ms (cache hit)
+221 http fetch GET 200 https://registry.npmjs.org/scheduler 41ms (cache hit)
+222 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-primitive 46ms (cache hit)
+223 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore 52ms (cache hit)
+224 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-id 57ms (cache hit)
+225 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-popper 63ms (cache hit)
+226 http fetch GET 200 https://registry.npmjs.org/undici-types 63ms (cache hit)
+227 http fetch GET 200 https://registry.npmjs.org/fdir 61ms (cache hit)
+228 http fetch GET 200 https://registry.npmjs.org/loose-envify 65ms (cache hit)
+229 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-compose-refs 65ms (cache hit)
+230 http fetch GET 200 https://registry.npmjs.org/rollup 64ms (cache hit)
+231 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-compose-refs 72ms (cache hit)
+232 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-context 79ms (cache hit)
+233 http fetch GET 200 https://registry.npmjs.org/tinyglobby 75ms (cache hit)
+234 http fetch GET 200 https://registry.npmjs.org/embla-carousel 74ms (cache hit)
+235 http fetch GET 200 https://registry.npmjs.org/lodash 70ms (cache hit)
+236 http fetch GET 200 https://registry.npmjs.org/picomatch 77ms (cache hit)
+237 http fetch GET 200 https://registry.npmjs.org/react-is 72ms (cache hit)
+238 http fetch GET 200 https://registry.npmjs.org/react-smooth 82ms (cache hit)
+239 http fetch GET 200 https://registry.npmjs.org/fsevents 90ms (cache hit)
+240 http fetch GET 200 https://registry.npmjs.org/eventemitter3 82ms (cache hit)
+241 http fetch GET 200 https://registry.npmjs.org/embla-carousel-reactive-utils 88ms (cache hit)
+242 http fetch GET 200 https://registry.npmjs.org/esbuild 92ms (cache hit)
+243 http fetch GET 200 https://registry.npmjs.org/victory-vendor 85ms (cache hit)
+244 http fetch GET 200 https://registry.npmjs.org/recharts-scale 86ms (cache hit)
+245 http fetch GET 200 https://registry.npmjs.org/tiny-invariant 86ms (cache hit)
+246 timing idealTree:#root Completed in 1751845ms
+247 timing idealTree:node_modules/@radix-ui/react-accordion Completed in 0ms
+248 timing idealTree:node_modules/@radix-ui/react-alert-dialog Completed in 0ms
+249 timing idealTree:node_modules/@radix-ui/react-aspect-ratio Completed in 0ms
+250 timing idealTree:node_modules/@radix-ui/react-avatar Completed in 0ms
+251 timing idealTree:node_modules/@radix-ui/react-checkbox Completed in 0ms
+252 timing idealTree:node_modules/@radix-ui/react-collapsible Completed in 0ms
+253 timing idealTree:node_modules/@radix-ui/react-context-menu Completed in 0ms
+254 timing idealTree:node_modules/@radix-ui/react-dialog Completed in 0ms
+255 timing idealTree:node_modules/@radix-ui/react-dropdown-menu Completed in 0ms
+256 timing idealTree:node_modules/@radix-ui/react-hover-card Completed in 0ms
+257 timing idealTree:node_modules/@radix-ui/react-label Completed in 0ms
+258 timing idealTree:node_modules/@radix-ui/react-menubar Completed in 0ms
+259 timing idealTree:node_modules/@radix-ui/react-navigation-menu Completed in 0ms
+260 timing idealTree:node_modules/@radix-ui/react-popover Completed in 0ms
+261 timing idealTree:node_modules/@radix-ui/react-progress Completed in 0ms
+262 timing idealTree:node_modules/@radix-ui/react-radio-group Completed in 0ms
+263 timing idealTree:node_modules/@radix-ui/react-scroll-area Completed in 0ms
+264 timing idealTree:node_modules/@radix-ui/react-select Completed in 0ms
+265 timing idealTree:node_modules/@radix-ui/react-separator Completed in 0ms
+266 timing idealTree:node_modules/@radix-ui/react-slider Completed in 0ms
+267 timing idealTree:node_modules/@radix-ui/react-slot Completed in 0ms
+268 timing idealTree:node_modules/@radix-ui/react-switch Completed in 0ms
+269 timing idealTree:node_modules/@radix-ui/react-tabs Completed in 0ms
+270 timing idealTree:node_modules/@radix-ui/react-toggle Completed in 0ms
+271 timing idealTree:node_modules/@radix-ui/react-toggle-group Completed in 0ms
+272 silly fetch manifest react@^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+273 silly fetch manifest react-dom@^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+274 silly placeDep ROOT @radix-ui/primitive@1.1.3 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.3
+275 silly placeDep ROOT @radix-ui/react-compose-refs@1.1.2 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.2
+276 silly placeDep ROOT @radix-ui/react-context@1.1.2 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.2
+277 silly placeDep ROOT @radix-ui/react-dismissable-layer@1.1.11 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.11
+278 silly fetch manifest @radix-ui/react-use-callback-ref@1.1.1
+279 silly fetch manifest @radix-ui/react-use-escape-keydown@1.1.1
+280 silly placeDep ROOT @radix-ui/react-id@1.1.1 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.1
+281 silly fetch manifest @radix-ui/react-use-layout-effect@1.1.1
+282 silly placeDep ROOT @radix-ui/react-popper@1.2.8 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.2.8
+283 silly fetch manifest @radix-ui/rect@1.1.1
+284 silly fetch manifest @radix-ui/react-arrow@1.1.7
+285 silly fetch manifest @floating-ui/react-dom@^2.0.0
+286 silly fetch manifest @radix-ui/react-use-rect@1.1.1
+287 silly fetch manifest @radix-ui/react-use-size@1.1.1
+288 silly placeDep ROOT @radix-ui/react-portal@1.1.9 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.9
+289 silly placeDep ROOT @radix-ui/react-presence@1.1.5 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.1.5
+290 silly placeDep ROOT @radix-ui/react-primitive@2.1.3 OK for: @radix-ui/react-tooltip@1.2.8 want: 2.1.3
+291 silly placeDep ROOT @radix-ui/react-use-controllable-state@1.2.2 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.2.2
+292 silly fetch manifest @radix-ui/react-use-effect-event@0.0.2
+293 silly placeDep ROOT @radix-ui/react-visually-hidden@1.2.3 OK for: @radix-ui/react-tooltip@1.2.8 want: 1.2.3
+294 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-effect-event 3ms (cache hit)
+295 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2frect 7ms (cache hit)
+296 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-escape-keydown 10ms (cache hit)
+297 http fetch GET 200 https://registry.npmjs.org/@floating-ui%2freact-dom 9ms (cache hit)
+298 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-rect 11ms (cache hit)
+299 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-callback-ref 13ms (cache hit)
+300 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-arrow 12ms (cache hit)
+301 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-layout-effect 14ms (cache hit)
+302 http fetch GET 200 https://registry.npmjs.org/@radix-ui%2freact-use-size 13ms (cache hit)
+303 timing idealTree:node_modules/@radix-ui/react-tooltip Completed in 27ms
+304 timing idealTree:node_modules/@radix-ui/primitive Completed in 0ms
+305 timing idealTree:node_modules/@radix-ui/react-compose-refs Completed in 0ms
+306 timing idealTree:node_modules/@radix-ui/react-context Completed in 0ms
+307 silly placeDep ROOT @radix-ui/react-use-callback-ref@1.1.1 OK for: @radix-ui/react-dismissable-layer@1.1.11 want: 1.1.1
+308 silly placeDep ROOT @radix-ui/react-use-escape-keydown@1.1.1 OK for: @radix-ui/react-dismissable-layer@1.1.11 want: 1.1.1
+309 timing idealTree:node_modules/@radix-ui/react-dismissable-layer Completed in 2ms
+310 silly placeDep ROOT @radix-ui/react-use-layout-effect@1.1.1 OK for: @radix-ui/react-id@1.1.1 want: 1.1.1
+311 timing idealTree:node_modules/@radix-ui/react-id Completed in 1ms
+312 silly placeDep ROOT @floating-ui/react-dom@2.1.6 OK for: @radix-ui/react-popper@1.2.8 want: ^2.0.0
+313 silly fetch manifest @floating-ui/dom@^1.7.4
+314 silly placeDep ROOT @radix-ui/react-arrow@1.1.7 OK for: @radix-ui/react-popper@1.2.8 want: 1.1.7
+315 silly placeDep ROOT @radix-ui/react-use-rect@1.1.1 OK for: @radix-ui/react-popper@1.2.8 want: 1.1.1
+316 silly placeDep ROOT @radix-ui/react-use-size@1.1.1 OK for: @radix-ui/react-popper@1.2.8 want: 1.1.1
+317 silly placeDep ROOT @radix-ui/rect@1.1.1 OK for: @radix-ui/react-popper@1.2.8 want: 1.1.1
+318 http fetch GET 200 https://registry.npmjs.org/@floating-ui%2fdom 4ms (cache hit)
+319 timing idealTree:node_modules/@radix-ui/react-popper Completed in 8ms
+320 silly placeDep ROOT @floating-ui/dom@1.7.4 OK for: @floating-ui/react-dom@2.1.6 want: ^1.7.4
+321 silly fetch manifest @floating-ui/core@^1.7.3
+322 silly fetch manifest @floating-ui/utils@^0.2.10
+323 http fetch GET 200 https://registry.npmjs.org/@floating-ui%2futils 3ms (cache hit)
+324 timing idealTree:node_modules/@floating-ui/react-dom Completed in 70280ms
+325 silly placeDep node_modules/@floating-ui/dom @floating-ui/core@ OK for: @floating-ui/dom@1.7.4 want: ^1.7.3
+326 silly placeDep ROOT @floating-ui/utils@0.2.10 OK for: @floating-ui/dom@1.7.4 want: ^0.2.10
+327 timing idealTree:node_modules/@floating-ui/dom Completed in 69ms
+328 timing idealTree:node_modules/@floating-ui/utils Completed in 0ms
+329 timing idealTree:node_modules/@radix-ui/react-arrow Completed in 0ms
+330 timing idealTree:node_modules/@radix-ui/react-portal Completed in 1ms
+331 timing idealTree:node_modules/@radix-ui/react-presence Completed in 0ms
+332 timing idealTree:node_modules/@radix-ui/react-primitive Completed in 0ms
+333 timing idealTree:node_modules/@radix-ui/react-use-callback-ref Completed in 0ms
+334 silly placeDep ROOT @radix-ui/react-use-effect-event@0.0.2 OK for: @radix-ui/react-use-controllable-state@1.2.2 want: 0.0.2
+335 timing idealTree:node_modules/@radix-ui/react-use-controllable-state Completed in 18ms
+336 timing idealTree:node_modules/@radix-ui/react-use-effect-event Completed in 0ms
+337 timing idealTree:node_modules/@radix-ui/react-use-escape-keydown Completed in 0ms
+338 timing idealTree:node_modules/@radix-ui/react-use-layout-effect Completed in 0ms
+339 timing idealTree:node_modules/@radix-ui/react-use-rect Completed in 0ms
+340 timing idealTree:node_modules/@radix-ui/react-use-size Completed in 0ms
+341 timing idealTree:node_modules/@radix-ui/react-visually-hidden Completed in 0ms
+342 timing idealTree:node_modules/@radix-ui/rect Completed in 0ms
+343 silly placeDep ROOT undici-types@6.21.0 OK for: @types/node@20.19.24 want: ~6.21.0
+344 timing idealTree:node_modules/@types/node Completed in 1ms
+345 silly fetch manifest @swc/helpers@>=0.5.17
+346 http fetch GET 200 https://registry.npmjs.org/@swc%2fhelpers 21ms (cache hit)
+347 silly placeDep ROOT @rolldown/pluginutils@1.0.0-beta.27 OK for: @vitejs/plugin-react-swc@3.11.0 want: 1.0.0-beta.27
+348 silly placeDep ROOT @swc/core@1.15.0 OK for: @vitejs/plugin-react-swc@3.11.0 want: ^1.12.11
+349 silly fetch manifest @swc/counter@^0.1.3
+350 silly fetch manifest @swc/types@^0.1.25
+351 silly fetch manifest @swc/core-darwin-x64@1.15.0
+352 silly fetch manifest @swc/core-win32-x64-msvc@1.15.0
+353 silly fetch manifest @swc/core-linux-x64-gnu@1.15.0
+354 silly fetch manifest @swc/core-linux-x64-musl@1.15.0
+355 silly fetch manifest @swc/core-win32-ia32-msvc@1.15.0
+356 silly fetch manifest @swc/core-linux-arm-gnueabihf@1.15.0
+357 silly fetch manifest @swc/core-darwin-arm64@1.15.0
+358 silly fetch manifest @swc/core-linux-arm64-gnu@1.15.0
+359 silly fetch manifest @swc/core-linux-arm64-musl@1.15.0
+360 silly fetch manifest @swc/core-win32-arm64-msvc@1.15.0
+361 http fetch GET 200 https://registry.npmjs.org/@swc%2ftypes 13ms (cache hit)
+362 http fetch GET 200 https://registry.npmjs.org/@swc%2fcounter 15ms (cache hit)
+363 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-linux-x64-musl 15ms (cache hit)
+364 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-win32-ia32-msvc 21ms (cache hit)
+365 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-linux-x64-gnu 28ms (cache hit)
+366 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-win32-x64-msvc 34ms (cache hit)
+367 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-linux-arm64-gnu 39ms (cache hit)
+368 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-linux-arm-gnueabihf 49ms (cache hit)
+369 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-linux-arm64-musl 56ms (cache hit)
+370 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-darwin-x64 62ms (cache hit)
+371 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-darwin-arm64 71ms (cache hit)
+372 http fetch GET 200 https://registry.npmjs.org/@swc%2fcore-win32-arm64-msvc 76ms (cache hit)
+373 timing idealTree:node_modules/@vitejs/plugin-react-swc Completed in 113ms
+374 timing idealTree:node_modules/@rolldown/pluginutils Completed in 0ms
+375 silly placeDep ROOT @swc/core-darwin-arm64@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+376 silly placeDep ROOT @swc/core-darwin-x64@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+377 silly placeDep ROOT @swc/core-linux-arm-gnueabihf@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+378 silly placeDep ROOT @swc/core-linux-arm64-gnu@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+379 silly placeDep ROOT @swc/core-linux-arm64-musl@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+380 silly placeDep ROOT @swc/core-linux-x64-gnu@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+381 silly placeDep ROOT @swc/core-linux-x64-musl@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+382 silly placeDep ROOT @swc/core-win32-arm64-msvc@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+383 silly placeDep ROOT @swc/core-win32-ia32-msvc@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+384 silly placeDep ROOT @swc/core-win32-x64-msvc@1.15.0 OK for: @swc/core@1.15.0 want: 1.15.0
+385 silly placeDep ROOT @swc/counter@0.1.3 OK for: @swc/core@1.15.0 want: ^0.1.3
+386 silly placeDep ROOT @swc/types@0.1.25 OK for: @swc/core@1.15.0 want: ^0.1.25
+387 timing idealTree:node_modules/@swc/core Completed in 10ms
+388 timing idealTree:node_modules/@swc/core-darwin-arm64 Completed in 1ms
+389 timing idealTree:node_modules/@swc/core-darwin-x64 Completed in 0ms
+390 timing idealTree:node_modules/@swc/core-linux-arm-gnueabihf Completed in 0ms
+391 timing idealTree:node_modules/@swc/core-linux-arm64-gnu Completed in 0ms
+392 timing idealTree:node_modules/@swc/core-linux-arm64-musl Completed in 0ms
+393 timing idealTree:node_modules/@swc/core-linux-x64-gnu Completed in 0ms
+394 timing idealTree:node_modules/@swc/core-linux-x64-musl Completed in 0ms
+395 timing idealTree:node_modules/@swc/core-win32-arm64-msvc Completed in 0ms
+396 timing idealTree:node_modules/@swc/core-win32-ia32-msvc Completed in 0ms
+397 timing idealTree:node_modules/@swc/core-win32-x64-msvc Completed in 0ms
+398 timing idealTree:node_modules/@swc/counter Completed in 0ms
+399 timing idealTree:node_modules/@swc/types Completed in 0ms
+400 timing idealTree:node_modules/class-variance-authority Completed in 0ms
+401 timing idealTree:node_modules/clsx Completed in 0ms
+402 timing idealTree:node_modules/cmdk Completed in 0ms
+403 timing idealTree:node_modules/date-fns Completed in 0ms
+404 silly placeDep ROOT embla-carousel@8.6.0 OK for: embla-carousel-react@8.6.0 want: 8.6.0
+405 silly placeDep ROOT embla-carousel-reactive-utils@8.6.0 OK for: embla-carousel-react@8.6.0 want: 8.6.0
+406 timing idealTree:node_modules/embla-carousel-react Completed in 2ms
+407 timing idealTree:node_modules/embla-carousel Completed in 0ms
+408 timing idealTree:node_modules/embla-carousel-reactive-utils Completed in 0ms
+409 timing idealTree:node_modules/input-otp Completed in 0ms
+410 timing idealTree:node_modules/lucide-react Completed in 0ms
+411 timing idealTree:node_modules/next-themes Completed in 0ms
+412 silly placeDep ROOT loose-envify@1.4.0 OK for: react@18.3.1 want: ^1.1.0
+413 silly fetch manifest js-tokens@^3.0.0 || ^4.0.0
+414 http fetch GET 200 https://registry.npmjs.org/js-tokens 4ms (cache hit)
+415 timing idealTree:node_modules/react Completed in 5ms
+416 silly placeDep ROOT js-tokens@4.0.0 OK for: loose-envify@1.4.0 want: ^3.0.0 || ^4.0.0
+417 timing idealTree:node_modules/loose-envify Completed in 1ms
+418 timing idealTree:node_modules/js-tokens Completed in 0ms
+419 timing idealTree:node_modules/react-day-picker Completed in 0ms
+420 silly placeDep ROOT scheduler@0.23.2 OK for: react-dom@18.3.1 want: ^0.23.2
+421 timing idealTree:node_modules/react-dom Completed in 0ms
+422 timing idealTree:node_modules/react-hook-form Completed in 0ms
+423 timing idealTree:node_modules/react-resizable-panels Completed in 0ms
+424 silly fetch manifest react@^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+425 silly fetch manifest react-dom@^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+426 silly placeDep ROOT eventemitter3@4.0.7 OK for: recharts@2.15.4 want: ^4.0.1
+427 silly placeDep ROOT lodash@4.17.21 OK for: recharts@2.15.4 want: ^4.17.21
+428 silly placeDep ROOT react-is@18.3.1 OK for: recharts@2.15.4 want: ^18.3.1
+429 silly placeDep ROOT react-smooth@4.0.4 OK for: recharts@2.15.4 want: ^4.0.4
+430 silly fetch manifest fast-equals@^5.0.1
+431 silly fetch manifest prop-types@^15.8.1
+432 silly fetch manifest react-transition-group@^4.4.5
+433 silly placeDep ROOT recharts-scale@0.4.5 OK for: recharts@2.15.4 want: ^0.4.4
+434 silly fetch manifest decimal.js-light@^2.4.1
+435 silly placeDep ROOT tiny-invariant@1.3.3 OK for: recharts@2.15.4 want: ^1.3.1
+436 silly placeDep ROOT victory-vendor@36.9.2 OK for: recharts@2.15.4 want: ^36.6.8
+437 silly fetch manifest d3-ease@^3.0.1
+438 silly fetch manifest d3-time@^3.0.0
+439 silly fetch manifest d3-array@^3.1.6
+440 silly fetch manifest d3-scale@^4.0.2
+441 silly fetch manifest d3-shape@^3.1.0
+442 silly fetch manifest d3-timer@^3.0.1
+443 silly fetch manifest @types/d3-ease@^3.0.0
+444 silly fetch manifest @types/d3-time@^3.0.0
+445 silly fetch manifest d3-interpolate@^3.0.1
+446 silly fetch manifest @types/d3-array@^3.0.3
+447 silly fetch manifest @types/d3-scale@^4.0.2
+448 silly fetch manifest @types/d3-shape@^3.1.0
+449 silly fetch manifest @types/d3-timer@^3.0.0
+450 silly fetch manifest @types/d3-interpolate@^3.0.1
+451 http fetch GET 200 https://registry.npmjs.org/prop-types 18ms (cache hit)
+452 http fetch GET 200 https://registry.npmjs.org/fast-equals 19ms (cache hit)
+453 http fetch GET 200 https://registry.npmjs.org/d3-interpolate 17ms (cache hit)
+454 http fetch GET 200 https://registry.npmjs.org/d3-ease 20ms (cache hit)
+455 http fetch GET 200 https://registry.npmjs.org/d3-time 20ms (cache hit)
+456 http fetch GET 200 https://registry.npmjs.org/decimal.js-light 22ms (cache hit)
+457 http fetch GET 200 https://registry.npmjs.org/react-transition-group 22ms (cache hit)
+458 http fetch GET 200 https://registry.npmjs.org/d3-shape 20ms (cache hit)
+459 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-array 20ms (cache hit)
+460 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-shape 21ms (cache hit)
+461 http fetch GET 200 https://registry.npmjs.org/d3-array 24ms (cache hit)
+462 http fetch GET 200 https://registry.npmjs.org/d3-scale 24ms (cache hit)
+463 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-time 25ms (cache hit)
+464 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-ease 25ms (cache hit)
+465 http fetch GET 200 https://registry.npmjs.org/d3-timer 25ms (cache hit)
+466 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-timer 23ms (cache hit)
+467 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-interpolate 24ms (cache hit)
+468 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-scale 25ms (cache hit)
+469 timing idealTree:node_modules/recharts Completed in 33ms
+470 timing idealTree:node_modules/eventemitter3 Completed in 0ms
+471 timing idealTree:node_modules/lodash Completed in 0ms
+472 timing idealTree:node_modules/react-is Completed in 0ms
+473 silly fetch manifest react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+474 silly fetch manifest react-dom@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+475 silly placeDep ROOT fast-equals@5.3.2 OK for: react-smooth@4.0.4 want: ^5.0.1
+476 silly placeDep ROOT prop-types@15.8.1 OK for: react-smooth@4.0.4 want: ^15.8.1
+477 silly fetch manifest object-assign@^4.1.1
+478 silly fetch manifest react-is@^16.13.1
+479 silly placeDep ROOT react-transition-group@4.4.5 OK for: react-smooth@4.0.4 want: ^4.4.5
+480 silly fetch manifest @babel/runtime@^7.5.5
+481 silly fetch manifest dom-helpers@^5.0.1
+482 http fetch GET 200 https://registry.npmjs.org/@babel%2fruntime 10ms (cache hit)
+483 http fetch GET 200 https://registry.npmjs.org/object-assign 12ms (cache hit)
+484 http fetch GET 200 https://registry.npmjs.org/dom-helpers 12ms (cache hit)
+485 timing idealTree:node_modules/react-smooth Completed in 15ms
+486 timing idealTree:node_modules/fast-equals Completed in 0ms
+487 silly placeDep ROOT object-assign@4.1.1 OK for: prop-types@15.8.1 want: ^4.1.1
+488 silly placeDep node_modules/prop-types react-is@16.13.1 OK for: prop-types@15.8.1 want: ^16.13.1
+489 timing idealTree:node_modules/prop-types Completed in 2ms
+490 timing idealTree:node_modules/object-assign Completed in 0ms
+491 silly placeDep ROOT @babel/runtime@7.28.4 OK for: react-transition-group@4.4.5 want: ^7.5.5
+492 silly placeDep ROOT dom-helpers@5.2.1 OK for: react-transition-group@4.4.5 want: ^5.0.1
+493 silly fetch manifest csstype@^3.0.2
+494 http fetch GET 200 https://registry.npmjs.org/csstype 2ms (cache hit)
+495 timing idealTree:node_modules/react-transition-group Completed in 3ms
+496 timing idealTree:node_modules/@babel/runtime Completed in 0ms
+497 silly placeDep ROOT csstype@3.1.3 OK for: dom-helpers@5.2.1 want: ^3.0.2
+498 timing idealTree:node_modules/dom-helpers Completed in 0ms
+499 timing idealTree:node_modules/csstype Completed in 0ms
+500 silly placeDep ROOT decimal.js-light@2.5.1 OK for: recharts-scale@0.4.5 want: ^2.4.1
+501 timing idealTree:node_modules/recharts-scale Completed in 0ms
+502 timing idealTree:node_modules/decimal.js-light Completed in 0ms
+503 timing idealTree:node_modules/scheduler Completed in 0ms
+504 timing idealTree:node_modules/sonner Completed in 0ms
+505 timing idealTree:node_modules/tailwind-merge Completed in 0ms
+506 timing idealTree:node_modules/tiny-invariant Completed in 0ms
+507 timing idealTree:node_modules/undici-types Completed in 0ms
+508 timing idealTree:node_modules/vaul Completed in 0ms
+509 silly placeDep ROOT @types/d3-array@3.2.2 OK for: victory-vendor@36.9.2 want: ^3.0.3
+510 silly placeDep ROOT @types/d3-ease@3.0.2 OK for: victory-vendor@36.9.2 want: ^3.0.0
+511 silly placeDep ROOT @types/d3-interpolate@3.0.4 OK for: victory-vendor@36.9.2 want: ^3.0.1
+512 silly fetch manifest @types/d3-color@*
+513 silly placeDep ROOT @types/d3-scale@4.0.9 OK for: victory-vendor@36.9.2 want: ^4.0.2
+514 silly fetch manifest @types/d3-time@*
+515 silly placeDep ROOT @types/d3-shape@3.1.7 OK for: victory-vendor@36.9.2 want: ^3.1.0
+516 silly fetch manifest @types/d3-path@*
+517 silly placeDep ROOT @types/d3-time@3.0.4 OK for: victory-vendor@36.9.2 want: ^3.0.0
+518 silly placeDep ROOT @types/d3-timer@3.0.2 OK for: victory-vendor@36.9.2 want: ^3.0.0
+519 silly placeDep ROOT d3-array@3.2.4 OK for: victory-vendor@36.9.2 want: ^3.1.6
+520 silly fetch manifest internmap@1 - 2
+521 silly placeDep ROOT d3-ease@3.0.1 OK for: victory-vendor@36.9.2 want: ^3.0.1
+522 silly placeDep ROOT d3-interpolate@3.0.1 OK for: victory-vendor@36.9.2 want: ^3.0.1
+523 silly fetch manifest d3-color@1 - 3
+524 silly placeDep ROOT d3-scale@4.0.2 OK for: victory-vendor@36.9.2 want: ^4.0.2
+525 silly fetch manifest d3-format@1 - 3
+526 silly fetch manifest d3-time@2.1.1 - 3
+527 silly fetch manifest d3-time-format@2 - 4
+528 silly placeDep ROOT d3-shape@3.2.0 OK for: victory-vendor@36.9.2 want: ^3.1.0
+529 silly fetch manifest d3-path@^3.1.0
+530 silly placeDep ROOT d3-time@3.1.0 OK for: victory-vendor@36.9.2 want: ^3.0.0
+531 silly placeDep ROOT d3-timer@3.0.1 OK for: victory-vendor@36.9.2 want: ^3.0.1
+532 http fetch GET 200 https://registry.npmjs.org/d3-format 5ms (cache hit)
+533 http fetch GET 200 https://registry.npmjs.org/internmap 7ms (cache hit)
+534 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-color 8ms (cache hit)
+535 http fetch GET 200 https://registry.npmjs.org/@types%2fd3-path 8ms (cache hit)
+536 http fetch GET 200 https://registry.npmjs.org/d3-color 7ms (cache hit)
+537 http fetch GET 200 https://registry.npmjs.org/d3-path 6ms (cache hit)
+538 http fetch GET 200 https://registry.npmjs.org/d3-time-format 6ms (cache hit)
+539 timing idealTree:node_modules/victory-vendor Completed in 12ms
+540 timing idealTree:node_modules/@types/d3-array Completed in 0ms
+541 timing idealTree:node_modules/@types/d3-ease Completed in 0ms
+542 silly placeDep ROOT @types/d3-color@3.1.3 OK for: @types/d3-interpolate@3.0.4 want: *
+543 timing idealTree:node_modules/@types/d3-interpolate Completed in 1ms
+544 timing idealTree:node_modules/@types/d3-color Completed in 0ms
+545 timing idealTree:node_modules/@types/d3-scale Completed in 0ms
+546 silly placeDep ROOT @types/d3-path@3.1.1 OK for: @types/d3-shape@3.1.7 want: *
+547 timing idealTree:node_modules/@types/d3-shape Completed in 1ms
+548 timing idealTree:node_modules/@types/d3-path Completed in 0ms
+549 timing idealTree:node_modules/@types/d3-time Completed in 0ms
+550 timing idealTree:node_modules/@types/d3-timer Completed in 0ms
+551 silly placeDep ROOT internmap@2.0.3 OK for: d3-array@3.2.4 want: 1 - 2
+552 timing idealTree:node_modules/d3-array Completed in 0ms
+553 timing idealTree:node_modules/d3-ease Completed in 0ms
+554 silly placeDep ROOT d3-color@3.1.0 OK for: d3-interpolate@3.0.1 want: 1 - 3
+555 timing idealTree:node_modules/d3-interpolate Completed in 1ms
+556 timing idealTree:node_modules/d3-color Completed in 0ms
+557 silly placeDep ROOT d3-format@3.1.0 OK for: d3-scale@4.0.2 want: 1 - 3
+558 silly placeDep ROOT d3-time-format@4.1.0 OK for: d3-scale@4.0.2 want: 2 - 4
+559 timing idealTree:node_modules/d3-scale Completed in 0ms
+560 timing idealTree:node_modules/d3-format Completed in 0ms
+561 silly placeDep ROOT d3-path@3.1.0 OK for: d3-shape@3.2.0 want: ^3.1.0
+562 timing idealTree:node_modules/d3-shape Completed in 0ms
+563 timing idealTree:node_modules/d3-path Completed in 0ms
+564 timing idealTree:node_modules/d3-time Completed in 0ms
+565 timing idealTree:node_modules/d3-time-format Completed in 0ms
+566 timing idealTree:node_modules/d3-timer Completed in 0ms
+567 timing idealTree:node_modules/internmap Completed in 0ms
+568 silly placeDep ROOT esbuild@0.25.12 OK for: vite@6.3.5 want: ^0.25.0
+569 silly fetch manifest @esbuild/aix-ppc64@0.25.12
+570 silly fetch manifest @esbuild/android-arm@0.25.12
+571 silly fetch manifest @esbuild/android-arm64@0.25.12
+572 silly fetch manifest @esbuild/android-x64@0.25.12
+573 silly fetch manifest @esbuild/darwin-arm64@0.25.12
+574 silly fetch manifest @esbuild/darwin-x64@0.25.12
+575 silly fetch manifest @esbuild/freebsd-arm64@0.25.12
+576 silly fetch manifest @esbuild/freebsd-x64@0.25.12
+577 silly fetch manifest @esbuild/linux-arm@0.25.12
+578 silly fetch manifest @esbuild/linux-arm64@0.25.12
+579 silly fetch manifest @esbuild/linux-ia32@0.25.12
+580 silly fetch manifest @esbuild/linux-loong64@0.25.12
+581 silly fetch manifest @esbuild/linux-mips64el@0.25.12
+582 silly fetch manifest @esbuild/linux-ppc64@0.25.12
+583 silly fetch manifest @esbuild/linux-riscv64@0.25.12
+584 silly fetch manifest @esbuild/linux-s390x@0.25.12
+585 silly fetch manifest @esbuild/linux-x64@0.25.12
+586 silly fetch manifest @esbuild/netbsd-arm64@0.25.12
+587 silly fetch manifest @esbuild/netbsd-x64@0.25.12
+588 silly fetch manifest @esbuild/openbsd-arm64@0.25.12
+589 silly fetch manifest @esbuild/openbsd-x64@0.25.12
+590 silly fetch manifest @esbuild/openharmony-arm64@0.25.12
+591 silly fetch manifest @esbuild/sunos-x64@0.25.12
+592 silly fetch manifest @esbuild/win32-arm64@0.25.12
+593 silly fetch manifest @esbuild/win32-ia32@0.25.12
+594 silly fetch manifest @esbuild/win32-x64@0.25.12
+595 silly placeDep ROOT fdir@6.5.0 OK for: vite@6.3.5 want: ^6.4.4
+596 silly placeDep ROOT fsevents@2.3.3 OK for: vite@6.3.5 want: ~2.3.3
+597 silly placeDep ROOT picomatch@4.0.3 OK for: vite@6.3.5 want: ^4.0.2
+598 silly placeDep ROOT postcss@8.5.6 OK for: vite@6.3.5 want: ^8.5.3
+599 silly fetch manifest nanoid@^3.3.11
+600 silly fetch manifest picocolors@^1.1.1
+601 silly fetch manifest source-map-js@^1.2.1
+602 silly placeDep ROOT rollup@4.52.5 OK for: vite@6.3.5 want: ^4.34.9
+603 silly fetch manifest @types/estree@1.0.8
+604 silly fetch manifest @rollup/rollup-darwin-arm64@4.52.5
+605 silly fetch manifest @rollup/rollup-android-arm64@4.52.5
+606 silly fetch manifest @rollup/rollup-win32-arm64-msvc@4.52.5
+607 silly fetch manifest @rollup/rollup-freebsd-arm64@4.52.5
+608 silly fetch manifest @rollup/rollup-linux-arm64-gnu@4.52.5
+609 silly fetch manifest @rollup/rollup-linux-arm64-musl@4.52.5
+610 silly fetch manifest @rollup/rollup-android-arm-eabi@4.52.5
+611 silly fetch manifest @rollup/rollup-linux-arm-gnueabihf@4.52.5
+612 silly fetch manifest @rollup/rollup-linux-arm-musleabihf@4.52.5
+613 silly fetch manifest @rollup/rollup-win32-ia32-msvc@4.52.5
+614 silly fetch manifest @rollup/rollup-linux-loong64-gnu@4.52.5
+615 silly fetch manifest @rollup/rollup-linux-riscv64-gnu@4.52.5
+616 silly fetch manifest @rollup/rollup-linux-riscv64-musl@4.52.5
+617 silly fetch manifest @rollup/rollup-linux-ppc64-gnu@4.52.5
+618 silly fetch manifest @rollup/rollup-linux-s390x-gnu@4.52.5
+619 silly fetch manifest @rollup/rollup-darwin-x64@4.52.5
+620 silly fetch manifest @rollup/rollup-win32-x64-gnu@4.52.5
+621 silly fetch manifest @rollup/rollup-win32-x64-msvc@4.52.5
+622 silly fetch manifest @rollup/rollup-freebsd-x64@4.52.5
+623 silly fetch manifest @rollup/rollup-linux-x64-gnu@4.52.5
+624 silly fetch manifest @rollup/rollup-linux-x64-musl@4.52.5
+625 silly fetch manifest @rollup/rollup-openharmony-arm64@4.52.5
+626 silly placeDep ROOT tinyglobby@0.2.15 OK for: vite@6.3.5 want: ^0.2.13
+627 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-x64 32ms (cache hit)
+628 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-arm64 32ms (cache hit)
+629 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm 33ms (cache hit)
+630 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm64 33ms (cache hit)
+631 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-arm64 34ms (cache hit)
+632 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-x64 34ms (cache hit)
+633 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ppc64 34ms (cache hit)
+634 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-x64 37ms (cache hit)
+635 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm 37ms (cache hit)
+636 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-mips64el 36ms (cache hit)
+637 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ia32 37ms (cache hit)
+638 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-x64 37ms (cache hit)
+639 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-riscv64 38ms (cache hit)
+640 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenharmony-arm64 38ms (cache hit)
+641 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-arm64 38ms (cache hit)
+642 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-s390x 38ms (cache hit)
+643 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-arm64 39ms (cache hit)
+644 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fsunos-x64 39ms (cache hit)
+645 http fetch GET 200 https://registry.npmjs.org/picocolors 37ms (cache hit)
+646 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-x64 40ms (cache hit)
+647 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-loong64 40ms (cache hit)
+648 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-arm64 40ms (cache hit)
+649 http fetch GET 200 https://registry.npmjs.org/nanoid 40ms (cache hit)
+650 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm64 43ms (cache hit)
+651 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-darwin-arm64 40ms (cache hit)
+652 http fetch GET 200 https://registry.npmjs.org/@types%2festree 41ms (cache hit)
+653 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-freebsd-arm64 41ms (cache hit)
+654 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-ia32 44ms (cache hit)
+655 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-android-arm-eabi 41ms (cache hit)
+656 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-arm64-musl 42ms (cache hit)
+657 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-win32-arm64-msvc 43ms (cache hit)
+658 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-x64 46ms (cache hit)
+659 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-arm-gnueabihf 43ms (cache hit)
+660 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-loong64-gnu 44ms (cache hit)
+661 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-win32-ia32-msvc 44ms (cache hit)
+662 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-android-arm64 46ms (cache hit)
+663 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-riscv64-musl 45ms (cache hit)
+664 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-freebsd-x64 45ms (cache hit)
+665 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-s390x-gnu 46ms (cache hit)
+666 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-win32-x64-gnu 46ms (cache hit)
+667 http fetch GET 200 https://registry.npmjs.org/source-map-js 48ms (cache hit)
+668 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-arm-musleabihf 47ms (cache hit)
+669 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-arm64-gnu 48ms (cache hit)
+670 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-x64-gnu 48ms (cache hit)
+671 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-darwin-x64 49ms (cache hit)
+672 http fetch GET 200 https://registry.npmjs.org/@esbuild%2faix-ppc64 55ms (cache hit)
+673 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-win32-x64-msvc 50ms (cache hit)
+674 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-openharmony-arm64 50ms (cache hit)
+675 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-x64 55ms (cache hit)
+676 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-riscv64-gnu 52ms (cache hit)
+677 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-ppc64-gnu 53ms (cache hit)
+678 http fetch GET 200 https://registry.npmjs.org/@rollup%2frollup-linux-x64-musl 52ms (cache hit)
+679 timing idealTree:node_modules/vite Completed in 61ms
+680 silly placeDep ROOT @esbuild/aix-ppc64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+681 silly placeDep ROOT @esbuild/android-arm@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+682 silly placeDep ROOT @esbuild/android-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+683 silly placeDep ROOT @esbuild/android-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+684 silly placeDep ROOT @esbuild/darwin-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+685 silly placeDep ROOT @esbuild/darwin-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+686 silly placeDep ROOT @esbuild/freebsd-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+687 silly placeDep ROOT @esbuild/freebsd-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+688 silly placeDep ROOT @esbuild/linux-arm@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+689 silly placeDep ROOT @esbuild/linux-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+690 silly placeDep ROOT @esbuild/linux-ia32@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+691 silly placeDep ROOT @esbuild/linux-loong64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+692 silly placeDep ROOT @esbuild/linux-mips64el@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+693 silly placeDep ROOT @esbuild/linux-ppc64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+694 silly placeDep ROOT @esbuild/linux-riscv64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+695 silly placeDep ROOT @esbuild/linux-s390x@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+696 silly placeDep ROOT @esbuild/linux-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+697 silly placeDep ROOT @esbuild/netbsd-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+698 silly placeDep ROOT @esbuild/netbsd-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+699 silly placeDep ROOT @esbuild/openbsd-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+700 silly placeDep ROOT @esbuild/openbsd-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+701 silly placeDep ROOT @esbuild/openharmony-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+702 silly placeDep ROOT @esbuild/sunos-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+703 silly placeDep ROOT @esbuild/win32-arm64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+704 silly placeDep ROOT @esbuild/win32-ia32@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+705 silly placeDep ROOT @esbuild/win32-x64@0.25.12 OK for: esbuild@0.25.12 want: 0.25.12
+706 timing idealTree:node_modules/esbuild Completed in 19ms
+707 timing idealTree:node_modules/@esbuild/aix-ppc64 Completed in 0ms
+708 timing idealTree:node_modules/@esbuild/android-arm Completed in 0ms
+709 timing idealTree:node_modules/@esbuild/android-arm64 Completed in 0ms
+710 timing idealTree:node_modules/@esbuild/android-x64 Completed in 0ms
+711 timing idealTree:node_modules/@esbuild/darwin-arm64 Completed in 0ms
+712 timing idealTree:node_modules/@esbuild/darwin-x64 Completed in 0ms
+713 timing idealTree:node_modules/@esbuild/freebsd-arm64 Completed in 0ms
+714 timing idealTree:node_modules/@esbuild/freebsd-x64 Completed in 0ms
+715 timing idealTree:node_modules/@esbuild/linux-arm Completed in 0ms
+716 timing idealTree:node_modules/@esbuild/linux-arm64 Completed in 0ms
+717 timing idealTree:node_modules/@esbuild/linux-ia32 Completed in 0ms
+718 timing idealTree:node_modules/@esbuild/linux-loong64 Completed in 0ms
+719 timing idealTree:node_modules/@esbuild/linux-mips64el Completed in 0ms
+720 timing idealTree:node_modules/@esbuild/linux-ppc64 Completed in 0ms
+721 timing idealTree:node_modules/@esbuild/linux-riscv64 Completed in 0ms
+722 timing idealTree:node_modules/@esbuild/linux-s390x Completed in 0ms
+723 timing idealTree:node_modules/@esbuild/linux-x64 Completed in 0ms
+724 timing idealTree:node_modules/@esbuild/netbsd-arm64 Completed in 0ms
+725 timing idealTree:node_modules/@esbuild/netbsd-x64 Completed in 0ms
+726 timing idealTree:node_modules/@esbuild/openbsd-arm64 Completed in 0ms
+727 timing idealTree:node_modules/@esbuild/openbsd-x64 Completed in 0ms
+728 timing idealTree:node_modules/@esbuild/openharmony-arm64 Completed in 0ms
+729 timing idealTree:node_modules/@esbuild/sunos-x64 Completed in 0ms
+730 timing idealTree:node_modules/@esbuild/win32-arm64 Completed in 0ms
+731 timing idealTree:node_modules/@esbuild/win32-ia32 Completed in 0ms
+732 timing idealTree:node_modules/@esbuild/win32-x64 Completed in 0ms
+733 timing idealTree:node_modules/fdir Completed in 0ms
+734 timing idealTree:node_modules/fsevents Completed in 0ms
+735 timing idealTree:node_modules/picomatch Completed in 0ms
+736 silly placeDep ROOT nanoid@3.3.11 OK for: postcss@8.5.6 want: ^3.3.11
+737 silly placeDep ROOT picocolors@1.1.1 OK for: postcss@8.5.6 want: ^1.1.1
+738 silly placeDep ROOT source-map-js@1.2.1 OK for: postcss@8.5.6 want: ^1.2.1
+739 timing idealTree:node_modules/postcss Completed in 11ms
+740 timing idealTree:node_modules/nanoid Completed in 0ms
+741 timing idealTree:node_modules/picocolors Completed in 0ms
+742 silly placeDep ROOT @rollup/rollup-android-arm-eabi@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+743 silly placeDep ROOT @rollup/rollup-android-arm64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+744 silly placeDep ROOT @rollup/rollup-darwin-arm64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+745 silly placeDep ROOT @rollup/rollup-darwin-x64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+746 silly placeDep ROOT @rollup/rollup-freebsd-arm64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+747 silly placeDep ROOT @rollup/rollup-freebsd-x64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+748 silly placeDep ROOT @rollup/rollup-linux-arm-gnueabihf@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+749 silly placeDep ROOT @rollup/rollup-linux-arm-musleabihf@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+750 silly placeDep ROOT @rollup/rollup-linux-arm64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+751 silly placeDep ROOT @rollup/rollup-linux-arm64-musl@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+752 silly placeDep ROOT @rollup/rollup-linux-loong64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+753 silly placeDep ROOT @rollup/rollup-linux-ppc64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+754 silly placeDep ROOT @rollup/rollup-linux-riscv64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+755 silly placeDep ROOT @rollup/rollup-linux-riscv64-musl@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+756 silly placeDep ROOT @rollup/rollup-linux-s390x-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+757 silly placeDep ROOT @rollup/rollup-linux-x64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+758 silly placeDep ROOT @rollup/rollup-linux-x64-musl@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+759 silly placeDep ROOT @rollup/rollup-openharmony-arm64@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+760 silly placeDep ROOT @rollup/rollup-win32-arm64-msvc@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+761 silly placeDep ROOT @rollup/rollup-win32-ia32-msvc@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+762 silly placeDep ROOT @rollup/rollup-win32-x64-gnu@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+763 silly placeDep ROOT @rollup/rollup-win32-x64-msvc@4.52.5 OK for: rollup@4.52.5 want: 4.52.5
+764 silly placeDep ROOT @types/estree@1.0.8 OK for: rollup@4.52.5 want: 1.0.8
+765 timing idealTree:node_modules/rollup Completed in 10ms
+766 timing idealTree:node_modules/@rollup/rollup-android-arm-eabi Completed in 0ms
+767 timing idealTree:node_modules/@rollup/rollup-android-arm64 Completed in 0ms
+768 timing idealTree:node_modules/@rollup/rollup-darwin-arm64 Completed in 0ms
+769 timing idealTree:node_modules/@rollup/rollup-darwin-x64 Completed in 0ms
+770 timing idealTree:node_modules/@rollup/rollup-freebsd-arm64 Completed in 0ms
+771 timing idealTree:node_modules/@rollup/rollup-freebsd-x64 Completed in 0ms
+772 timing idealTree:node_modules/@rollup/rollup-linux-arm-gnueabihf Completed in 0ms
+773 timing idealTree:node_modules/@rollup/rollup-linux-arm-musleabihf Completed in 0ms
+774 timing idealTree:node_modules/@rollup/rollup-linux-arm64-gnu Completed in 0ms
+775 timing idealTree:node_modules/@rollup/rollup-linux-arm64-musl Completed in 0ms
+776 timing idealTree:node_modules/@rollup/rollup-linux-loong64-gnu Completed in 0ms
+777 timing idealTree:node_modules/@rollup/rollup-linux-ppc64-gnu Completed in 0ms
+778 timing idealTree:node_modules/@rollup/rollup-linux-riscv64-gnu Completed in 0ms
+779 timing idealTree:node_modules/@rollup/rollup-linux-riscv64-musl Completed in 0ms
+780 timing idealTree:node_modules/@rollup/rollup-linux-s390x-gnu Completed in 0ms
+781 timing idealTree:node_modules/@rollup/rollup-linux-x64-gnu Completed in 0ms
+782 timing idealTree:node_modules/@rollup/rollup-linux-x64-musl Completed in 0ms
+783 timing idealTree:node_modules/@rollup/rollup-openharmony-arm64 Completed in 0ms
+784 timing idealTree:node_modules/@rollup/rollup-win32-arm64-msvc Completed in 0ms
+785 timing idealTree:node_modules/@rollup/rollup-win32-ia32-msvc Completed in 0ms
+786 timing idealTree:node_modules/@rollup/rollup-win32-x64-gnu Completed in 0ms
+787 timing idealTree:node_modules/@rollup/rollup-win32-x64-msvc Completed in 0ms
+788 timing idealTree:node_modules/@types/estree Completed in 0ms
+789 timing idealTree:node_modules/source-map-js Completed in 0ms
+790 timing idealTree:node_modules/tinyglobby Completed in 0ms
+791 timing idealTree:node_modules/@floating-ui/dom/node_modules/@floating-ui/core Completed in 0ms
+792 timing idealTree:node_modules/prop-types/node_modules/react-is Completed in 0ms
+793 timing idealTree:buildDeps Completed in 1822594ms
+794 timing idealTree:fixDepFlags Completed in 11ms
+795 timing idealTree Completed in 1822614ms
+796 timing command:install Completed in 1822648ms
+797 verbose type system
+798 verbose stack FetchError: request to https://registry.npmjs.org/@radix-ui%2freact-accordion failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+798 verbose stack     at ClientRequest.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/minipass-fetch/lib/index.js:130:14)
+798 verbose stack     at ClientRequest.emit (node:events:519:28)
+798 verbose stack     at _destroy (node:_http_client:872:13)
+798 verbose stack     at onSocketNT (node:_http_client:892:5)
+798 verbose stack     at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+799 verbose cwd /Users/sudhanshukumarjha/Downloads/QLM Claims Approval
+800 verbose Darwin 24.6.0
+801 verbose node v21.6.2
+802 verbose npm  v10.2.4
+803 error code ENOTFOUND
+804 error syscall getaddrinfo
+805 error errno ENOTFOUND
+806 error network request to https://registry.npmjs.org/@radix-ui%2freact-accordion failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+807 error network This is a problem related to network connectivity.
+807 error network In most cases you are behind a proxy or have bad network settings.
+807 error network
+807 error network If you are behind a proxy, please make sure that the
+807 error network 'proxy' config is set properly.  See: 'npm help config'
+808 verbose exit 1
+809 timing npm Completed in 1822790ms
+810 verbose unfinished npm timer reify 1762347413812
+811 verbose unfinished npm timer reify:loadTrees 1762347413843
+812 verbose code 1
+813 error A complete log of this run can be found in: /Users/sudhanshukumarjha/Downloads/QLM Claims Approval/.npm-cache/_logs/2025-11-05T12_56_53_680Z-debug-0.log
