@@ -1,0 +1,13 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index 0c8c294..6f99ca3 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -115,7 +115,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+   );
+ 
+   return (
+-    <div className="flex-1 bg-gray-50 flex flex-col">
++    <div className="bg-gray-50 min-h-screen flex flex-col">
+       {/* Top Header */}
+       <div className="bg-white border-b shrink-0">
+         <div className="p-4 space-y-4">

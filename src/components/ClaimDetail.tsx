@@ -115,7 +115,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   );
 
   return (
-    <div className="flex-1 bg-gray-50 flex flex-col">
+    <div className="bg-gray-50 min-h-screen flex flex-col">
       {/* Top Header */}
       <div className="bg-white border-b shrink-0">
         <div className="p-4 space-y-4">
