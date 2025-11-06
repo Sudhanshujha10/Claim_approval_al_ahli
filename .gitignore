@@ -28,4 +28,11 @@ pnpm-debug.log*
 
 # Change log diffs (kept in repo, but ignore temp files)
 change-logs/*.tmp
+# Node.js dependencies
+node_modules/
+
+# NPM cache and logs
+.npm-cache/
+.npmrc
+*.log
 
