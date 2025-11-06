@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Generate a timestamped diff of staged changes and save to change-logs
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+SHA=$(git rev-parse --short HEAD 2>/dev/null || echo "nohead")
+DEST="change-logs/${TIMESTAMP}_${SHA}.patch"
+
+# Only write if there are staged changes
+if ! git diff --cached --quiet; then
+	git diff --cached > "$DEST"
+	git add "$DEST"
+fi
