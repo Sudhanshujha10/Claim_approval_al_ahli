@@ -9,19 +9,17 @@ import { Progress } from "./ui/progress";
 import { Switch } from "./ui/switch";
 import { Label } from "./ui/label";
 import { Separator } from "./ui/separator";
-import {
-  ArrowLeft,
-  CheckCircle,
-  XCircle,
-  AlertTriangle,
+import { 
+  ArrowLeft, 
+  CheckCircle, 
+  XCircle, 
+  AlertTriangle, 
   Search,
   FileText,
   Lightbulb,
-  RefreshCw,
-  Eye
+  RefreshCw
 } from "lucide-react";
 import type { Claim } from "./ClaimsTable";
-import PDFViewerModal from "./PDFViewerModal";
 
 interface ClaimDetailProps {
   claim: Claim;
@@ -32,54 +30,48 @@ interface ChecklistItem {
   name: string;
   status: "passed" | "failed" | "pending";
   action?: string;
-  // optional metadata so you can later link to document locations etc.
-  note?: string;
 }
 
 export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showLowConfidence, setShowLowConfidence] = useState(false);
-  const [viewerOpen, setViewerOpen] = useState(false);
-  const [viewerFile, setViewerFile] = useState<File | string | null>(null);
-  const [viewerContext, setViewerContext] = useState<{ listName: "claim" | "invoice" | "approval"; index: number } | null>(null);
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "approved":
-        return "bg-green-100 text-green-800";
+        return "bg-green-100 text-green-800 hover:bg-green-100";
       case "pending":
       case "pending gsd review":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100";
       case "rejected":
-        return "bg-red-100 text-red-800";
+        return "bg-red-100 text-red-800 hover:bg-red-100";
       case "query raised":
-        return "bg-orange-100 text-orange-800";
+        return "bg-orange-100 text-orange-800 hover:bg-orange-100";
       default:
-        return "bg-gray-100 text-gray-800";
+        return "bg-gray-100 text-gray-800 hover:bg-gray-100";
     }
   };
 
-  // initialize checklist state arrays so they can be updated (manual override)
-  const [claimFormChecklist, setClaimFormChecklist] = useState<ChecklistItem[]>([
+  // Mock data for checklists
+  const claimFormChecklist: ChecklistItem[] = [
     { name: "EMR and Final Dx filled", status: "passed" },
     { name: "Doctor name & license present", status: "passed" },
     { name: "Diagnosis requiring approval", status: "failed", action: "Missing approval code" },
     { name: "Admission status recorded", status: "passed" },
-  ]);
+  ];
 
-  const [invoiceChecklist, setInvoiceChecklist] = useState<ChecklistItem[]>([
+  const invoiceChecklist: ChecklistItem[] = [
     { name: "Invoice total matches approval", status: "failed", action: "Amount mismatch" },
     { name: "Duplicate services", status: "passed" },
     { name: "Discounts verified", status: "passed" },
-  ]);
+  ];
 
-  const [approvalChecklist, setApprovalChecklist] = useState<ChecklistItem[]>([
+  const approvalChecklist: ChecklistItem[] = [
     { name: "Approval document present", status: "passed" },
     { name: "Partial approvals", status: "failed", action: "Check partial amounts" },
     { name: "Threshold verified", status: "passed" },
-  ]);
+  ];
 
-  // invoice / approved / email data (unchanged)
   const invoiceItems = [
     { code: "LAB001", service: "Complete Blood Count", qty: 1, gross: "150.00", approved: "150.00", guestShare: "30.00" },
     { code: "RAD002", service: "Chest X-Ray", qty: 1, gross: "300.00", approved: "300.00", guestShare: "60.00" },
@@ -99,54 +91,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
     { to: "patient@email.com", cc: "", subject: "Claim Status Update", status: "Sent", date: "20/07/2025" },
   ];
 
-  // preview helpers
-  const openPreview = (file: File | string) => {
-    setViewerFile(file);
-    setViewerOpen(true);
-    setViewerContext(null);
-  };
-
-  const openPreviewForChecklist = (listName: "claim" | "invoice" | "approval", index: number) => {
-    const map: Record<"claim" | "invoice" | "approval", string> = {
-      claim: "/sample/claim-form.pdf",
-      invoice: "/sample/invoice.pdf",
-      approval: "/sample/approval.pdf",
-    };
-    setViewerFile(map[listName]);
-    setViewerContext({ listName, index });
-    setViewerOpen(true);
-  };
-
-  // handler to mark a checklist item as passed (manual override)
-  const markChecklistPassed = (listName: "claim" | "invoice" | "approval", idx: number) => {
-    if (listName === "claim") {
-      setClaimFormChecklist((prev) => {
-        const copy = [...prev];
-        copy[idx] = { ...copy[idx], status: copy[idx].status === "passed" ? "failed" : "passed" };
-        return copy;
-      });
-    } else if (listName === "invoice") {
-      setInvoiceChecklist((prev) => {
-        const copy = [...prev];
-        copy[idx] = { ...copy[idx], status: copy[idx].status === "passed" ? "failed" : "passed" };
-        return copy;
-      });
-    } else {
-      setApprovalChecklist((prev) => {
-        const copy = [...prev];
-        copy[idx] = { ...copy[idx], status: copy[idx].status === "passed" ? "failed" : "passed" };
-        return copy;
-      });
-    }
-  };
-
-  // stub: raise query (UI-only for now)
-  const raiseQuery = (listName: string, item: ChecklistItem) => {
-    // here you will open your email modal / call the /api/send-email endpoint later
-    alert(`Raise query for "${item.name}" in ${listName} checks.`);
-  };
-
-  const renderChecklistItem = (item: ChecklistItem, index: number, listName?: "claim" | "invoice" | "approval") => (
+  const renderChecklistItem = (item: ChecklistItem, index: number) => (
     <div key={index} className="flex items-start justify-between p-3 rounded-lg bg-gray-50">
       <div className="flex items-start gap-3">
         {item.status === "passed" ? (
@@ -157,44 +102,20 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
           <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5" />
         )}
         <div>
-          <div className="text-sm font-medium">{item.name}</div>
+          <div className="text-sm">{item.name}</div>
           {item.action && (
             <div className="text-sm text-red-600 mt-1">{item.action}</div>
           )}
-          {item.note && (
-            <div className="text-xs text-gray-500 mt-1">{item.note}</div>
-          )}
         </div>
       </div>
-
-      <div className="flex items-center gap-2">
-        <Button variant="ghost" size="sm" onClick={() => openPreviewForChecklist(listName ?? "claim", index)}>
-          <Eye className="mr-2 h-4 w-4" /> Preview
-        </Button>
-        {/* If failed, offer Raise Query and also Mark as Passed */}
-        {item.status === "failed" && (
-          <>
-            <Button variant="ghost" size="sm" onClick={() => raiseQuery(listName ?? "unknown", item)}>Raise Query</Button>
-            <Button variant="outline" size="sm" onClick={() => markChecklistPassed(listName ?? "unknown" as any, index)}>Mark as Passed</Button>
-          </>
-        )}
-
-        {/* If pending allow manual override */}
-        {item.status === "pending" && (
-          <Button variant="outline" size="sm" onClick={() => markChecklistPassed(listName ?? "unknown" as any, index)}>Mark as Passed</Button>
-        )}
-
-        {/* If passed, allow unmark (toggle) */}
-        {item.status === "passed" && (
-          <Button variant="ghost" size="sm" onClick={() => markChecklistPassed(listName ?? "unknown" as any, index)}>Unmark</Button>
-        )}
-      </div>
+      {item.status === "failed" && (
+        <Button variant="outline" size="sm">Raise Query</Button>
+      )}
     </div>
   );
 
   return (
-    // make the whole page scroll, page-level min height
-    <div className="flex-1 bg-gray-50 flex flex-col min-h-screen">
+    <div className="flex-1 bg-gray-50 flex flex-col overflow-hidden">
       {/* Top Header */}
       <div className="bg-white border-b shrink-0">
         <div className="p-4 space-y-4">
@@ -205,11 +126,11 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
             <div className="flex items-center gap-6 flex-1">
               <div>
                 <div className="text-sm text-gray-500">Claim ID</div>
-                <div className="font-medium">{claim.id}</div>
+                <div>{claim.id}</div>
               </div>
               <div className="flex-1">
                 <div className="text-sm text-gray-500">Patient Name</div>
-                <div className="font-medium">{claim.patientName}</div>
+                <div>{claim.patientName}</div>
               </div>
               <Badge className={getStatusColor(claim.status)}>{claim.status}</Badge>
             </div>
@@ -230,11 +151,11 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
         </div>
       </div>
 
-      {/* Main Content Area (no inner scrolls) */}
-      <div className="flex-1 flex flex-col md:flex-row">
+      {/* Main Content Area */}
+      <div className="flex-1 flex overflow-hidden">
         {/* Left Side - Tabs Content */}
-        <div className="flex-1 p-6">
-          <Tabs defaultValue="claim-form" className="w-full">
+        <div className="flex-1 overflow-auto">
+          <Tabs defaultValue="claim-form" className="p-6">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
               <TabsTrigger value="invoice">Invoice</TabsTrigger>
@@ -296,7 +217,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Claim Form Checklist</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {claimFormChecklist.map((item, index) => renderChecklistItem(item, index, "claim"))}
+                  {claimFormChecklist.map((item, index) => renderChecklistItem(item, index))}
                 </CardContent>
               </Card>
             </TabsContent>
@@ -370,7 +291,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Invoice Checklist</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {invoiceChecklist.map((item, index) => renderChecklistItem(item, index, "invoice"))}
+                  {invoiceChecklist.map((item, index) => renderChecklistItem(item, index))}
                 </CardContent>
               </Card>
             </TabsContent>
@@ -442,7 +363,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Approval Checklist</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {approvalChecklist.map((item, index) => renderChecklistItem(item, index, "approval"))}
+                  {approvalChecklist.map((item, index) => renderChecklistItem(item, index))}
                 </CardContent>
               </Card>
             </TabsContent>
@@ -455,7 +376,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                     <CardTitle>Claim Form Checks</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    {claimFormChecklist.map((item, index) => renderChecklistItem(item, index, "claim"))}
+                    {claimFormChecklist.map((item, index) => renderChecklistItem(item, index))}
                   </CardContent>
                 </Card>
 
@@ -464,7 +385,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                     <CardTitle>Approval Checks</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    {approvalChecklist.map((item, index) => renderChecklistItem(item, index, "approval"))}
+                    {approvalChecklist.map((item, index) => renderChecklistItem(item, index))}
                   </CardContent>
                 </Card>
 
@@ -473,7 +394,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                     <CardTitle>Invoice Checks</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    {invoiceChecklist.map((item, index) => renderChecklistItem(item, index, "invoice"))}
+                    {invoiceChecklist.map((item, index) => renderChecklistItem(item, index))}
                   </CardContent>
                 </Card>
 
@@ -482,8 +403,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                     <CardTitle>Investigation Checks</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    {renderChecklistItem({ name: "Lab results attached", status: "passed" }, 0, "claim")}
-                    {renderChecklistItem({ name: "Imaging reports verified", status: "passed" }, 1, "claim")}
+                    {renderChecklistItem({ name: "Lab results attached", status: "passed" }, 0)}
+                    {renderChecklistItem({ name: "Imaging reports verified", status: "passed" }, 1)}
                   </CardContent>
                 </Card>
               </div>
@@ -556,81 +477,73 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
           </Tabs>
         </div>
 
-        {/* Right: sticky document viewer (no internal scrolls) */}
-        <aside className="w-full md:w-96 border-l bg-white p-4 sticky top-16 h-[calc(100vh-96px)]">
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Document Viewer</h3>
-
-            {/* Compact preview tiles */}
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-gray-100 p-2 flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                <span className="text-sm">Claim Form PDF</span>
-              </div>
-              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <FileText className="h-10 w-10 mx-auto mb-1" />
-                  <div className="text-sm">PDF Preview</div>
+        {/* Right Side - Document Viewer Sidebar */}
+        <div className="w-96 border-l bg-white overflow-auto">
+          <div className="p-4 space-y-4">
+            <div className="space-y-4">
+              <h3>Document Viewer</h3>
+              
+              <div className="border rounded-lg overflow-hidden">
+                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  <span className="text-sm">Claim Form PDF</span>
+                </div>
+                <div className="h-48 bg-gray-50 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <FileText className="h-12 w-12 mx-auto mb-2" />
+                    <div className="text-sm">PDF Preview</div>
+                  </div>
                 </div>
               </div>
-              <div className="p-2 border-t bg-white">
-                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/claim-form.pdf")}>Preview</Button>
-              </div>
-            </div>
 
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-gray-100 p-2 flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                <span className="text-sm">Invoice PDF</span>
-              </div>
-              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <FileText className="h-10 w-10 mx-auto mb-1" />
-                  <div className="text-sm">PDF Preview</div>
+              <div className="border rounded-lg overflow-hidden">
+                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  <span className="text-sm">Invoice PDF</span>
+                </div>
+                <div className="h-48 bg-gray-50 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <FileText className="h-12 w-12 mx-auto mb-2" />
+                    <div className="text-sm">PDF Preview</div>
+                  </div>
                 </div>
               </div>
-              <div className="p-2 border-t bg-white">
-                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/invoice.pdf")}>Preview</Button>
-              </div>
-            </div>
 
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-gray-100 p-2 flex items-center gap-2">
-                <FileText className="h-4 w-4" />
-                <span className="text-sm">Approval PDF</span>
-              </div>
-              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <FileText className="h-10 w-10 mx-auto mb-1" />
-                  <div className="text-sm">PDF Preview</div>
+              <div className="border rounded-lg overflow-hidden">
+                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  <span className="text-sm">Approval PDF</span>
+                </div>
+                <div className="h-48 bg-gray-50 flex items-center justify-center">
+                  <div className="text-center text-gray-400">
+                    <FileText className="h-12 w-12 mx-auto mb-2" />
+                    <div className="text-sm">PDF Preview</div>
+                  </div>
                 </div>
               </div>
-              <div className="p-2 border-t bg-white">
-                <Button size="sm" className="w-full" onClick={() => openPreview("/sample/approval.pdf")}>Preview</Button>
+
+              <Separator />
+
+              <div className="flex items-center justify-between">
+                <Label htmlFor="low-confidence" className="text-sm">Show Low Confidence Fields</Label>
+                <Switch
+                  id="low-confidence"
+                  checked={showLowConfidence}
+                  onCheckedChange={setShowLowConfidence}
+                />
               </div>
+
+              <Button variant="outline" className="w-full">
+                Mark as Verified
+              </Button>
+
+              <Button variant="outline" className="w-full gap-2">
+                <RefreshCw className="h-4 w-4" />
+                Re-run AI Validation
+              </Button>
             </div>
-
-            <Separator />
-
-            <div className="flex items-center justify-between">
-              <Label htmlFor="low-confidence" className="text-sm">Show Low Confidence Fields</Label>
-              <Switch
-                id="low-confidence"
-                checked={showLowConfidence}
-                onCheckedChange={setShowLowConfidence}
-              />
-            </div>
-
-            <Button variant="outline" className="w-full">
-              Mark as Verified
-            </Button>
-
-            <Button variant="outline" className="w-full gap-2">
-              <RefreshCw className="h-4 w-4" />
-              Re-run AI Validation
-            </Button>
           </div>
-        </aside>
+        </div>
       </div>
 
       {/* Footer - Summary & Actions */}
@@ -696,21 +609,6 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
           </div>
         </div>
       </div>
-      {/* PDF Viewer Modal */}
-      <PDFViewerModal
-        file={viewerFile}
-        open={viewerOpen}
-        title={`Preview - ${viewerFile instanceof File ? viewerFile.name : "Claim PDF"}`}
-        initialPage={1}
-        initialScale={1.0}
-        onClose={() => setViewerOpen(false)}
-        onMarkPassed={() => {
-          if (viewerContext) {
-            markChecklistPassed(viewerContext.listName, viewerContext.index);
-          }
-          setViewerOpen(false);
-        }}
-      />
     </div>
   );
 }
