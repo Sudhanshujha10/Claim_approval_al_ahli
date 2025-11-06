@@ -1,0 +1,123 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index e599c74..7e443d0 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -17,7 +17,8 @@ import {
+   Search,
+   FileText,
+   Lightbulb,
+-  RefreshCw
++  RefreshCw,
++  Eye
+ } from "lucide-react";
+ import type { Claim } from "./ClaimsTable";
+ import PDFViewerModal from "./PDFViewerModal";
+@@ -45,16 +46,16 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+   const getStatusColor = (status: string) => {
+     switch (status.toLowerCase()) {
+       case "approved":
+-        return "bg-green-100 text-green-800 hover:bg-green-100";
++        return "bg-green-100 text-green-800";
+       case "pending":
+       case "pending gsd review":
+-        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-100";
++        return "bg-yellow-100 text-yellow-800";
+       case "rejected":
+-        return "bg-red-100 text-red-800 hover:bg-red-100";
++        return "bg-red-100 text-red-800";
+       case "query raised":
+-        return "bg-orange-100 text-orange-800 hover:bg-orange-100";
++        return "bg-orange-100 text-orange-800";
+       default:
+-        return "bg-gray-100 text-gray-800 hover:bg-gray-100";
++        return "bg-gray-100 text-gray-800";
+     }
+   };
+ 
+@@ -105,8 +106,13 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+     setViewerContext(null);
+   };
+ 
+-  const openPreviewForChecklist = (listName: "claim" | "invoice" | "approval", index: number, file: File | string) => {
+-    setViewerFile(file);
++  const openPreviewForChecklist = (listName: "claim" | "invoice" | "approval", index: number) => {
++    const map: Record<"claim" | "invoice" | "approval", string> = {
++      claim: "/sample/claim-form.pdf",
++      invoice: "/sample/invoice.pdf",
++      approval: "/sample/approval.pdf",
++    };
++    setViewerFile(map[listName]);
+     setViewerContext({ listName, index });
+     setViewerOpen(true);
+   };
+@@ -162,6 +168,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+       </div>
+ 
+       <div className="flex items-center gap-2">
++        <Button variant="ghost" size="sm" onClick={() => openPreviewForChecklist(listName ?? "claim", index)}>
++          <Eye className="mr-2 h-4 w-4" /> Preview
++        </Button>
+         {/* If failed, offer Raise Query and also Mark as Passed */}
+         {item.status === "failed" && (
+           <>
+@@ -184,8 +193,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+   );
+ 
+   return (
+-    // make the whole page scroll, not inner containers (only root overflow-auto)
+-    <div className="flex-1 bg-gray-50 flex flex-col overflow-auto min-h-0">
++    // make the whole page scroll, page-level min height
++    <div className="flex-1 bg-gray-50 flex flex-col min-h-screen">
+       {/* Top Header */}
+       <div className="bg-white border-b shrink-0">
+         <div className="p-4 space-y-4">
+@@ -547,20 +556,20 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+           </Tabs>
+         </div>
+ 
+-        {/* Right Side - Document Viewer (no internal scrolling) */}
+-        <aside className="w-full md:w-96 border-l bg-white p-4">
++        {/* Right: sticky document viewer (no internal scrolls) */}
++        <aside className="w-full md:w-96 border-l bg-white p-4 sticky top-16 h-[calc(100vh-96px)]">
+           <div className="space-y-4">
+             <h3 className="text-lg font-medium">Document Viewer</h3>
+ 
++            {/* Compact preview tiles */}
+             <div className="border rounded-lg overflow-hidden">
+               <div className="bg-gray-100 p-2 flex items-center gap-2">
+                 <FileText className="h-4 w-4" />
+                 <span className="text-sm">Claim Form PDF</span>
+               </div>
+-              {/* increase min-height so viewer is large and scrolls with page */}
+-              <div className="min-h-[360px] bg-gray-50 flex items-center justify-center">
++              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
+                 <div className="text-center text-gray-400">
+-                  <FileText className="h-12 w-12 mx-auto mb-2" />
++                  <FileText className="h-10 w-10 mx-auto mb-1" />
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
+@@ -574,9 +583,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                 <FileText className="h-4 w-4" />
+                 <span className="text-sm">Invoice PDF</span>
+               </div>
+-              <div className="min-h-[260px] bg-gray-50 flex items-center justify-center">
++              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
+                 <div className="text-center text-gray-400">
+-                  <FileText className="h-12 w-12 mx-auto mb-2" />
++                  <FileText className="h-10 w-10 mx-auto mb-1" />
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
+@@ -590,9 +599,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                 <FileText className="h-4 w-4" />
+                 <span className="text-sm">Approval PDF</span>
+               </div>
+-              <div className="min-h-[200px] bg-gray-50 flex items-center justify-center">
++              <div className="min-h-[120px] bg-gray-50 flex items-center justify-center">
+                 <div className="text-center text-gray-400">
+-                  <FileText className="h-12 w-12 mx-auto mb-2" />
++                  <FileText className="h-10 w-10 mx-auto mb-1" />
+                   <div className="text-sm">PDF Preview</div>
+                 </div>
+               </div>
