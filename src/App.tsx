@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavigationSidebar } from "./components/NavigationSidebar";
 import { AppHeader } from "./components/AppHeader";
 import { Dashboard } from "./components/Dashboard";
@@ -7,6 +7,7 @@ import { AdminConfig } from "./components/AdminConfig";
 import { Reports } from "./components/Reports";
 import { EmailCenter } from "./components/EmailCenter";
 import type { Claim } from "./components/ClaimsTable";
+import { listClaims } from "./lib/api";
 
 // Mock data for claims
 const mockClaims: Claim[] = [
@@ -98,10 +99,27 @@ const mockClaims: Claim[] = [
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("dashboard");
-  const [selectedClaimId, setSelectedClaimId] = useState<string | null>(null);
+  const [selectedClaimId, setSelectedClaimId] = useState(null as string | null);
+  const [claims, setClaims] = useState([] as Claim[]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const selectedClaim = mockClaims.find((c) => c.id === selectedClaimId);
+  const selectedClaim = claims.find((c) => c.id === selectedClaimId);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const resp = await listClaims();
+        if (resp.ok && Array.isArray(resp.claims)) {
+          setClaims(resp.claims as Claim[]);
+        } else {
+          // seed with mock for first run when no backend data
+          setClaims(mockClaims);
+        }
+      } catch {
+        setClaims(mockClaims);
+      }
+    })();
+  }, []);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
@@ -116,12 +134,25 @@ export default function App() {
     setSelectedClaimId(null);
   };
 
+  const handleClaimCreated = (c: Claim) => {
+    setClaims((prev) => {
+      const idx = prev.findIndex((x) => x.id === c.id);
+      if (idx >= 0) {
+        const copy = [...prev];
+        copy[idx] = { ...prev[idx], ...c };
+        return copy;
+      }
+      return [c, ...prev];
+    });
+    setSelectedClaimId(c.id);
+  };
+
   // If viewing claim detail
   if (selectedClaim) {
     return (
-      <div className="flex h-screen overflow-hidden">
+      <div className="flex h-screen">
         <NavigationSidebar currentPage={currentPage} onNavigate={handleNavigate} />
-        <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 flex flex-col min-h-0">
           <ClaimDetail claim={selectedClaim} onBack={handleBackFromClaim} />
         </div>
       </div>
@@ -133,7 +164,7 @@ export default function App() {
     <div className="flex h-screen">
       <NavigationSidebar currentPage={currentPage} onNavigate={handleNavigate} />
       
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0">
         {currentPage !== "dashboard" && (
           <AppHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
         )}
@@ -141,9 +172,10 @@ export default function App() {
         {/* Page Content */}
         {currentPage === "dashboard" && (
           <Dashboard 
-            mockClaims={mockClaims} 
+            claims={claims}
             onViewClaim={handleViewClaim}
             onNavigate={handleNavigate}
+            onClaimCreated={handleClaimCreated}
           />
         )}
         

@@ -7,19 +7,20 @@ import { Button } from "./ui/button";
 import { FileUp, BarChart3, Settings } from "lucide-react";
 
 interface DashboardProps {
-  mockClaims: Claim[];
+  claims: Claim[];
   onViewClaim: (claimId: string) => void;
   onNavigate: (page: string) => void;
+  onClaimCreated: (c: Claim) => void;
 }
 
-export function Dashboard({ mockClaims, onViewClaim, onNavigate }: DashboardProps) {
+export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: DashboardProps) {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
 
   // Filter and search claims
   const filteredClaims = useMemo(() => {
-    let filtered = mockClaims;
+    let filtered = claims;
 
     // Apply status filter
     if (activeFilter !== "All") {
@@ -45,19 +46,19 @@ export function Dashboard({ mockClaims, onViewClaim, onNavigate }: DashboardProp
     }
 
     return filtered;
-  }, [activeFilter, searchQuery, mockClaims]);
+  }, [activeFilter, searchQuery, claims]);
 
   // Calculate KPIs
   const kpiData = useMemo(() => {
-    const totalClaims = mockClaims.length;
-    const pendingReview = mockClaims.filter((c) =>
+    const totalClaims = claims.length;
+    const pendingReview = claims.filter((c) =>
       c.status.toLowerCase().includes("pending")
     ).length;
-    const autoValidated = mockClaims.filter((c) => c.checklistFailed === 0).length;
-    const queriesRaised = mockClaims.filter((c) =>
+    const autoValidated = claims.filter((c) => c.checklistFailed === 0).length;
+    const queriesRaised = claims.filter((c) =>
       c.status.toLowerCase().includes("query")
     ).length;
-    const approved = mockClaims.filter((c) =>
+    const approved = claims.filter((c) =>
       c.status.toLowerCase() === "approved"
     ).length;
 
@@ -68,7 +69,7 @@ export function Dashboard({ mockClaims, onViewClaim, onNavigate }: DashboardProp
       { title: "Queries Raised", value: queriesRaised.toString() },
       { title: "Approved Claims", value: approved.toString() },
     ];
-  }, [mockClaims]);
+  }, [claims]);
 
   return (
     <div className="flex-1 flex flex-col bg-gray-50 overflow-auto">
@@ -100,7 +101,11 @@ export function Dashboard({ mockClaims, onViewClaim, onNavigate }: DashboardProp
         </div>
       </div>
 
-      <UploadClaimModal open={uploadModalOpen} onOpenChange={setUploadModalOpen} />
+      <UploadClaimModal
+        open={uploadModalOpen}
+        onOpenChange={setUploadModalOpen}
+        onParsed={(c) => onClaimCreated(c as unknown as Claim)}
+      />
     </div>
   );
 }

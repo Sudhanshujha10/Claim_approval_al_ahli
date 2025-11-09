@@ -9,6 +9,16 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
   export default defineConfig({
     plugins: [react()],
+    server: {
+      port: 3007,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+        },
+        
+      },
+    },
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -56,9 +66,5 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
     build: {
       target: 'esnext',
       outDir: 'build',
-    },
-    server: {
-      port: 3000,
-      open: true,
     },
   });

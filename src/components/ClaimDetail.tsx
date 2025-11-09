@@ -36,6 +36,13 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showLowConfidence, setShowLowConfidence] = useState(false);
 
+  // Extract AI data
+  const aiData = (claim as any).aiData || {};
+  const claimData = aiData.Claim || {};
+  const invoiceData = aiData.Invoice || {};
+  const approvalData = aiData.Approval || {};
+  const checklistData = aiData.Checklist || {};
+
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "approved":
@@ -52,38 +59,39 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
     }
   };
 
-  // Mock data for checklists
-  const claimFormChecklist: ChecklistItem[] = [
-    { name: "EMR and Final Dx filled", status: "passed" },
-    { name: "Doctor name & license present", status: "passed" },
-    { name: "Diagnosis requiring approval", status: "failed", action: "Missing approval code" },
-    { name: "Admission status recorded", status: "passed" },
-  ];
+  // Convert AI checklist data to component format
+  const convertChecklist = (items: any[]): ChecklistItem[] => {
+    if (!Array.isArray(items)) return [];
+    return items.map(item => ({
+      name: item.title || item.name || "Check",
+      status: (item.status === "pass" || item.status === "passed") ? "passed" : "failed",
+      action: item.reason || item.action
+    }));
+  };
 
-  const invoiceChecklist: ChecklistItem[] = [
-    { name: "Invoice total matches approval", status: "failed", action: "Amount mismatch" },
-    { name: "Duplicate services", status: "passed" },
-    { name: "Discounts verified", status: "passed" },
-  ];
+  const claimFormChecklist = convertChecklist(checklistData.ClaimForm || []);
+  const invoiceChecklist = convertChecklist(checklistData.Invoice || []);
+  const approvalChecklist = convertChecklist(checklistData.Approval || []);
+  const investigationChecklist = convertChecklist(checklistData.Investigation || []);
 
-  const approvalChecklist: ChecklistItem[] = [
-    { name: "Approval document present", status: "passed" },
-    { name: "Partial approvals", status: "failed", action: "Check partial amounts" },
-    { name: "Threshold verified", status: "passed" },
-  ];
+  // Extract invoice items from AI data
+  const invoiceItems = (invoiceData.items || []).map((item: any) => ({
+    code: item.code || "-",
+    service: item.description || item.service || "-",
+    qty: item.qty || item.quantity || 1,
+    gross: item.amount || item.gross || "0.00",
+    approved: item.approvedAmount || item.approved || item.amount || "0.00",
+    guestShare: item.guestShare || "0.00"
+  }));
 
-  const invoiceItems = [
-    { code: "LAB001", service: "Complete Blood Count", qty: 1, gross: "150.00", approved: "150.00", guestShare: "30.00" },
-    { code: "RAD002", service: "Chest X-Ray", qty: 1, gross: "300.00", approved: "300.00", guestShare: "60.00" },
-    { code: "CONS01", service: "Consultation - Emergency", qty: 1, gross: "500.00", approved: "450.00", guestShare: "90.00" },
-    { code: "MED003", service: "Medication - Antibiotics", qty: 2, gross: "200.00", approved: "200.00", guestShare: "40.00" },
-  ];
-
-  const approvedItems = [
-    { code: "CONS01", description: "Emergency Consultation", estAmt: "500.00", approvedAmt: "450.00", remarks: "Standard rate applied" },
-    { code: "LAB001", description: "Lab Tests", estAmt: "200.00", approvedAmt: "150.00", remarks: "Covered under policy" },
-    { code: "RAD002", description: "Radiology", estAmt: "300.00", approvedAmt: "300.00", remarks: "Approved" },
-  ];
+  // Extract approval items from AI data
+  const approvedItems = (approvalData.approvals || []).map((item: any) => ({
+    code: item.code || "-",
+    description: item.description || item.service || "-",
+    estAmt: item.estimatedAmount || item.estAmt || "0.00",
+    approvedAmt: item.approvedAmount || item.amount || "0.00",
+    remarks: item.remarks || item.status || "-"
+  }));
 
   const emailLog = [
     { to: "gsd@insurance.com", cc: "claims@hospital.com", subject: "Query: Missing Approval Code", status: "Sent", date: "22/07/2025" },
@@ -115,7 +123,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   );
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col">
+    <div className="bg-gray-50 h-full min-h-0 flex flex-col">
       {/* Top Header */}
       <div className="bg-white border-b shrink-0">
         <div className="p-4 space-y-4">
@@ -128,7 +136,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                 <div className="text-sm text-gray-500">Claim ID</div>
                 <div>{claim.id}</div>
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-h-0 overflow-auto">
                 <div className="text-sm text-gray-500">Patient Name</div>
                 <div>{claim.patientName}</div>
               </div>
@@ -152,9 +160,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex">
+      <div className="flex-1 min-h-0 flex">
         {/* Left Side - Tabs Content */}
-        <div className="flex-1">
+        <div className="flex-1 min-h-0 overflow-auto">
           <Tabs defaultValue="claim-form" className="p-6">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
@@ -174,39 +182,39 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <div className="grid grid-cols-3 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">DOB</div>
-                      <div className="text-sm">15/03/1985</div>
+                      <div className="text-sm">{claimData.dob || claimData.dateOfBirth || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Gender</div>
-                      <div className="text-sm">Female</div>
+                      <div className="text-sm">{claimData.gender || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">QID</div>
-                      <div className="text-sm">28503156789</div>
+                      <div className="text-sm text-gray-500">QID/Passport</div>
+                      <div className="text-sm">{claimData.qid || claimData.passportNo || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Doctor</div>
-                      <div className="text-sm">{claim.doctor}</div>
+                      <div className="text-sm">{claimData.doctor || claim.doctor}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Department</div>
-                      <div className="text-sm">{claim.department}</div>
+                      <div className="text-sm">{claimData.department || claim.department}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Diagnosis</div>
-                      <div className="text-sm">Acute Respiratory Infection</div>
+                      <div className="text-sm">{claimData.diagnosis || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Visit Date</div>
-                      <div className="text-sm">{claim.uploadedOn}</div>
+                      <div className="text-sm">{claimData.visitDate || claim.uploadedOn}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Policy No</div>
-                      <div className="text-sm">POL-2024-00123</div>
+                      <div className="text-sm">{claimData.policyNo || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Insurer</div>
-                      <div className="text-sm">BUPA Arabia</div>
+                      <div className="text-sm">{claimData.insuranceCompany || "-"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -232,23 +240,23 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <div className="grid grid-cols-5 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Invoice No</div>
-                      <div className="text-sm">INV-2025-00456</div>
+                      <div className="text-sm">{invoiceData.invoiceNo || claim.id}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Date</div>
-                      <div className="text-sm">{claim.uploadedOn}</div>
+                      <div className="text-sm">{invoiceData.date || claim.uploadedOn}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Gross</div>
-                      <div className="text-sm">SAR 1,150.00</div>
+                      <div className="text-sm">SAR {invoiceData.totalAmount || invoiceData.gross || "0.00"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Company Share</div>
-                      <div className="text-sm">SAR 920.00</div>
+                      <div className="text-sm">SAR {invoiceData.companyShare || "0.00"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Patient Share</div>
-                      <div className="text-sm">SAR 230.00</div>
+                      <div className="text-sm">SAR {invoiceData.patientShare || "0.00"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -306,23 +314,23 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <div className="grid grid-cols-5 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Approval Code</div>
-                      <div className="text-sm">APP-2025-789</div>
+                      <div className="text-sm">{approvalData.approvalCode || approvalData.code || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Date</div>
-                      <div className="text-sm">20/07/2025</div>
+                      <div className="text-sm">{approvalData.date || approvalData.approvalDate || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Status</div>
-                      <div className="text-sm">Partial Approval</div>
+                      <div className="text-sm">{approvalData.status || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Approved Amount</div>
-                      <div className="text-sm">SAR 900.00</div>
+                      <div className="text-sm">SAR {approvalData.approvedAmount || approvalData.totalAmount || "0.00"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Diagnosis</div>
-                      <div className="text-sm">J06.9</div>
+                      <div className="text-sm">{claimData.diagnosis || "-"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -403,8 +411,11 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                     <CardTitle>Investigation Checks</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    {renderChecklistItem({ name: "Lab results attached", status: "passed" }, 0)}
-                    {renderChecklistItem({ name: "Imaging reports verified", status: "passed" }, 1)}
+                    {investigationChecklist.length > 0 ? (
+                      investigationChecklist.map((item, index) => renderChecklistItem(item, index))
+                    ) : (
+                      <div className="text-sm text-gray-500">No investigation checks</div>
+                    )}
                   </CardContent>
                 </Card>
               </div>
@@ -478,7 +489,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
         </div>
 
         {/* Right Side - Document Viewer Sidebar */}
-        <div className="w-96 border-l bg-white">
+        <div className="w-96 border-l bg-white h-full overflow-auto">
           <div className="p-4 space-y-4">
             <div className="space-y-4">
               <h3>Document Viewer</h3>

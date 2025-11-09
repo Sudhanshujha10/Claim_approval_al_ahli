@@ -1,0 +1,440 @@
+{
+  "claims": [
+    {
+      "id": "OUT7206597",
+      "patientName": "NOOR YOUSSEF G H AL-ROMAIHI",
+      "doctor": "Dr. Ali Mohamed Eldamanhoury",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 3,
+      "checklistFailed": 0,
+      "checklistTotal": 3,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7206597",
+          "patientName": "NOOR YOUSSEF G H AL-ROMAIHI",
+          "doctor": "Dr. Ali Mohamed Eldamanhoury",
+          "department": "Emergency Department",
+          "visitDate": "2024-09-19",
+          "policyNo": "P2209000046-R2",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "status": "Pending Review"
+        },
+        "Invoice": {
+          "items": [
+            {
+              "code": "LAB01211",
+              "description": "Total-hCG, serum Quantitative",
+              "qty": 1,
+              "amount": 210
+            },
+            {
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": 1,
+              "amount": 115
+            },
+            {
+              "code": "LAB00227",
+              "description": "Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)",
+              "qty": 1,
+              "amount": 425
+            },
+            {
+              "code": "SRV0095",
+              "description": "Injection - Simply I.V Injection",
+              "qty": 1,
+              "amount": 50
+            },
+            {
+              "code": "SRV0094",
+              "description": "Injection - I.V Injection with fluid",
+              "qty": 1,
+              "amount": 75
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": 1,
+              "amount": 500
+            },
+            {
+              "code": "EMG0021",
+              "description": "Administration Of I/V Fluids",
+              "qty": 1,
+              "amount": 175
+            },
+            {
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": 1,
+              "amount": 140
+            },
+            {
+              "code": "MED040076",
+              "description": "PARACETAMOL KABI 10MG/ML IV, 100ML",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED090085",
+              "description": "SODIUM CHLORIDE 0.9% (NORMAL SALINE) 500ML",
+              "qty": 1,
+              "amount": 33.6
+            },
+            {
+              "code": "MED040108",
+              "description": "ONDANSETRON 4MG/2ML IM / IV AMP.",
+              "qty": 1,
+              "amount": 12.4
+            },
+            {
+              "code": "MED040154",
+              "description": "DEXLANSOPRAZOLE (DEXILANT) 60MG CAP 28'S",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED040208",
+              "description": "PANTOLOC (PANTOPRAZOLE) 40MG IV VIAL-40MG",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED010108",
+              "description": "PARACETAMOL (PANORIX) 500MG TAB, BOX-30",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED010117",
+              "description": "ITOPRIDE HCL (GANATON) 50MG TAB, 30'S",
+              "qty": 1,
+              "amount": 0
+            }
+          ],
+          "totalAmount": 1190
+        },
+        "Approval": {
+          "approvals": [
+            {
+              "code": "24090672625",
+              "status": "Approved",
+              "date": "2024-09-19"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR and Final to Wired",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Diagnosis requiring approval",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Admission date recorded",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762695489647",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "raw": "{\n  \"Claim\": {\n    \"claimId\": \"OUT7206597\",\n    \"patientName\": \"NOOR YOUSSEF G H AL-ROMAIHI\",\n    \"doctor\": \"Dr. Ali Mohamed Eldamanhoury\",\n    \"department\": \"Emergency Department\",\n    \"visitDate\": \"2024-09-19\",\n    \"policyNo\": \"P2209000046-R2\",\n    \"insuranceCompany\": \"Q LIFE & MEDICAL INSURANCE COMPANY (QLM)\",\n    \"status\": \"Pending Review\"\n  },\n  \"Invoice\": {\n    \"items\": [\n      {\"code\": \"SRV0094\", \"description\": \"Injection - I.V Injection with fluid\", \"qty\": 1, \"amount\": 75.00},\n      {\"code\": \"CON0065\", \"description\": \"Initial Emergency Services\", \"qty\": 1, \"amount\": 500.00},\n      {\"code\": \"LAB01120\", \"description\": \"C-Reactive Protein (Quantitative)\", \"qty\": 1, \"amount\": 115.00},\n      {\"code\": \"SRV0095\", \"description\": \"Injection - Simply I.V Injection\", \"qty\": 1, \"amount\": 50.00},\n      {\"code\": \"LAB00227\", \"description\": \"Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)\", \"qty\": 1, \"amount\": 425.00},\n      {\"code\": \"EMG0021\", \"description\": \"Administration Of I/V Fluids\", \"qty\": 1, \"amount\": 175.00},\n      {\"code\": \"LAB01283\", \"description\": \"CBC with Platelet Count & Automated Differential\", \"qty\": 1, \"amount\": 140.00},\n      {\"code\": \"LAB01211\", \"description\": \"Total-hCG, serum Quantitative\", \"qty\": 1, \"amount\": 210.00}\n    ],\n    \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"total"
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694754242",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7206597",
+        "Invoice": "OUT7206597 INVOICE.pdf",
+        "Approval": "OUT7206597 OLD APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694533226",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7206597",
+        "Invoice": "OUT7206597 INVOICE.pdf",
+        "Approval": "OUT7206597 OLD APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694374878",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": {
+            "FileName": "OUT7206597 CF.pdf",
+            "CreationDate": "2025-10-13T09:17:11"
+          },
+          "Invoice": {
+            "FileName": "OUT7206597 INVOICE.pdf",
+            "CreationDate": "2025-10-13T09:16:40"
+          },
+          "Approval": {
+            "FileName": "OUT7206597 OLD APPROVAL.pdf",
+            "CreationDate": "Unknown"
+          }
+        },
+        "Invoice": {
+          "InvoiceDetails": {
+            "FileName": "OUT7206597 INVOICE.pdf",
+            "CreationDate": "2025-10-13T09:16:40"
+          }
+        },
+        "Approval": {
+          "ApprovalDetails": {
+            "FileName": "OUT7206597 OLD APPROVAL.pdf",
+            "CreationDate": "Unknown"
+          }
+        },
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693977554",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Invoice": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Approval": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7670993 CF.pdf"
+        },
+        {
+          "name": "OUT7670993 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7670993 -Approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693516548",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": "OUT7637150-CLAIM FORM.pdf",
+          "Invoice": "OUT7637150-INVOICE.pdf",
+          "Approval": "OUT7637150-APPROVAL.pdf",
+          "Checklist": {
+            "ClaimForm": [],
+            "Approval": [],
+            "Invoice": [],
+            "Investigation": []
+          }
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7637150-CLAIM FORM.pdf"
+        },
+        {
+          "name": "OUT7637150-INVOICE.pdf"
+        },
+        {
+          "name": "OUT7637150-APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693319390",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7316563",
+        "Invoice": "OUT7316563 OLD INVOICE.pdf",
+        "Approval": "OUT7316563 APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7316563 CF.pdf"
+        },
+        {
+          "name": "OUT7316563 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7316563 APPROVAL.pdf"
+        }
+      ]
+    }
+  ]
+}
