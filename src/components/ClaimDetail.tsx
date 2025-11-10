@@ -259,9 +259,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   };
 
   return (
-    <div className="bg-gray-50 h-screen flex flex-col overflow-hidden">
+    <div className="bg-gray-50 h-screen flex flex-col overflow-hidden overflow-x-hidden">
       {/* Fixed Top Header */}
-      <div className="bg-white border-b shrink-0">
+      <div className="bg-white border-b shrink-0 overflow-x-hidden">
         <div className="p-4 space-y-4">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={onBack}>
