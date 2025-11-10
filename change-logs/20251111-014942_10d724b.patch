@@ -1,0 +1,66 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index 1a42b37..6584e0a 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -296,10 +296,10 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+       </div>
+ 
+       {/* Main Content Area - Scrollable */}
+-      <div className="flex-1 min-h-0 flex overflow-hidden">
++      <div className="flex-1 min-h-0 flex overflow-hidden w-full">
+         {/* Left Side - Tabs Content with Scrolling */}
+-        <div className="flex-1 overflow-auto">
+-          <Tabs defaultValue="claim-form" className="p-6">
++        <div className="flex-1 overflow-auto min-w-0">
++          <Tabs defaultValue="claim-form" className="p-6 w-full">
+             <TabsList className="mb-6">
+               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
+               <TabsTrigger value="invoice">Invoice</TabsTrigger>
+@@ -1004,9 +1004,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+         </div>
+       </div>
+ 
+-      {/* Footer - Summary & Actions */}
+-      <div className="bg-white border-t shrink-0">
+-        <div className="p-4 space-y-4">
++      {/* Footer - Summary & Actions - Fixed */}
++      <div className="bg-white border-t shrink-0 w-full">
++        <div className="p-4 space-y-4 max-w-full">
+           {/* Progress Bar - Real Stats */}
+           <div className="space-y-2">
+             {(() => {
+@@ -1054,12 +1054,12 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+ 
+           <Separator />
+ 
+-          {/* AI Suggestions */}
+-          <div className="flex gap-4">
+-            <div className="flex-1 bg-blue-50 rounded-lg p-4">
++          {/* AI Suggestions & Actions */}
++          <div className="flex gap-4 items-center">
++            <div className="flex-1 bg-blue-50 rounded-lg p-4 min-w-0">
+               <div className="flex items-start gap-3">
+-                <Lightbulb className="h-5 w-5 text-blue-600 mt-0.5" />
+-                <div className="flex-1">
++                <Lightbulb className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
++                <div className="flex-1 min-w-0">
+                   <div className="text-sm mb-2">AI Suggestions</div>
+                   <ul className="text-sm text-gray-700 space-y-1">
+                     <li>• Check partial approvals vs invoice total</li>
+@@ -1070,13 +1070,13 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+               </div>
+             </div>
+ 
+-            {/* Action Buttons */}
+-            <div className="flex gap-2 items-end">
++            {/* Action Buttons - Always Visible */}
++            <div className="flex gap-2 shrink-0">
+               <Button 
+                 variant="default" 
+                 onClick={handleApproveClaim}
+                 disabled={isApproving}
+-                className="gap-2"
++                className="gap-2 whitespace-nowrap"
+               >
+                 {isApproving ? 'Approving...' : 'Approve Claim'}
+               </Button>
