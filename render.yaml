@@ -1,0 +1,30 @@
+services:
+  # Backend API Service
+  - type: web
+    name: qlm-claims-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: node api/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: OPENAI_API_KEY
+        sync: false
+    healthCheckPath: /api/claims
+
+  # Python Parser Service (Optional - if using Docling)
+  - type: web
+    name: qlm-claims-parser
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: cd python-parser && pip install -r requirements.txt
+    startCommand: cd python-parser && python app.py
+    envVars:
+      - key: PORT
+        value: 5000
+    healthCheckPath: /health
