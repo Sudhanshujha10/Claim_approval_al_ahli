@@ -1,0 +1,31 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index d4bfcfb..6fc3890 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -502,7 +502,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                 </CardHeader>
+                 <CardContent>
+                   <div className="overflow-x-auto">
+-                    <Table>
++                    <Table className="min-w-max">
+                     <TableHeader>
+                       <TableRow>
+                         <TableHead className="w-12">No</TableHead>
+@@ -716,7 +716,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                 </CardHeader>
+                 <CardContent>
+                   <div className="overflow-x-auto">
+-                    <Table>
++                    <Table className="min-w-max">
+                     <TableHeader>
+                       <TableRow>
+                         <TableHead className="w-28">Treat/Drug Code</TableHead>
+@@ -1076,7 +1076,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+                 variant="default" 
+                 onClick={handleApproveClaim}
+                 disabled={isApproving}
+-                className="gap-2 whitespace-nowrap w-full lg:w-auto"
++                className="gap-2 whitespace-nowrap w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 shadow-md"
+               >
+                 {isApproving ? 'Approving...' : 'Approve Claim'}
+               </Button>
