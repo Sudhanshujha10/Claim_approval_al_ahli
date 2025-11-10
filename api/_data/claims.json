@@ -1,6 +1,1191 @@
 {
   "claims": [
     {
+      "id": "OUT7619283",
+      "patientName": "SIFA LUTFI",
+      "doctor": "Dr. Hassan Abou Tafish",
+      "department": "Emergency Department",
+      "status": "Manual Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 16,
+      "checklistFailed": 3,
+      "checklistTotal": 19,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7619283",
+          "patientName": "SIFA LUTFI",
+          "guestFileNo": "ACP0905",
+          "qid": "28476000130",
+          "memberNo": "MEM24162433",
+          "dob": "28/08/1984",
+          "gender": "Female",
+          "telNo": "60004223",
+          "nationality": "Republic of Turkiye",
+          "doctor": "Dr. Hassan Abou Tafish",
+          "department": "Emergency Department",
+          "visitDate": "19/07/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000064",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - QATAR UNIVERSITY (P+)",
+          "diagnosis": "M54.6 Pain in thoracic spine",
+          "chiefComplaint": "right upper back pain, shortness of breath when moving, pain in right upper abdomen since 1 week on / off",
+          "clinicalFindings": "heart normal, chest clear, abdomen soft, pain in right upper abdomen",
+          "vitals": {
+            "bp": "112/79 mmHg",
+            "pulse": "79",
+            "respRate": "20",
+            "temperature": "37.4",
+            "painScale": "4"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Hussein AlHallak",
+          "regDateTime": "19/07/2025 12:23 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7619283",
+          "invoiceDate": "19/07/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 01:09 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "19/07/2025",
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "50.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "335.00"
+            },
+            {
+              "no": "2",
+              "date": "19/07/2025",
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1.00",
+              "dv": "140.00",
+              "ndv": "-",
+              "totalInvoice": "140.00",
+              "guestShare": "-",
+              "companyDiscount": "(32.20)",
+              "companyShare": "107.80"
+            },
+            {
+              "no": "3",
+              "date": "19/07/2025",
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1.00",
+              "dv": "115.00",
+              "ndv": "-",
+              "totalInvoice": "115.00",
+              "guestShare": "-",
+              "companyDiscount": "(26.45)",
+              "companyShare": "88.55"
+            },
+            {
+              "no": "4",
+              "date": "19/07/2025",
+              "code": "LAB00294",
+              "description": "Creatinine, Serum or Plasma",
+              "qty": "1.00",
+              "dv": "70.00",
+              "ndv": "-",
+              "totalInvoice": "70.00",
+              "guestShare": "-",
+              "companyDiscount": "(16.10)",
+              "companyShare": "53.90"
+            },
+            {
+              "no": "5",
+              "date": "19/07/2025",
+              "code": "LAB00230",
+              "description": "Liver Function Tests (Bili, ALP, TP, Alb, ALT, AST)",
+              "qty": "1.00",
+              "dv": "450.00",
+              "ndv": "-",
+              "totalInvoice": "450.00",
+              "guestShare": "-",
+              "companyDiscount": "(103.50)",
+              "companyShare": "346.50"
+            },
+            {
+              "no": "6",
+              "date": "19/07/2025",
+              "code": "USSX0002",
+              "description": "Radiology - U/S Abdomen & Pelvis",
+              "qty": "1.00",
+              "dv": "700.00",
+              "ndv": "-",
+              "totalInvoice": "700.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "539.00"
+            },
+            {
+              "no": "7",
+              "date": "19/07/2025",
+              "code": "USSX0042",
+              "description": "Radiology - U/S Soft Tissue",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "385.00"
+            },
+            {
+              "no": "8",
+              "date": "19/07/2025",
+              "code": "XRAY0015",
+              "description": "Radiology - Digital X-Ray Chest (Two Views)",
+              "qty": "1.00",
+              "dv": "320.00",
+              "ndv": "-",
+              "totalInvoice": "320.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "246.40"
+            },
+            {
+              "no": "9",
+              "date": "19/07/2025",
+              "code": "MED040217",
+              "description": "DICLOFENAC 2% (VOLTAREN) EMULGEL 100G - TB100",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "63.00",
+              "totalInvoice": "63.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "63.00"
+            },
+            {
+              "no": "10",
+              "date": "19/07/2025",
+              "code": "MED100025",
+              "description": "ORPHENADRINE35MG+ PARACETAMOL 450MG TAB ( MYOGESIC ) - BX20",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "8.00",
+              "totalInvoice": "8.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "8.00"
+            },
+            {
+              "no": "11",
+              "date": "19/07/2025",
+              "code": "MED100030",
+              "description": "CELECOXIB 200 MG CAP ( CELEBREX ) - BX30",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "79.00",
+              "totalInvoice": "79.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "79.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "2,945.00",
+            "grossAmount": "2,945.00",
+            "companyDiscount": "50.00",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "2,895.00",
+            "companyShare": "2,252.15"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090471336",
+          "preApprovalStatus": "Partial Approved",
+          "appliedDate": "19/07/2025 14:29",
+          "approvalDate": "19/07/2025 15:02",
+          "printDate": "19/07/2025 15:05",
+          "insuredName": "SIFA LUTFI",
+          "memberId": "MEM24162433",
+          "ageGender": "40 Y Female",
+          "medicalRecordNo": "ACP0905",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar University",
+          "policyNo": "P2409000064",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "19/07/2025",
+          "admissionType": "Illness",
+          "illness": "Acute",
+          "facility": "Emergency Medicine",
+          "doctor": "Dr. Hassan Abou Tafish",
+          "primaryDiagnosis": "Pain in thoracic spine",
+          "aboutPresentIllness": "right upper back pain, shortness of breath when moving, pain in right upper abdomen since 1 week on / off",
+          "currency": "QAR",
+          "benefit": "Basic",
+          "subBenefit": "Basic",
+          "coIns": "50",
+          "deductible": "50 QAR",
+          "totalEstimatedAmount": "2,945.00",
+          "totalApprovedAmount": "2,235.00",
+          "approvals": [
+            {
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1",
+              "estAmt": "115.00",
+              "apprAmt": "115.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00230",
+              "description": "Liver Function Tests (Bili, ALP, TP, Alb, ALT, AST)",
+              "qty": "1",
+              "estAmt": "450.00",
+              "apprAmt": "240.00",
+              "status": "Partial Approved",
+              "remarks": "Approved for LAB00231-Liver Enzymes Profile (ALT,AST,ALP) only"
+            },
+            {
+              "code": "XRAY0015",
+              "description": "Radiology - Digital X-Ray Chest (Two Views)",
+              "qty": "1",
+              "estAmt": "320.00",
+              "apprAmt": "320.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00294",
+              "description": "Creatinine, Serum or Plasma",
+              "qty": "1",
+              "estAmt": "70.00",
+              "apprAmt": "70.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1",
+              "estAmt": "140.00",
+              "apprAmt": "140.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "USSX0002",
+              "description": "Radiology - U/S Abdomen & Pelvis",
+              "qty": "1",
+              "estAmt": "700.00",
+              "apprAmt": "700.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "USSX0042",
+              "description": "Radiology - U/S Soft Tissue",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "0.00",
+              "status": "Rejected",
+              "remarks": "Non indicated service as per submitted data"
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED1940",
+              "description": "ORPHENADRINE35MG+ PARACETAMOL 450MG TAB ( MYOGESIC ) - BX20",
+              "qty": "1",
+              "estAmt": "8.00",
+              "apprAmt": "8.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED3911",
+              "description": "DICLOFENAC 2% (VOLTAREN) EMULGEL 100G - TB100",
+              "qty": "1",
+              "estAmt": "63.00",
+              "apprAmt": "63.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED2114",
+              "description": "CELECOXIB 200 MG CAP ( CELEBREX ) - BX30",
+              "qty": "1",
+              "estAmt": "79.00",
+              "apprAmt": "79.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "All patient demographics present: Name (SIFA LUTFI), DOB (28/08/1984), Member No (MEM24162433), File No (ACP0905), Provider (Al Ahli Hospital), Clinic (Emergency Department), Date (19/07/2025) and diagnosis (M54.6) clearly stated.",
+              "confidence": 0.95,
+              "manualOverride": false
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "Diagnosis code M54.6 is not in the list of codes requiring pre-approval.",
+              "confidence": 0.92,
+              "manualOverride": false
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "All service codes billed are either approved or not requiring approval as per the admin list.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "Total claim value of 2,945.00 is below the policy threshold.",
+              "confidence": 0.88,
+              "manualOverride": false
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "Approval document is present and valid.",
+              "confidence": 0.95,
+              "manualOverride": false
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Obtained Prior to Service Date",
+              "status": "pass",
+              "reason": "Approval date (19/07/2025 15:02) is on the same day as the service date (19/07/2025).",
+              "confidence": 0.93,
+              "manualOverride": false
+            },
+            {
+              "id": "ap2",
+              "title": "All Services Billed Are Approved",
+              "status": "fail",
+              "reason": "Service USSX0042 (Radiology - U/S Soft Tissue) is rejected and not approved.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "ap3",
+              "title": "Partial Approvals and Remarks Check",
+              "status": "pass",
+              "reason": "Partial approval for LAB00230 is noted with remarks indicating limited approval.",
+              "confidence": 0.85,
+              "manualOverride": false
+            },
+            {
+              "id": "ap4",
+              "title": "Co-pay/Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "Deductible of 50 QAR is reflected in the approval and invoice.",
+              "confidence": 0.89,
+              "manualOverride": false
+            },
+            {
+              "id": "ap5",
+              "title": "Approval Validity Period",
+              "status": "pass",
+              "reason": "All services are within the 21-day validity period from the approval date.",
+              "confidence": 0.92,
+              "manualOverride": false
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Services Only",
+              "status": "fail",
+              "reason": "Invoice includes USSX0042 which is not approved.",
+              "confidence": 0.9,
+              "manualOverride": false
+            },
+            {
+              "id": "inv2",
+              "title": "Approved vs Charged Amounts Match",
+              "status": "pass",
+              "reason": "Approved amounts match the billed amounts for all approved services.",
+              "confidence": 0.87,
+              "manualOverride": false
+            },
+            {
+              "id": "inv3",
+              "title": "Discounts and Company Share Accurate",
+              "status": "pass",
+              "reason": "Company discount applied correctly as per invoice.",
+              "confidence": 0.86,
+              "manualOverride": false
+            },
+            {
+              "id": "inv4",
+              "title": "Deductible Reflected in Invoice",
+              "status": "pass",
+              "reason": "Deductible of 50 QAR is reflected in the invoice.",
+              "confidence": 0.88,
+              "manualOverride": false
+            },
+            {
+              "id": "inv5",
+              "title": "Submission Within 60-day Limit",
+              "status": "pass",
+              "reason": "Invoice date (19/07/2025) is within the 60-day limit for submission.",
+              "confidence": 0.94,
+              "manualOverride": false
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "All Approved Investigations Billed",
+              "status": "pass",
+              "reason": "All approved investigations are included in the invoice.",
+              "confidence": 0.89,
+              "manualOverride": false
+            },
+            {
+              "id": "iv2",
+              "title": "No Unapproved Investigations Billed",
+              "status": "fail",
+              "reason": "Invoice includes USSX0042 which is unapproved.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "iv3",
+              "title": "Investigation Date Matches Service Date",
+              "status": "pass",
+              "reason": "All investigation dates match the service date (19/07/2025).",
+              "confidence": 0.87,
+              "manualOverride": false
+            },
+            {
+              "id": "iv4",
+              "title": "Investigation Cost Aligns with Contract",
+              "status": "pass",
+              "reason": "Investigation costs align with the agreed contract rates.",
+              "confidence": 0.82,
+              "manualOverride": false
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7619283 CF.pdf"
+        },
+        {
+          "name": "OUT7619283 Invoice.pdf"
+        },
+        {
+          "name": "OUT7619283  ACP0905 PArtial approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7617392",
+      "patientName": "FATIMA AUWIDHA A S ALAHBABI",
+      "doctor": "Dr. Ettihad Abbas",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7617392",
+          "patientName": "FATIMA AUWIDHA A S ALAHBABI",
+          "guestFileNo": "ABC8061",
+          "qid": "28678400040",
+          "memberNo": "MEM25001413",
+          "dob": "21/03/1986",
+          "gender": "Female",
+          "telNo": "55090212",
+          "nationality": "QATAR",
+          "doctor": "Dr. Ettihad Abbas",
+          "department": "Emergency Department",
+          "visitDate": "16/07/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000073-16",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - FAMILY CONSULTING CENTER (P)",
+          "diagnosis": "THREATENED ABORTION INJ.PROLUTION",
+          "chiefComplaint": "THREATENED ABORTION INJ.PROLUTION",
+          "clinicalFindings": "",
+          "vitals": {
+            "bp": "0/0 mmHg",
+            "pulse": "",
+            "respRate": "0",
+            "temperature": "",
+            "painScale": "0"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Ismaila Touray",
+          "regDateTime": "16/07/2025 08:41 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7617392",
+          "invoiceDate": "16/07/2025",
+          "dischargeDate": "-",
+          "printedBy": "KHALILS",
+          "printingDateTime": "09/10/2025 04:44 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "16/07/2025",
+              "code": "CON0087",
+              "description": "Procedure - consultation",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "-",
+              "totalInvoice": "-",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            },
+            {
+              "no": "2",
+              "date": "16/07/2025",
+              "code": "SRV0043",
+              "description": "Injection - Intra Muscular",
+              "qty": "1.00",
+              "dv": "50.00",
+              "ndv": "-",
+              "totalInvoice": "50.00",
+              "guestShare": "(11.50)",
+              "companyDiscount": "-",
+              "companyShare": "38.50"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "50.00",
+            "grossAmount": "50.00",
+            "companyDiscount": "(11.50)",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "38.50",
+            "companyShare": "38.50"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090475196",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "21/07/2025 08:34",
+          "approvalDate": "21/07/2025 08:37",
+          "printDate": "21/07/2025 08:41",
+          "insuredName": "FATIMA AUWIDHA",
+          "memberId": "MEM25001413",
+          "ageGender": "39 Y Female",
+          "medicalRecordNo": "ABC8061",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Family Consulting Center",
+          "policyNo": "P2409000073-16",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "16/07/2025",
+          "admissionType": "",
+          "illness": "Acute",
+          "facility": "Emergency Medicine",
+          "doctor": "ETTIHAD ABBAS",
+          "primaryDiagnosis": "Threatened abortion",
+          "aboutPresentIllness": "THREATENED ABORTION INJ.PROLUTION",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "0%",
+          "deductible": "NA",
+          "totalEstimatedAmount": "50.00",
+          "totalApprovedAmount": "50.00",
+          "approvals": [
+            {
+              "code": "SRV0043",
+              "description": "Injection - Intra Muscular (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "50.00",
+              "apprAmt": "50.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "CON0087",
+              "description": "Procedure - consultation (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "0.00",
+              "apprAmt": "0.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": ""
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7617392-CLAIM FORM.pdf"
+        },
+        {
+          "name": "OUT7617392-INVOICE.pdf"
+        },
+        {
+          "name": "OUT7617392-APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7669005",
+      "patientName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+      "doctor": "Dr. Dalila Znimi",
+      "department": "Emergency Department",
+      "status": "Manual Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 9,
+      "checklistFailed": 4,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7669005",
+          "patientName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+          "guestFileNo": "ABD6457",
+          "qid": "28963402506",
+          "memberNo": "MEM22197281",
+          "dob": "25/11/1989",
+          "gender": "Female",
+          "telNo": "66737323",
+          "nationality": "QATAR",
+          "doctor": "Dr. Dalila Znimi",
+          "department": "Emergency Department",
+          "visitDate": "31/08/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2109000119-R3",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - ASPIRE ZONE (Premier Plus)",
+          "diagnosis": "O02.1 Missed abortion",
+          "chiefComplaint": "12 WEEKS BY EDD 16/3 was told that there was no fetal heart from private clinic came for confirmation no pain no bleeding p/v BG A POSITIVE",
+          "clinicalFindings": "TAS SLF 11W+5D by CRL NO FH NO FM",
+          "vitals": {
+            "bp": "105/83 mmHg",
+            "pulse": "92",
+            "respRate": "19",
+            "temperature": "36.5",
+            "painScale": "0"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Abdallah Ibrahim",
+          "regDateTime": "31/08/2025 08:47 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7669005",
+          "invoiceDate": "31/08/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 01:06 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "31/08/2025",
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "275.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "110.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "500.00",
+            "grossAmount": "275.00",
+            "companyDiscount": "-",
+            "finTRS": "-",
+            "guestPayments": "(400.00)",
+            "refunds": "-",
+            "amountDue": "(125.00)",
+            "companyShare": "225.00"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090560232",
+          "preApprovalStatus": "Rejected",
+          "appliedDate": "31/08/2025 21:37",
+          "approvalDate": "31/08/2025 21:55",
+          "printDate": "31/08/2025 22:00",
+          "insuredName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+          "memberId": "MEM22197281",
+          "ageGender": "35 Y Female",
+          "medicalRecordNo": "ABD6457",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Aspire Zone",
+          "policyNo": "P2109000119-R3",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "31/08/2025",
+          "admissionType": "",
+          "illness": "Acute",
+          "facility": "Obstetrics and Gynecology",
+          "doctor": "Dr. Dalila Znimi",
+          "primaryDiagnosis": "Missed abortion",
+          "aboutPresentIllness": "12 WEEKS BY EDD 16/3 was told that there was no fetal heart from private clinic came for confirmation no pain no bleeding p/v BG A POSITIVE",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "30%",
+          "deductible": "NIL",
+          "totalEstimatedAmount": "500.00",
+          "totalApprovedAmount": "0.00",
+          "approvals": [
+            {
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics(Benefit Overall Limit Check)",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "0.00",
+              "status": "Rejected",
+              "remarks": "Benefit Overall Limit Check"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "fail",
+              "reason": "Claim value exceeds policy limits."
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "fail",
+              "reason": "Pre-approval was rejected."
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "fail",
+              "reason": "Approval document indicates rejection."
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "fail",
+              "reason": "Invoice reflects rejected services."
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": ""
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7669005  CF.pdf"
+        },
+        {
+          "name": "OUT7669005  OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7669005  REJECTION.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7670993",
+      "patientName": "HEBAH ABUEITAH",
+      "doctor": "Dr. Ettihad Abbas",
+      "department": "Labor and Delivery",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7670993",
+          "patientName": "HEBAH ABUEITAH",
+          "guestFileNo": "AAU4700",
+          "qid": "QID-28540000753",
+          "memberNo": "MEM24217742",
+          "dob": "19/08/1985",
+          "gender": "Female",
+          "telNo": "66530588",
+          "nationality": "JORDAN",
+          "doctor": "Dr. Ettihad Abbas",
+          "department": "Labor and Delivery",
+          "visitDate": "02/09/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000073",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "Labor and Delivery",
+          "diagnosis": "O09.893 - Supervision of other high risk pregnancies, third trimester",
+          "chiefComplaint": "lady 40 years old , G6P2A3 at 37W6D of pregnancy with mild labor pain , decrease fetal movements since 4-5 days + minimal brown vaginal spotting today",
+          "clinicalFindings": "g/c stable vitals stable afebrile p/a soft abdomen , 38 weeks of pregnancy , no tenderness p/v no bleeding , no leaking PV: cx 1 cm . posterior and high , no effacement CTG reactive , no contractions",
+          "vitals": {
+            "bp": "121/76 mmHg",
+            "pulse": "70",
+            "respRate": "20",
+            "temperature": "36.6",
+            "painScale": "-"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "PILOTINB",
+          "regDateTime": "02/09/2025 10:50 AM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7670993",
+          "invoiceDate": "13/10/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 12:52 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "02/09/2025",
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "-",
+              "companyDiscount": "(115.00)",
+              "companyShare": "500.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "500.00",
+            "grossAmount": "385.00",
+            "companyDiscount": "(115.00)",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "500.00",
+            "companyShare": "500.00",
+            "patientShare": "-"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090569215",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "04/09/2025 11:48",
+          "approvalDate": "04/09/2025 11:50",
+          "printDate": "04/09/2025 11:55",
+          "insuredName": "HIBA ABDEL RAHMAN ABU AITA",
+          "memberId": "MEM24217742",
+          "ageGender": "40 Y / Female",
+          "medicalRecordNo": "AAU4700",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar Foundation",
+          "policyNo": "P2409000073",
+          "type": "Out-Patient",
+          "priority": "NORMAL",
+          "admissionDate": "03/09/2025",
+          "admissionType": "-",
+          "illness": "Acute",
+          "facility": "Obstetrics and Gynecology",
+          "doctor": "Dr. Priyanka Shah",
+          "primaryDiagnosis": "Supervision of other high risk pregnancies, third trimester",
+          "aboutPresentIllness": "lady 40 years old , G6P2A3 at 37W6D of pregnancy with mild labor pain , decrease fetal movements since 4-5 days + minimal pink vaginal spotting today",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "0%",
+          "deductible": "NA",
+          "totalEstimatedAmount": "500.00",
+          "totalApprovedAmount": "500.00",
+          "approvals": [
+            {
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": "-"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7670993 CF.pdf"
+        },
+        {
+          "name": "OUT7670993 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7670993 -Approval.pdf"
+        }
+      ]
+    },
+    {
       "id": "OUT7234851",
       "patientName": "AISHA ALI A A AL-MUHANNADI",
       "doctor": "Dr. Fuad Hussain Yahya",

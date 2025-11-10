@@ -63,19 +63,19 @@ export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
 
   return (
     <div className="p-4">
-      <div className="rounded-lg border bg-white">
+      <div className="rounded-lg border bg-white overflow-x-auto">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 bg-white z-10">
             <TableRow>
-              <TableHead>Claim ID</TableHead>
-              <TableHead>Patient Name</TableHead>
-              <TableHead>Doctor</TableHead>
-              <TableHead>Department</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Uploaded By</TableHead>
-              <TableHead>Uploaded On</TableHead>
-              <TableHead>Checklist Status</TableHead>
-              <TableHead>Actions</TableHead>
+              <TableHead className="bg-white">Claim ID</TableHead>
+              <TableHead className="bg-white">Patient Name</TableHead>
+              <TableHead className="bg-white">Doctor</TableHead>
+              <TableHead className="bg-white">Department</TableHead>
+              <TableHead className="bg-white">Status</TableHead>
+              <TableHead className="bg-white">Uploaded By</TableHead>
+              <TableHead className="bg-white">Uploaded On</TableHead>
+              <TableHead className="bg-white">Checklist Status</TableHead>
+              <TableHead className="bg-white">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

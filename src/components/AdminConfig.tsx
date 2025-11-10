@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
@@ -19,27 +19,160 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 export function AdminConfig() {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [dialogType, setDialogType] = useState<"diagnosis" | "service" | "exception" | "contact">("diagnosis");
+  const [loading, setLoading] = useState(true);
+  const [diagnosisCodes, setDiagnosisCodes] = useState<any[]>([]);
+  const [services, setServices] = useState<any[]>([]);
+  const [exceptions, setExceptions] = useState<any[]>([]);
+  const [newItem, setNewItem] = useState({ code: "", name: "", description: "" });
+  const [editMode, setEditMode] = useState(false);
+  const [editIndex, setEditIndex] = useState<number>(-1);
 
-  // Mock data
-  const diagnosisCodes = [
-    { code: "Z34", description: "Supervision of normal pregnancy", status: "Requires Approval" },
-    { code: "F32", description: "Depressive episode", status: "Requires Approval" },
-    { code: "O80", description: "Encounter for full-term delivery", status: "Requires Approval" },
-    { code: "I10", description: "Essential hypertension", status: "Requires Approval" },
-  ];
+  // Load configuration from API
+  useEffect(() => {
+    loadConfig();
+  }, []);
 
-  const services = [
-    { code: "S-1234", description: "CT Scan - Brain", status: "Requires Approval" },
-    { code: "S-5678", description: "MRI - Spine", status: "Requires Approval" },
-    { code: "S-9012", description: "Ultrasound - Abdomen", status: "No Approval Needed" },
-    { code: "S-3456", description: "ECG - Standard", status: "No Approval Needed" },
-  ];
+  async function loadConfig() {
+    try {
+      setLoading(true);
+      const response = await fetch('/api/admin/config');
+      const data = await response.json();
+      if (data.ok) {
+        setDiagnosisCodes(data.config.diagnosisCodesRequiringApproval || []);
+        setServices(data.config.servicesRequiringApproval || []);
+        setExceptions(data.config.coverageExceptions || []);
+      }
+    } catch (e) {
+      console.error('Error loading config:', e);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-  const exceptions = [
-    { service: "Emergency Room Visit", coverage: "Full Coverage", notes: "No pre-approval required" },
-    { service: "Basic Lab Tests", coverage: "100%", notes: "CBC, Urinalysis included" },
-    { service: "Preventive Care", coverage: "100%", notes: "Annual checkup covered" },
-  ];
+  async function saveServices(updatedServices: any[]) {
+    try {
+      const response = await fetch('/api/admin/services', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ services: updatedServices })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setServices(data.config.servicesRequiringApproval);
+      }
+    } catch (e) {
+      console.error('Error saving services:', e);
+    }
+  }
+
+  async function saveDiagnosisCodes(updatedCodes: any[]) {
+    try {
+      const response = await fetch('/api/admin/diagnosis-codes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ codes: updatedCodes })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setDiagnosisCodes(data.config.diagnosisCodesRequiringApproval);
+      }
+    } catch (e) {
+      console.error('Error saving diagnosis codes:', e);
+    }
+  }
+
+  async function saveExceptions(updatedExceptions: any[]) {
+    try {
+      const response = await fetch('/api/admin/coverage-exceptions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ exceptions: updatedExceptions })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setExceptions(data.config.coverageExceptions);
+      }
+    } catch (e) {
+      console.error('Error saving exceptions:', e);
+    }
+  }
+
+  function handleAddItem() {
+    if (editMode) {
+      // Edit existing item
+      if (dialogType === 'service') {
+        const updated = [...services];
+        updated[editIndex] = { code: newItem.code, name: newItem.name };
+        saveServices(updated);
+      } else if (dialogType === 'diagnosis') {
+        const updated = [...diagnosisCodes];
+        updated[editIndex] = { code: newItem.code, description: newItem.description };
+        saveDiagnosisCodes(updated);
+      } else if (dialogType === 'exception') {
+        const updated = [...exceptions];
+        updated[editIndex] = { service: newItem.name, coverage: newItem.description, notes: "" };
+        saveExceptions(updated);
+      }
+    } else {
+      // Add new item
+      if (dialogType === 'service') {
+        const updated = [...services, { code: newItem.code, name: newItem.name }];
+        saveServices(updated);
+      } else if (dialogType === 'diagnosis') {
+        const updated = [...diagnosisCodes, { code: newItem.code, description: newItem.description }];
+        saveDiagnosisCodes(updated);
+      } else if (dialogType === 'exception') {
+        const updated = [...exceptions, { service: newItem.name, coverage: newItem.description, notes: "" }];
+        saveExceptions(updated);
+      }
+    }
+    setNewItem({ code: "", name: "", description: "" });
+    setEditMode(false);
+    setEditIndex(-1);
+    setAddDialogOpen(false);
+  }
+
+  function handleDeleteService(index: number) {
+    const updated = services.filter((_, i) => i !== index);
+    saveServices(updated);
+  }
+
+  function handleDeleteDiagnosis(index: number) {
+    const updated = diagnosisCodes.filter((_, i) => i !== index);
+    saveDiagnosisCodes(updated);
+  }
+
+  function handleDeleteException(index: number) {
+    const updated = exceptions.filter((_, i) => i !== index);
+    saveExceptions(updated);
+  }
+
+  function handleEditService(index: number) {
+    const item = services[index];
+    setNewItem({ code: item.code, name: item.name, description: "" });
+    setEditMode(true);
+    setEditIndex(index);
+    setDialogType("service");
+    setAddDialogOpen(true);
+  }
+
+  function handleEditDiagnosis(index: number) {
+    const item = diagnosisCodes[index];
+    setNewItem({ code: item.code, name: "", description: item.description });
+    setEditMode(true);
+    setEditIndex(index);
+    setDialogType("diagnosis");
+    setAddDialogOpen(true);
+  }
+
+  function handleEditException(index: number) {
+    const item = exceptions[index];
+    setNewItem({ code: "", name: item.service, description: item.coverage });
+    setEditMode(true);
+    setEditIndex(index);
+    setDialogType("exception");
+    setAddDialogOpen(true);
+  }
 
   const contacts = [
     { department: "GSD Team", role: "Supervisor", email: "gsd@alahli.com", level: "Level 1" },
@@ -51,6 +184,9 @@ export function AdminConfig() {
 
   const openAddDialog = (type: typeof dialogType) => {
     setDialogType(type);
+    setEditMode(false);
+    setEditIndex(-1);
+    setNewItem({ code: "", name: "", description: "" });
     setAddDialogOpen(true);
   };
 
@@ -90,15 +226,15 @@ export function AdminConfig() {
                   <TableCell>{item.description}</TableCell>
                   <TableCell>
                     <Badge variant="outline" className="bg-yellow-50 text-yellow-700">
-                      {item.status}
+                      Requires Approval
                     </Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleEditDiagnosis(index)}>
                         <Pencil className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleDeleteDiagnosis(index)}>
                         <Trash2 className="h-4 w-4 text-red-600" />
                       </Button>
                     </div>
@@ -135,25 +271,18 @@ export function AdminConfig() {
               {services.map((item, index) => (
                 <TableRow key={index}>
                   <TableCell>{item.code}</TableCell>
-                  <TableCell>{item.description}</TableCell>
+                  <TableCell>{item.name}</TableCell>
                   <TableCell>
-                    <Badge
-                      variant="outline"
-                      className={
-                        item.status === "Requires Approval"
-                          ? "bg-yellow-50 text-yellow-700"
-                          : "bg-green-50 text-green-700"
-                      }
-                    >
-                      {item.status}
+                    <Badge variant="outline" className="bg-yellow-50 text-yellow-700">
+                      Requires Approval
                     </Badge>
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleEditService(index)}>
                         <Pencil className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleDeleteService(index)}>
                         <Trash2 className="h-4 w-4 text-red-600" />
                       </Button>
                     </div>
@@ -198,10 +327,10 @@ export function AdminConfig() {
                   <TableCell>{item.notes}</TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleEditException(index)}>
                         <Pencil className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" onClick={() => handleDeleteException(index)}>
                         <Trash2 className="h-4 w-4 text-red-600" />
                       </Button>
                     </div>
@@ -275,13 +404,13 @@ export function AdminConfig() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>
-              {dialogType === "diagnosis" && "Add Diagnosis Code"}
-              {dialogType === "service" && "Add Service"}
-              {dialogType === "exception" && "Add Coverage Exception"}
-              {dialogType === "contact" && "Add Department Contact"}
+              {editMode ? "Edit" : "Add"} {dialogType === "diagnosis" && "Diagnosis Code"}
+              {dialogType === "service" && "Service"}
+              {dialogType === "exception" && "Coverage Exception"}
+              {dialogType === "contact" && "Department Contact"}
             </DialogTitle>
             <DialogDescription>
-              Fill in the details below to add a new entry.
+              Fill in the details below to {editMode ? "update" : "add"} {editMode ? "this" : "a new"} entry.
             </DialogDescription>
           </DialogHeader>
 
@@ -290,23 +419,21 @@ export function AdminConfig() {
               <>
                 <div className="space-y-2">
                   <Label htmlFor="icd-code">ICD Code</Label>
-                  <Input id="icd-code" placeholder="e.g., Z34" />
+                  <Input 
+                    id="icd-code" 
+                    placeholder="e.g., Z34" 
+                    value={newItem.code}
+                    onChange={(e) => setNewItem({...newItem, code: e.target.value})}
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="description">Description</Label>
-                  <Input id="description" placeholder="Enter description" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="status">Status</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="requires">Requires Approval</SelectItem>
-                      <SelectItem value="no-approval">No Approval Needed</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Input 
+                    id="description" 
+                    placeholder="Enter description" 
+                    value={newItem.description}
+                    onChange={(e) => setNewItem({...newItem, description: e.target.value})}
+                  />
                 </div>
               </>
             )}
@@ -315,23 +442,21 @@ export function AdminConfig() {
               <>
                 <div className="space-y-2">
                   <Label htmlFor="service-code">Service Code</Label>
-                  <Input id="service-code" placeholder="e.g., S-1234" />
+                  <Input 
+                    id="service-code" 
+                    placeholder="e.g., PST0001" 
+                    value={newItem.code}
+                    onChange={(e) => setNewItem({...newItem, code: e.target.value})}
+                  />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="service-desc">Description</Label>
-                  <Input id="service-desc" placeholder="Enter description" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="service-status">Status</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="requires">Requires Approval</SelectItem>
-                      <SelectItem value="no-approval">No Approval Needed</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Label htmlFor="service-desc">Service Name</Label>
+                  <Input 
+                    id="service-desc" 
+                    placeholder="Enter service name" 
+                    value={newItem.name}
+                    onChange={(e) => setNewItem({...newItem, name: e.target.value})}
+                  />
                 </div>
               </>
             )}
@@ -388,7 +513,7 @@ export function AdminConfig() {
             <Button variant="outline" onClick={() => setAddDialogOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={() => setAddDialogOpen(false)}>Add</Button>
+            <Button onClick={handleAddItem}>{editMode ? "Update" : "Add"}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

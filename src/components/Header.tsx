@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 export function Header({ activeFilter, onFilterChange, searchQuery, onSearchChange }: HeaderProps) {
-  const filters = ["All", "Pending", "Approved", "Rejected", "Manual Review"];
+  const filters = ["All", "Pending", "Approved", "Rejected"];
 
   return (
     <div className="border-b bg-white">

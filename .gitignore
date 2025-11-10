@@ -36,3 +36,7 @@ node_modules/
 .npmrc
 *.log
 
+
+# Local artifacts
+api/_data/uploads/
+.env

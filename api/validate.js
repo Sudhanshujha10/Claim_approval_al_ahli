@@ -210,8 +210,23 @@ For each FAIL, provide specific reason with service names, codes, or amounts.`;
   
   const user = `Medical claim documents text (contains Claim Form, Invoice, and Approval documents):
 
-CRITICAL: When extracting invoice items, look for the table with columns: No, Service (Date), Service (Code), Service Name, QTY, D.V, N.D.V, Total Invoice, Guest Share, Company Discount, Company Share.
-Extract EVERY value from EVERY column for EVERY row. Do not leave columns empty or as "-" if values exist in the document.
+CRITICAL INSTRUCTIONS FOR TABLE EXTRACTION:
+
+1. INVOICE TABLE: Look for rows with pattern like "10 19/07/2025 LAB01186 Stool, Ova & Parasite-Concentration Method 1.00 150.00 150.00 - (34.50) 115.50"
+   - Each row has: No | Date | Code | Service Name | QTY | D.V | N.D.V | Total Invoice | Guest Share | Company Discount | Company Share
+   - Extract EVERY number and value from EVERY column
+   - If a column shows "-" or is empty in the PDF, use "-" in JSON
+   - If a column has a value, extract it EXACTLY (e.g., "150.00", "(34.50)", "1.00")
+
+2. APPROVAL TABLE: Look for rows with pattern like "LAB01283 CBC with Platelet Count & Automated Differential 1 140.00 140.00 Approved"
+   - Each row has: Code | Description | Qty | Est Amt | Appr.Amt | Status | Remarks
+   - Extract ALL values including status (Approved/Partial Approved/Rejected)
+   - If remarks exist (like "Additional Info Required--"), include them
+
+3. SCAN THE TEXT LINE BY LINE: Tables are often extracted as continuous text. Look for patterns:
+   - Numbers followed by dates (DD/MM/YYYY)
+   - Service codes (LAB, MED, CON, SRV, EMG followed by numbers)
+   - Amounts in format XX.XX or (XX.XX) for negatives
 
 Document text:
 ${String(combinedText).slice(0, 120000)}`;
@@ -232,6 +247,24 @@ ${String(combinedText).slice(0, 120000)}`;
       content = resp.choices?.[0]?.message?.content || '{}';
       console.log('OpenAI response received, length:', content.length);
       console.log('OpenAI response preview:', content.substring(0, 500));
+      
+      // Parse and log extracted data for debugging
+      try {
+        const parsed = JSON.parse(content);
+        console.log('\n=== EXTRACTED DATA SUMMARY ===');
+        console.log('Invoice items count:', parsed.Invoice?.items?.length || 0);
+        if (parsed.Invoice?.items?.length > 0) {
+          console.log('First invoice item:', JSON.stringify(parsed.Invoice.items[0], null, 2));
+        }
+        console.log('Financial Summary:', JSON.stringify(parsed.Invoice?.financialSummary, null, 2));
+        console.log('Approval items count:', parsed.Approval?.approvals?.length || 0);
+        if (parsed.Approval?.approvals?.length > 0) {
+          console.log('First approval item:', JSON.stringify(parsed.Approval.approvals[0], null, 2));
+        }
+        console.log('==============================\n');
+      } catch (e) {
+        console.log('Could not parse response for logging:', e.message);
+      }
     } else {
       console.log('No OpenAI client - using fallback mock data');
       content = JSON.stringify({

@@ -72,33 +72,41 @@ export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: D
   }, [claims]);
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-50 overflow-auto">
-      <Header
-        activeFilter={activeFilter}
-        onFilterChange={setActiveFilter}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-      />
+    <div className="flex-1 flex flex-col bg-gray-50 h-screen overflow-hidden w-full">
+      {/* Fixed Header */}
+      <div className="shrink-0">
+        <Header
+          activeFilter={activeFilter}
+          onFilterChange={setActiveFilter}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+        />
+      </div>
 
-      <div className="flex-1 overflow-auto">
+      {/* Fixed KPI Cards */}
+      <div className="shrink-0">
         <KPICards data={kpiData} />
-        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} />
+      </div>
 
-        {/* Dashboard Actions */}
-        <div className="p-4 flex gap-3">
-          <Button onClick={() => setUploadModalOpen(true)} className="gap-2">
-            <FileUp className="h-4 w-4" />
-            Upload New Claim
-          </Button>
-          <Button variant="outline" className="gap-2" onClick={() => onNavigate("reports")}>
-            <BarChart3 className="h-4 w-4" />
-            Go to Reports
-          </Button>
-          <Button variant="outline" className="gap-2" onClick={() => onNavigate("admin")}>
-            <Settings className="h-4 w-4" />
-            Open Admin Settings
-          </Button>
-        </div>
+      {/* Scrollable Claims Table */}
+      <div className="flex-1 overflow-auto">
+        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} />
+      </div>
+
+      {/* Fixed Footer Actions */}
+      <div className="shrink-0 bg-white border-t p-4 flex gap-3">
+        <Button onClick={() => setUploadModalOpen(true)} className="gap-2">
+          <FileUp className="h-4 w-4" />
+          Upload New Claim
+        </Button>
+        <Button variant="outline" className="gap-2" onClick={() => onNavigate("reports")}>
+          <BarChart3 className="h-4 w-4" />
+          Go to Reports
+        </Button>
+        <Button variant="outline" className="gap-2" onClick={() => onNavigate("admin")}>
+          <Settings className="h-4 w-4" />
+          Open Admin Settings
+        </Button>
       </div>
 
       <UploadClaimModal

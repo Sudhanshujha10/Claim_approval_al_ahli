@@ -35,13 +35,100 @@ interface ChecklistItem {
 export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showLowConfidence, setShowLowConfidence] = useState(false);
+  const [isRevalidating, setIsRevalidating] = useState(false);
+  const [localAiData, setLocalAiData] = useState((claim as any).aiData || {});
+  const [pdfPreview, setPdfPreview] = useState<string | null>(null);
+  const [isApproving, setIsApproving] = useState(false);
 
-  // Extract AI data
-  const aiData = (claim as any).aiData || {};
+  // Extract AI data - use local state for real-time updates
+  const aiData = localAiData;
   const claimData = aiData.Claim || {};
   const invoiceData = aiData.Invoice || {};
   const approvalData = aiData.Approval || {};
   const checklistData = aiData.Checklist || {};
+
+  // Re-run AI validation
+  async function handleRevalidate() {
+    setIsRevalidating(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/revalidate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ claimId: claim.id })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setLocalAiData(data.aiData);
+        alert('Validation re-run successfully!');
+      } else {
+        alert('Revalidation failed: ' + data.error);
+      }
+    } catch (e: any) {
+      console.error('Revalidation error:', e);
+      alert('Error re-running validation');
+    } finally {
+      setIsRevalidating(false);
+    }
+  }
+
+  // Update checklist item manually
+  async function handleChecklistUpdate(checklistId: string, newStatus: string) {
+    try {
+      const response = await fetch('http://localhost:3001/api/update-checklist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          claimId: claim.id,
+          checklistId,
+          status: newStatus,
+          manualOverride: true
+        })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        setLocalAiData(data.aiData);
+      } else {
+        alert('Update failed: ' + data.error);
+      }
+    } catch (e: any) {
+      console.error('Update error:', e);
+      alert('Error updating checklist');
+    }
+  }
+
+  // Approve claim
+  async function handleApproveClaim() {
+    setIsApproving(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/approve-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ claimId: claim.id })
+      });
+      const data = await response.json();
+      if (data.ok) {
+        alert('Claim approved successfully!');
+        // Refresh page or go back to dashboard
+        window.location.reload();
+      } else {
+        alert('Approval failed: ' + data.error);
+      }
+    } catch (e: any) {
+      console.error('Approve error:', e);
+      alert('Error approving claim');
+    } finally {
+      setIsApproving(false);
+    }
+  }
+
+  // Calculate checklist statistics
+  function calculateChecklistStats(category: any[]) {
+    if (!category || !Array.isArray(category)) return { passed: 0, total: 0, percentage: 0 };
+    const total = category.length;
+    const passed = category.filter(item => item.status?.toLowerCase() === 'pass').length;
+    const percentage = total > 0 ? Math.round((passed / total) * 100) : 0;
+    return { passed, total, percentage };
+  }
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
@@ -59,38 +146,36 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
     }
   };
 
-  // Convert AI checklist data to component format
-  const convertChecklist = (items: any[]): ChecklistItem[] => {
-    if (!Array.isArray(items)) return [];
-    return items.map(item => ({
-      name: item.title || item.name || "Check",
-      status: (item.status === "pass" || item.status === "passed") ? "passed" : "failed",
-      action: item.reason || item.action
-    }));
-  };
-
-  const claimFormChecklist = convertChecklist(checklistData.ClaimForm || []);
-  const invoiceChecklist = convertChecklist(checklistData.Invoice || []);
-  const approvalChecklist = convertChecklist(checklistData.Approval || []);
-  const investigationChecklist = convertChecklist(checklistData.Investigation || []);
+  // Use checklist data directly (no conversion needed - preserve all AI fields)
+  const claimFormChecklist = checklistData.ClaimForm || [];
+  const invoiceChecklist = checklistData.Invoice || [];
+  const approvalChecklist = checklistData.Approval || [];
+  const investigationChecklist = checklistData.Investigation || [];
 
   // Extract invoice items from AI data
   const invoiceItems = (invoiceData.items || []).map((item: any) => ({
+    no: item.no || "-",
+    date: item.date || "-",
     code: item.code || "-",
-    service: item.description || item.service || "-",
-    qty: item.qty || item.quantity || 1,
-    gross: item.amount || item.gross || "0.00",
-    approved: item.approvedAmount || item.approved || item.amount || "0.00",
-    guestShare: item.guestShare || "0.00"
+    description: item.description || item.service || "-",
+    qty: item.qty || item.quantity || "1.00",
+    dv: item.dv || "-",
+    ndv: item.ndv || "-",
+    totalInvoice: item.totalInvoice || "-",
+    guestShare: item.guestShare || "-",
+    companyDiscount: item.companyDiscount || "-",
+    companyShare: item.companyShare || "-"
   }));
 
   // Extract approval items from AI data
   const approvedItems = (approvalData.approvals || []).map((item: any) => ({
     code: item.code || "-",
     description: item.description || item.service || "-",
-    estAmt: item.estimatedAmount || item.estAmt || "0.00",
-    approvedAmt: item.approvedAmount || item.amount || "0.00",
-    remarks: item.remarks || item.status || "-"
+    qty: item.qty || item.quantity || "-",
+    estAmt: item.estAmt || item.estimatedAmount || "0.00",
+    apprAmt: item.apprAmt || item.approvedAmount || item.amount || "0.00",
+    status: item.status || "Approved",
+    remarks: item.remarks || "-"
   }));
 
   const emailLog = [
@@ -99,32 +184,83 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
     { to: "patient@email.com", cc: "", subject: "Claim Status Update", status: "Sent", date: "20/07/2025" },
   ];
 
-  const renderChecklistItem = (item: ChecklistItem, index: number) => (
-    <div key={index} className="flex items-start justify-between p-3 rounded-lg bg-gray-50">
-      <div className="flex items-start gap-3">
-        {item.status === "passed" ? (
-          <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-        ) : item.status === "failed" ? (
-          <XCircle className="h-5 w-5 text-red-600 mt-0.5" />
-        ) : (
-          <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5" />
-        )}
-        <div>
-          <div className="text-sm">{item.name}</div>
-          {item.action && (
-            <div className="text-sm text-red-600 mt-1">{item.action}</div>
+  const renderChecklistItem = (item: any, index: number) => {
+    const confidence = item.confidence !== undefined ? item.confidence : 0.85;
+    const isLowConfidence = confidence < 0.7;
+    
+    // Filter by low confidence toggle
+    if (showLowConfidence && !isLowConfidence) {
+      return null;
+    }
+
+    const status = item.status?.toLowerCase() || 'pending';
+    const isManualOverride = item.manualOverride || false;
+
+    return (
+      <div key={index} className="flex items-start justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+        <div className="flex items-start gap-3 flex-1">
+          {status === "pass" ? (
+            <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 shrink-0" />
+          ) : status === "fail" ? (
+            <XCircle className="h-5 w-5 text-red-600 mt-0.5 shrink-0" />
+          ) : (
+            <AlertTriangle className="h-5 w-5 text-yellow-600 mt-0.5 shrink-0" />
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm font-medium">{item.title}</span>
+              <span className={`text-xs px-2 py-0.5 rounded ${
+                confidence >= 0.9 ? 'bg-green-100 text-green-700' :
+                confidence >= 0.7 ? 'bg-yellow-100 text-yellow-700' :
+                'bg-red-100 text-red-700'
+              }`}>
+                Confidence {Math.round(confidence * 100)}%
+              </span>
+              {isManualOverride && (
+                <span className="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-700">
+                  Manual Override
+                </span>
+              )}
+            </div>
+            {item.reason && (
+              <div className="text-xs text-gray-600 mt-1">{item.reason}</div>
+            )}
+          </div>
+        </div>
+        <div className="flex items-center gap-2 ml-3 shrink-0">
+          {status !== "pass" && (
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="text-xs h-7"
+              onClick={() => handleChecklistUpdate(item.id, 'pass')}
+            >
+              Mark Pass
+            </Button>
+          )}
+          {status !== "fail" && (
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="text-xs h-7"
+              onClick={() => handleChecklistUpdate(item.id, 'fail')}
+            >
+              Mark Fail
+            </Button>
+          )}
+          {status === "fail" && (
+            <Button variant="destructive" size="sm" className="text-xs h-7">
+              Raise Query
+            </Button>
           )}
         </div>
       </div>
-      {item.status === "failed" && (
-        <Button variant="outline" size="sm">Raise Query</Button>
-      )}
-    </div>
-  );
+    );
+  };
 
   return (
-    <div className="bg-gray-50 h-full min-h-0 flex flex-col">
-      {/* Top Header */}
+    <div className="bg-gray-50 h-screen flex flex-col overflow-hidden">
+      {/* Fixed Top Header */}
       <div className="bg-white border-b shrink-0">
         <div className="p-4 space-y-4">
           <div className="flex items-center gap-4">
@@ -159,10 +295,10 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 min-h-0 flex">
-        {/* Left Side - Tabs Content */}
-        <div className="flex-1 min-h-0 overflow-auto">
+      {/* Main Content Area - Scrollable */}
+      <div className="flex-1 min-h-0 flex overflow-hidden">
+        {/* Left Side - Tabs Content with Scrolling */}
+        <div className="flex-1 overflow-auto">
           <Tabs defaultValue="claim-form" className="p-6">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
@@ -365,7 +501,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Invoice Items</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Table>
+                  <div className="overflow-x-auto">
+                    <Table>
                     <TableHeader>
                       <TableRow>
                         <TableHead className="w-12">No</TableHead>
@@ -399,6 +536,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                       ))}
                     </TableBody>
                   </Table>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -577,7 +715,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Approved Items</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Table>
+                  <div className="overflow-x-auto">
+                    <Table>
                     <TableHeader>
                       <TableRow>
                         <TableHead className="w-28">Treat/Drug Code</TableHead>
@@ -614,6 +753,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                       ))}
                     </TableBody>
                   </Table>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -679,7 +819,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Email Log</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <Table>
+                  <div className="overflow-x-auto">
+                    <Table>
                     <TableHeader>
                       <TableRow>
                         <TableHead>To</TableHead>
@@ -705,6 +846,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                       ))}
                     </TableBody>
                   </Table>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -739,49 +881,112 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
           </Tabs>
         </div>
 
-        {/* Right Side - Document Viewer Sidebar */}
-        <div className="w-96 border-l bg-white h-full overflow-auto">
+        {/* Right Side - Fixed Document Viewer Sidebar */}
+        <div className="w-96 border-l bg-white overflow-y-auto shrink-0">
           <div className="p-4 space-y-4">
             <div className="space-y-4">
-              <h3>Document Viewer</h3>
+              <h3>Document Previewer</h3>
               
+              {/* Claim Form PDF */}
               <div className="border rounded-lg overflow-hidden">
-                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                <button 
+                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
+                  onClick={() => {
+                    const claimFormFile = (claim as any).files?.find((f: any) => 
+                      f.name?.toLowerCase().includes('claim') || f.name?.toLowerCase().includes('form')
+                    );
+                    if (claimFormFile?.filePath) {
+                      setPdfPreview(`http://localhost:3001${claimFormFile.filePath}`);
+                    } else {
+                      alert('Claim Form PDF not found');
+                    }
+                  }}
+                >
                   <FileText className="h-4 w-4" />
                   <span className="text-sm">Claim Form PDF</span>
-                </div>
-                <div className="h-48 bg-gray-50 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <FileText className="h-12 w-12 mx-auto mb-2" />
-                    <div className="text-sm">PDF Preview</div>
+                </button>
+                {pdfPreview && pdfPreview.includes('claim') || pdfPreview?.includes('form') ? (
+                  <iframe 
+                    src={pdfPreview} 
+                    className="w-full h-96"
+                    title="Claim Form PDF"
+                  />
+                ) : (
+                  <div className="h-48 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center text-gray-400">
+                      <FileText className="h-12 w-12 mx-auto mb-2" />
+                      <div className="text-sm">Click to preview</div>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
+              {/* Invoice PDF */}
               <div className="border rounded-lg overflow-hidden">
-                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                <button 
+                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
+                  onClick={() => {
+                    const invoiceFile = (claim as any).files?.find((f: any) => 
+                      f.name?.toLowerCase().includes('invoice')
+                    );
+                    if (invoiceFile?.filePath) {
+                      setPdfPreview(`http://localhost:3001${invoiceFile.filePath}`);
+                    } else {
+                      alert('Invoice PDF not found');
+                    }
+                  }}
+                >
                   <FileText className="h-4 w-4" />
                   <span className="text-sm">Invoice PDF</span>
-                </div>
-                <div className="h-48 bg-gray-50 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <FileText className="h-12 w-12 mx-auto mb-2" />
-                    <div className="text-sm">PDF Preview</div>
+                </button>
+                {pdfPreview && pdfPreview.includes('invoice') ? (
+                  <iframe 
+                    src={pdfPreview} 
+                    className="w-full h-96"
+                    title="Invoice PDF"
+                  />
+                ) : (
+                  <div className="h-48 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center text-gray-400">
+                      <FileText className="h-12 w-12 mx-auto mb-2" />
+                      <div className="text-sm">Click to preview</div>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
+              {/* Approval PDF */}
               <div className="border rounded-lg overflow-hidden">
-                <div className="bg-gray-100 p-2 flex items-center gap-2">
+                <button 
+                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
+                  onClick={() => {
+                    const approvalFile = (claim as any).files?.find((f: any) => 
+                      f.name?.toLowerCase().includes('approval')
+                    );
+                    if (approvalFile?.filePath) {
+                      setPdfPreview(`http://localhost:3001${approvalFile.filePath}`);
+                    } else {
+                      alert('Approval PDF not found');
+                    }
+                  }}
+                >
                   <FileText className="h-4 w-4" />
                   <span className="text-sm">Approval PDF</span>
-                </div>
-                <div className="h-48 bg-gray-50 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <FileText className="h-12 w-12 mx-auto mb-2" />
-                    <div className="text-sm">PDF Preview</div>
+                </button>
+                {pdfPreview && pdfPreview.includes('approval') ? (
+                  <iframe 
+                    src={pdfPreview} 
+                    className="w-full h-96"
+                    title="Approval PDF"
+                  />
+                ) : (
+                  <div className="h-48 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center text-gray-400">
+                      <FileText className="h-12 w-12 mx-auto mb-2" />
+                      <div className="text-sm">Click to preview</div>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <Separator />
@@ -794,15 +999,6 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   onCheckedChange={setShowLowConfidence}
                 />
               </div>
-
-              <Button variant="outline" className="w-full">
-                Mark as Verified
-              </Button>
-
-              <Button variant="outline" className="w-full gap-2">
-                <RefreshCw className="h-4 w-4" />
-                Re-run AI Validation
-              </Button>
             </div>
           </div>
         </div>
@@ -811,34 +1007,49 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       {/* Footer - Summary & Actions */}
       <div className="bg-white border-t shrink-0">
         <div className="p-4 space-y-4">
-          {/* Progress Bar */}
+          {/* Progress Bar - Real Stats */}
           <div className="space-y-2">
-            <div className="flex justify-between text-sm">
-              <span>Checklist Completion</span>
-              <span>70% Complete</span>
-            </div>
-            <div className="grid grid-cols-4 gap-4">
-              <div>
-                <div className="text-xs text-gray-500 mb-1">Claim Form</div>
-                <Progress value={75} className="h-2" />
-                <div className="text-xs text-gray-500 mt-1">3/4 passed</div>
-              </div>
-              <div>
-                <div className="text-xs text-gray-500 mb-1">Approval</div>
-                <Progress value={66} className="h-2" />
-                <div className="text-xs text-gray-500 mt-1">2/3 passed</div>
-              </div>
-              <div>
-                <div className="text-xs text-gray-500 mb-1">Invoice</div>
-                <Progress value={66} className="h-2" />
-                <div className="text-xs text-gray-500 mt-1">2/3 passed</div>
-              </div>
-              <div>
-                <div className="text-xs text-gray-500 mb-1">Investigation</div>
-                <Progress value={100} className="h-2" />
-                <div className="text-xs text-gray-500 mt-1">2/2 passed</div>
-              </div>
-            </div>
+            {(() => {
+              const claimFormStats = calculateChecklistStats(checklistData.ClaimForm);
+              const approvalStats = calculateChecklistStats(checklistData.Approval);
+              const invoiceStats = calculateChecklistStats(checklistData.Invoice);
+              const investigationStats = calculateChecklistStats(checklistData.Investigation);
+              
+              const totalPassed = claimFormStats.passed + approvalStats.passed + invoiceStats.passed + investigationStats.passed;
+              const totalItems = claimFormStats.total + approvalStats.total + invoiceStats.total + investigationStats.total;
+              const overallPercentage = totalItems > 0 ? Math.round((totalPassed / totalItems) * 100) : 0;
+              
+              return (
+                <>
+                  <div className="flex justify-between text-sm">
+                    <span>Checklist Completion</span>
+                    <span>{overallPercentage}% Complete</span>
+                  </div>
+                  <div className="grid grid-cols-4 gap-4">
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Claim Form</div>
+                      <Progress value={claimFormStats.percentage} className="h-2" />
+                      <div className="text-xs text-gray-500 mt-1">{claimFormStats.passed}/{claimFormStats.total} passed</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Approval</div>
+                      <Progress value={approvalStats.percentage} className="h-2" />
+                      <div className="text-xs text-gray-500 mt-1">{approvalStats.passed}/{approvalStats.total} passed</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Invoice</div>
+                      <Progress value={invoiceStats.percentage} className="h-2" />
+                      <div className="text-xs text-gray-500 mt-1">{invoiceStats.passed}/{invoiceStats.total} passed</div>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 mb-1">Investigation</div>
+                      <Progress value={investigationStats.percentage} className="h-2" />
+                      <div className="text-xs text-gray-500 mt-1">{investigationStats.passed}/{investigationStats.total} passed</div>
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
           </div>
 
           <Separator />
@@ -861,11 +1072,13 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
 
             {/* Action Buttons */}
             <div className="flex gap-2 items-end">
-              <Button variant="outline">Save</Button>
-              <Button variant="default">Submit</Button>
-              <Button variant="outline" className="gap-2">
-                <RefreshCw className="h-4 w-4" />
-                Revalidate
+              <Button 
+                variant="default" 
+                onClick={handleApproveClaim}
+                disabled={isApproving}
+                className="gap-2"
+              >
+                {isApproving ? 'Approving...' : 'Approve Claim'}
               </Button>
             </div>
           </div>

@@ -45,8 +45,8 @@ export function UploadClaimModal({ open, onOpenChange, onParsed }: UploadClaimMo
       console.log('Upload response:', up);
       if (!up.ok) throw new Error(up.error || "Upload failed");
 
-      console.log('Validating claim...');
-      const val = await validateClaim(up.combinedText, up.skeleton);
+      console.log('Validating claim with structured data...');
+      const val = await validateClaim(up.combinedText, up.skeleton, (up as any).structuredData);
       console.log('Validation response:', val);
       if (!val.ok) throw new Error(val.error || "Validation failed");
 

@@ -1,7 +1,15 @@
 // api/upload.js
 import formidable from "formidable";
 import fs from "fs";
+import path from "path";
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+
+const UPLOADS_DIR = path.join(process.cwd(), 'api', '_data', 'uploads');
+
+// Ensure uploads directory exists
+if (!fs.existsSync(UPLOADS_DIR)) {
+  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
 
 // Use pdfjs-dist for proper PDF text extraction
 async function extractPdfText(buffer) {
@@ -48,6 +56,8 @@ export default async function handler(req, res) {
 
     try {
       const extracted = [];
+      const timestamp = Date.now();
+      
       for (const f of fileList) {
         console.log('Processing file:', f.originalFilename || f.newFilename, 'at', f.filepath);
         const buffer = await fs.promises.readFile(f.filepath);
@@ -56,7 +66,19 @@ export default async function handler(req, res) {
         const parsed = await extractPdfText(buffer);
         console.log('Extracted text length:', parsed?.text?.length || 0);
         
-        extracted.push({ filename: f.originalFilename || f.newFilename || "file.pdf", text: parsed.text || "" });
+        // Save file permanently
+        const originalName = f.originalFilename || f.newFilename || "file.pdf";
+        const savedFilename = `${timestamp}_${originalName}`;
+        const savedPath = path.join(UPLOADS_DIR, savedFilename);
+        await fs.promises.copyFile(f.filepath, savedPath);
+        console.log('Saved file to:', savedPath);
+        
+        extracted.push({ 
+          filename: originalName,
+          savedFilename: savedFilename,
+          filePath: `/api/files/${savedFilename}`,
+          text: parsed.text || "" 
+        });
       }
 
       const combinedText = extracted
@@ -72,7 +94,11 @@ export default async function handler(req, res) {
         policyNo: (combinedText.match(/\\b(POL[-\\s:]?\\w+|\\d{6,})\\b/i) || [])[0] || "",
       };
 
-      const filesMeta = extracted.map((e) => ({ name: e.filename }));
+      const filesMeta = extracted.map((e) => ({ 
+        name: e.filename,
+        savedFilename: e.savedFilename,
+        filePath: e.filePath
+      }));
 
       return res.json({ ok: true, files: filesMeta, combinedText, skeleton });
     } catch (e) {

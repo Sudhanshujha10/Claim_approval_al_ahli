@@ -18,16 +18,18 @@ const BASE_URL = ""; // Vite proxy handles /api/* in dev
 export async function uploadClaimFiles(files: File[]): Promise<UploadResp> {
   const fd = new FormData();
   files.forEach((f) => fd.append("files", f, f.name));
-  const r = await fetch(`${BASE_URL}/api/upload`, { method: "POST", body: fd });
+  // Use Docling endpoint for better table extraction
+  const r = await fetch(`${BASE_URL}/api/upload-docling`, { method: "POST", body: fd });
   if (!r.ok) throw new Error(`Upload failed: ${r.status}`);
   return r.json();
 }
 
-export async function validateClaim(combinedText: string, skeleton?: any): Promise<ValidateResp> {
-  const r = await fetch(`${BASE_URL}/api/validate`, {
+export async function validateClaim(combinedText: string, skeleton?: any, structuredData?: any): Promise<ValidateResp> {
+  // Use Docling endpoint with structured data
+  const r = await fetch(`${BASE_URL}/api/validate-docling`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ combinedText, skeleton }),
+    body: JSON.stringify({ combinedText, skeleton, structuredData }),
   });
   if (!r.ok) throw new Error(`Validate failed: ${r.status}`);
   return r.json();
