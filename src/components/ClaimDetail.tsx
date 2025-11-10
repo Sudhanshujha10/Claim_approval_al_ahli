@@ -315,7 +315,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Guest Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Guest Name</div>
                       <div className="text-sm font-medium">{claimData.patientName || claim.patientName}</div>
@@ -357,7 +357,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Visit & Clinical Details</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Visit Date</div>
                       <div className="text-sm">{claimData.visitDate || "-"}</div>
@@ -403,7 +403,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Vitals</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-5 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">BP</div>
                       <div className="text-sm">{claimData.vitals?.bp || "-"}</div>
@@ -433,7 +433,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Insurance Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Insurance Company</div>
                       <div className="text-sm">{claimData.insuranceCompany || "-"}</div>
@@ -475,7 +475,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Invoice Summary</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Invoice No</div>
                       <div className="text-sm font-medium">{invoiceData.invoiceNo || claim.id}</div>
@@ -545,7 +545,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Financial Summary</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Total Invoice</div>
                       <div className="text-sm font-medium">{invoiceData.financialSummary?.totalInvoice || invoiceData.totalInvoice || "0.00"}</div>
@@ -599,7 +599,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Pre-Approval Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Pre-Approval Code</div>
                       <div className="text-sm font-medium">{approvalData.preApprovalCode || "-"}</div>
@@ -681,7 +681,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Benefit & Cost Details</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Currency</div>
                       <div className="text-sm">{approvalData.currency || "-"}</div>
@@ -769,7 +769,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
 
             {/* Unified Checklist Tab */}
             <TabsContent value="checklist" className="space-y-6">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>Claim Form Checks</CardTitle>
