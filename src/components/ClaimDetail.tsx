@@ -501,7 +501,7 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Invoice Items</CardTitle>
                 </CardHeader>
                 <CardContent className="overflow-x-hidden">
-                  <div className="overflow-x-auto max-w-full">
+                  <div className="overflow-x-auto max-w-full border rounded-md" style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e1 #f1f5f9' }}>
                     <Table className="min-w-max">
                     <TableHeader>
                       <TableRow>
