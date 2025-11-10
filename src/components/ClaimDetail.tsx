@@ -496,13 +496,13 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                 </CardContent>
               </Card>
 
-              <Card className="overflow-hidden w-full">
+              <Card className="overflow-hidden w-full max-w-full">
                 <CardHeader>
                   <CardTitle>Invoice Items</CardTitle>
                 </CardHeader>
-                <CardContent className="p-0">
-                  <div className="overflow-x-auto w-full border-t" style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e1 #f1f5f9' }}>
-                    <Table className="min-w-max w-full">
+                <CardContent className="p-0 overflow-hidden">
+                  <div className="overflow-x-auto w-full max-w-full border-t" style={{ maxWidth: '100%', scrollbarWidth: 'thin', scrollbarColor: '#cbd5e1 #f1f5f9' }}>
+                    <Table className="min-w-max" style={{ width: 'max-content' }}>
                     <TableHeader>
                       <TableRow>
                         <TableHead className="w-12">No</TableHead>
