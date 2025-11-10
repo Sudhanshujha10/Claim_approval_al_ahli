@@ -1,0 +1,15 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index 3570770..901982b 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -1005,8 +1005,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+       </div>
+ 
+       {/* Footer - Summary & Actions - Fixed */}
+-      <div className="bg-white border-t shrink-0 w-full">
+-        <div className="p-4 space-y-4 max-w-full">
++      <div className="bg-white border-t shrink-0 w-full overflow-x-hidden">
++        <div className="p-4 space-y-4 max-w-full overflow-x-hidden">
+           {/* Progress Bar - Real Stats */}
+           <div className="space-y-2">
+             {(() => {
