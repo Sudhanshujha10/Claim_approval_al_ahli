@@ -1,0 +1,51 @@
+diff --git a/src/components/ClaimDetail.tsx b/src/components/ClaimDetail.tsx
+index 6fc3890..32ada19 100644
+--- a/src/components/ClaimDetail.tsx
++++ b/src/components/ClaimDetail.tsx
+@@ -295,11 +295,11 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+         </div>
+       </div>
+ 
+-      {/* Main Content Area - Scrollable */}
+-      <div className="flex-1 min-h-0 flex overflow-hidden w-full">
++      {/* Main Content Area */}
++      <div className="flex-1 min-h-0 flex overflow-hidden max-w-full">
+         {/* Left Side - Tabs Content with Scrolling */}
+-        <div className="flex-1 overflow-auto min-w-0">
+-          <Tabs defaultValue="claim-form" className="p-6 w-full">
++        <div className="flex-1 overflow-auto min-w-0 max-w-full">
++          <Tabs defaultValue="claim-form" className="p-6 max-w-full">
+             <TabsList className="mb-6">
+               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
+               <TabsTrigger value="invoice">Invoice</TabsTrigger>
+@@ -1055,12 +1055,12 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+           <Separator />
+ 
+           {/* AI Suggestions & Actions */}
+-          <div className="flex flex-col lg:flex-row gap-4 lg:items-center">
+-            <div className="flex-1 bg-blue-50 rounded-lg p-4 min-w-0">
++          <div className="flex flex-col lg:flex-row gap-4 lg:items-center max-w-full">
++            <div className="flex-1 bg-blue-50 rounded-lg p-4 min-w-0 max-w-full">
+               <div className="flex items-start gap-3">
+                 <Lightbulb className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+                 <div className="flex-1 min-w-0">
+-                  <div className="text-sm mb-2">AI Suggestions</div>
++                  <div className="text-sm font-medium mb-2">AI Suggestions</div>
+                   <ul className="text-sm text-gray-700 space-y-1">
+                     <li>• Check partial approvals vs invoice total</li>
+                     <li>• Send query to GSD for missing info</li>
+@@ -1071,12 +1071,12 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+             </div>
+ 
+             {/* Action Buttons - Always Visible */}
+-            <div className="flex gap-2 shrink-0 lg:self-end">
++            <div className="flex gap-2 shrink-0">
+               <Button 
+                 variant="default" 
+                 onClick={handleApproveClaim}
+                 disabled={isApproving}
+-                className="gap-2 whitespace-nowrap w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 shadow-md"
++                className="whitespace-nowrap bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 h-10"
+               >
+                 {isApproving ? 'Approving...' : 'Approve Claim'}
+               </Button>
