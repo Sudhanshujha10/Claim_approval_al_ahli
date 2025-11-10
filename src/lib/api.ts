@@ -19,18 +19,18 @@ const BASE_URL = import.meta.env.VITE_API_URL || "";
 export async function uploadClaimFiles(files: File[]): Promise<UploadResp> {
   const fd = new FormData();
   files.forEach((f) => fd.append("files", f, f.name));
-  // Use Docling endpoint for better table extraction
-  const r = await fetch(`${BASE_URL}/api/upload-docling`, { method: "POST", body: fd });
+  // Use standard upload endpoint (works without Python parser)
+  const r = await fetch(`${BASE_URL}/api/upload`, { method: "POST", body: fd });
   if (!r.ok) throw new Error(`Upload failed: ${r.status}`);
   return r.json();
 }
 
 export async function validateClaim(combinedText: string, skeleton?: any, structuredData?: any): Promise<ValidateResp> {
-  // Use Docling endpoint with structured data
-  const r = await fetch(`${BASE_URL}/api/validate-docling`, {
+  // Use standard validate endpoint (works without Python parser)
+  const r = await fetch(`${BASE_URL}/api/validate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ combinedText, skeleton, structuredData }),
+    body: JSON.stringify({ combinedText }),
   });
   if (!r.ok) throw new Error(`Validate failed: ${r.status}`);
   return r.json();
