@@ -1,5 +1,4 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+
 
 # Generate a timestamped diff of staged changes and save to change-logs
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")

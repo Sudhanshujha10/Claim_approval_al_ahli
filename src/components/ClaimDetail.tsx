@@ -176,45 +176,143 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
             <TabsContent value="claim-form" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Patient Information</CardTitle>
+                  <CardTitle>Guest Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-4 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">Guest Name</div>
+                      <div className="text-sm font-medium">{claimData.patientName || claim.patientName}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Guest File No</div>
+                      <div className="text-sm">{claimData.guestFileNo || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">QID/Passport</div>
+                      <div className="text-sm">{claimData.qid || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Member No</div>
+                      <div className="text-sm">{claimData.memberNo || "-"}</div>
+                    </div>
                     <div>
                       <div className="text-sm text-gray-500">DOB</div>
-                      <div className="text-sm">{claimData.dob || claimData.dateOfBirth || "-"}</div>
+                      <div className="text-sm">{claimData.dob || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Gender</div>
                       <div className="text-sm">{claimData.gender || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">QID/Passport</div>
-                      <div className="text-sm">{claimData.qid || claimData.passportNo || "-"}</div>
+                      <div className="text-sm text-gray-500">Tel No</div>
+                      <div className="text-sm">{claimData.telNo || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Nationality</div>
+                      <div className="text-sm">{claimData.nationality || "-"}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Visit & Clinical Details</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">Visit Date</div>
+                      <div className="text-sm">{claimData.visitDate || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Visit No</div>
+                      <div className="text-sm">{claimData.claimId || claim.id}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Visit Type</div>
+                      <div className="text-sm">{claimData.visitType || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Doctor</div>
                       <div className="text-sm">{claimData.doctor || claim.doctor}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Department</div>
+                      <div className="text-sm text-gray-500">Department/Clinic</div>
                       <div className="text-sm">{claimData.department || claim.department}</div>
                     </div>
                     <div>
+                      <div className="text-sm text-gray-500">Registered By</div>
+                      <div className="text-sm">{claimData.registeredBy || "-"}</div>
+                    </div>
+                    <div className="col-span-3">
                       <div className="text-sm text-gray-500">Diagnosis</div>
                       <div className="text-sm">{claimData.diagnosis || "-"}</div>
                     </div>
+                    <div className="col-span-3">
+                      <div className="text-sm text-gray-500">Chief Complaint</div>
+                      <div className="text-sm">{claimData.chiefComplaint || "-"}</div>
+                    </div>
+                    <div className="col-span-3">
+                      <div className="text-sm text-gray-500">Clinical Findings</div>
+                      <div className="text-sm whitespace-pre-wrap">{claimData.clinicalFindings || "-"}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Vitals</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-5 gap-4">
                     <div>
-                      <div className="text-sm text-gray-500">Visit Date</div>
-                      <div className="text-sm">{claimData.visitDate || claim.uploadedOn}</div>
+                      <div className="text-sm text-gray-500">BP</div>
+                      <div className="text-sm">{claimData.vitals?.bp || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Pulse</div>
+                      <div className="text-sm">{claimData.vitals?.pulse || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Resp Rate</div>
+                      <div className="text-sm">{claimData.vitals?.respRate || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Temperature</div>
+                      <div className="text-sm">{claimData.vitals?.temperature || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Pain Scale</div>
+                      <div className="text-sm">{claimData.vitals?.painScale || "-"}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Insurance Information</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">Insurance Company</div>
+                      <div className="text-sm">{claimData.insuranceCompany || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Policy No</div>
                       <div className="text-sm">{claimData.policyNo || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Insurer</div>
-                      <div className="text-sm">{claimData.insuranceCompany || "-"}</div>
+                      <div className="text-sm text-gray-500">Plan Name</div>
+                      <div className="text-sm">{claimData.planName || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Admission Required</div>
+                      <div className="text-sm">{claimData.isAdmissionRequired || "-"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -225,7 +323,11 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Claim Form Checklist</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {claimFormChecklist.map((item, index) => renderChecklistItem(item, index))}
+                  {claimFormChecklist.length > 0 ? (
+                    claimFormChecklist.map((item, index) => renderChecklistItem(item, index))
+                  ) : (
+                    <div className="text-sm text-gray-500">No checklist items</div>
+                  )}
                 </CardContent>
               </Card>
             </TabsContent>
@@ -237,26 +339,22 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <CardTitle>Invoice Summary</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-5 gap-4">
+                  <div className="grid grid-cols-4 gap-4">
                     <div>
                       <div className="text-sm text-gray-500">Invoice No</div>
-                      <div className="text-sm">{invoiceData.invoiceNo || claim.id}</div>
+                      <div className="text-sm font-medium">{invoiceData.invoiceNo || claim.id}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Date</div>
-                      <div className="text-sm">{invoiceData.date || claim.uploadedOn}</div>
+                      <div className="text-sm text-gray-500">Invoice Date</div>
+                      <div className="text-sm">{invoiceData.invoiceDate || claim.uploadedOn}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Gross</div>
-                      <div className="text-sm">SAR {invoiceData.totalAmount || invoiceData.gross || "0.00"}</div>
+                      <div className="text-sm text-gray-500">Discharge Date</div>
+                      <div className="text-sm">{invoiceData.dischargeDate || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Company Share</div>
-                      <div className="text-sm">SAR {invoiceData.companyShare || "0.00"}</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-500">Patient Share</div>
-                      <div className="text-sm">SAR {invoiceData.patientShare || "0.00"}</div>
+                      <div className="text-sm text-gray-500">Printed By</div>
+                      <div className="text-sm">{invoiceData.printedBy || "-"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -270,27 +368,79 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Code</TableHead>
-                        <TableHead>Service</TableHead>
-                        <TableHead>Qty</TableHead>
-                        <TableHead>Gross</TableHead>
-                        <TableHead>Approved</TableHead>
-                        <TableHead>Guest Share</TableHead>
+                        <TableHead className="w-12">No</TableHead>
+                        <TableHead className="w-24">Date</TableHead>
+                        <TableHead className="w-28">Code</TableHead>
+                        <TableHead>Service Name</TableHead>
+                        <TableHead className="w-16">QTY</TableHead>
+                        <TableHead className="w-20">D.V</TableHead>
+                        <TableHead className="w-20">N.D.V</TableHead>
+                        <TableHead className="w-24">Total Invoice</TableHead>
+                        <TableHead className="w-24">Guest Share</TableHead>
+                        <TableHead className="w-28">Company Discount</TableHead>
+                        <TableHead className="w-24">Company Share</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {invoiceItems.map((item, index) => (
                         <TableRow key={index}>
-                          <TableCell>{item.code}</TableCell>
-                          <TableCell>{item.service}</TableCell>
+                          <TableCell>{item.no || index + 1}</TableCell>
+                          <TableCell className="text-xs">{item.date || "-"}</TableCell>
+                          <TableCell className="text-xs font-mono">{item.code}</TableCell>
+                          <TableCell className="text-xs">{item.description || item.service}</TableCell>
                           <TableCell>{item.qty}</TableCell>
-                          <TableCell>SAR {item.gross}</TableCell>
-                          <TableCell>SAR {item.approved}</TableCell>
-                          <TableCell>SAR {item.guestShare}</TableCell>
+                          <TableCell>{item.dv || "-"}</TableCell>
+                          <TableCell>{item.ndv || "-"}</TableCell>
+                          <TableCell>{item.totalInvoice || "-"}</TableCell>
+                          <TableCell>{item.guestShare || "-"}</TableCell>
+                          <TableCell>{item.companyDiscount || "-"}</TableCell>
+                          <TableCell>{item.companyShare || "-"}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
                   </Table>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Financial Summary</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-4 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">Total Invoice</div>
+                      <div className="text-sm font-medium">{invoiceData.financialSummary?.totalInvoice || invoiceData.totalInvoice || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Gross Amount</div>
+                      <div className="text-sm font-medium">{invoiceData.financialSummary?.grossAmount || invoiceData.grossAmount || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Company Discount</div>
+                      <div className="text-sm">{invoiceData.financialSummary?.companyDiscount || invoiceData.companyDiscount || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Fin. TRS</div>
+                      <div className="text-sm">{invoiceData.financialSummary?.finTRS || invoiceData.finTRS || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Guest Payments</div>
+                      <div className="text-sm">{invoiceData.financialSummary?.guestPayments || invoiceData.guestPayments || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Refunds</div>
+                      <div className="text-sm">{invoiceData.financialSummary?.refunds || invoiceData.refunds || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Amount Due</div>
+                      <div className="text-sm font-medium text-green-600">{invoiceData.financialSummary?.amountDue || invoiceData.amountDue || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Company Share</div>
+                      <div className="text-sm font-medium">{invoiceData.financialSummary?.companyShare || invoiceData.companyShare || "0.00"}</div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -308,29 +458,115 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
             <TabsContent value="approval" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Approval Summary</CardTitle>
+                  <CardTitle>Pre-Approval Information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-5 gap-4">
+                  <div className="grid grid-cols-4 gap-4">
                     <div>
-                      <div className="text-sm text-gray-500">Approval Code</div>
-                      <div className="text-sm">{approvalData.approvalCode || approvalData.code || "-"}</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-500">Date</div>
-                      <div className="text-sm">{approvalData.date || approvalData.approvalDate || "-"}</div>
+                      <div className="text-sm text-gray-500">Pre-Approval Code</div>
+                      <div className="text-sm font-medium">{approvalData.preApprovalCode || "-"}</div>
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Status</div>
-                      <div className="text-sm">{approvalData.status || "-"}</div>
+                      <div className="text-sm">{approvalData.preApprovalStatus || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Approved Amount</div>
-                      <div className="text-sm">SAR {approvalData.approvedAmount || approvalData.totalAmount || "0.00"}</div>
+                      <div className="text-sm text-gray-500">Applied Date</div>
+                      <div className="text-sm">{approvalData.appliedDate || "-"}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Diagnosis</div>
-                      <div className="text-sm">{claimData.diagnosis || "-"}</div>
+                      <div className="text-sm text-gray-500">Approval Date</div>
+                      <div className="text-sm">{approvalData.approvalDate || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Insured Name</div>
+                      <div className="text-sm">{approvalData.insuredName || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Member ID</div>
+                      <div className="text-sm">{approvalData.memberId || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Age/Gender</div>
+                      <div className="text-sm">{approvalData.ageGender || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Medical Record No</div>
+                      <div className="text-sm">{approvalData.medicalRecordNo || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Provider Name</div>
+                      <div className="text-sm">{approvalData.providerName || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Policy Holder</div>
+                      <div className="text-sm">{approvalData.policyHolder || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Policy No</div>
+                      <div className="text-sm">{approvalData.policyNo || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Type</div>
+                      <div className="text-sm">{approvalData.type || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Priority</div>
+                      <div className="text-sm">{approvalData.priority || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Admission Date</div>
+                      <div className="text-sm">{approvalData.admissionDate || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Facility</div>
+                      <div className="text-sm">{approvalData.facility || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Doctor</div>
+                      <div className="text-sm">{approvalData.doctor || "-"}</div>
+                    </div>
+                    <div className="col-span-4">
+                      <div className="text-sm text-gray-500">Primary Diagnosis</div>
+                      <div className="text-sm">{approvalData.primaryDiagnosis || "-"}</div>
+                    </div>
+                    <div className="col-span-4">
+                      <div className="text-sm text-gray-500">About Present Illness</div>
+                      <div className="text-sm whitespace-pre-wrap">{approvalData.aboutPresentIllness || "-"}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Benefit & Cost Details</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-4 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">Currency</div>
+                      <div className="text-sm">{approvalData.currency || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Benefit</div>
+                      <div className="text-sm">{approvalData.benefit || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Co-Insurance</div>
+                      <div className="text-sm">{approvalData.coIns || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Deductible</div>
+                      <div className="text-sm">{approvalData.deductible || "-"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Total Estimated Amount</div>
+                      <div className="text-sm font-medium">{approvalData.currency || "QAR"} {approvalData.totalEstimatedAmount || "0.00"}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Total Approved Amount</div>
+                      <div className="text-sm font-medium text-green-600">{approvalData.currency || "QAR"} {approvalData.totalApprovedAmount || "0.00"}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -344,21 +580,36 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead>Code</TableHead>
-                        <TableHead>Description</TableHead>
-                        <TableHead>Est Amt</TableHead>
-                        <TableHead>Approved Amt</TableHead>
-                        <TableHead>Remarks</TableHead>
+                        <TableHead className="w-28">Treat/Drug Code</TableHead>
+                        <TableHead>Treatment/Drug Desc (Reject/Approval Remarks)</TableHead>
+                        <TableHead className="w-20">Quantity</TableHead>
+                        <TableHead className="w-24">Est Amt</TableHead>
+                        <TableHead className="w-24">Appr.Amt</TableHead>
+                        <TableHead className="w-32">Status</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {approvedItems.map((item, index) => (
                         <TableRow key={index}>
-                          <TableCell>{item.code}</TableCell>
-                          <TableCell>{item.description}</TableCell>
-                          <TableCell>SAR {item.estAmt}</TableCell>
-                          <TableCell>SAR {item.approvedAmt}</TableCell>
-                          <TableCell>{item.remarks}</TableCell>
+                          <TableCell className="text-xs font-mono">{item.code}</TableCell>
+                          <TableCell className="text-xs">
+                            {item.description}
+                            {item.remarks && item.remarks !== "-" && (
+                              <div className="text-xs text-gray-500 mt-1">({item.remarks})</div>
+                            )}
+                          </TableCell>
+                          <TableCell>{item.qty}</TableCell>
+                          <TableCell>{item.estAmt}</TableCell>
+                          <TableCell>{item.apprAmt || item.approvedAmt}</TableCell>
+                          <TableCell>
+                            <span className={`text-xs px-2 py-1 rounded ${
+                              item.status === "Approved" ? "bg-green-100 text-green-800" :
+                              item.status === "Partial Approved" ? "bg-yellow-100 text-yellow-800" :
+                              "bg-red-100 text-red-800"
+                            }`}>
+                              {item.status || "Approved"}
+                            </span>
+                          </TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
