@@ -1,0 +1,25 @@
+diff --git a/.gitignore b/.gitignore
+index 9d06c67..815da18 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -41,3 +41,4 @@ node_modules/
+ # Local artifacts
+ api/_data/uploads/
+ .env
++.vercel
+diff --git a/vercel.json b/vercel.json
+index 222fe67..14af8d5 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -1,9 +1,8 @@
+ {
+   "version": 2,
+-  "buildCommand": "npm run build",
+-  "outputDirectory": "dist",
++  "buildCommand": "npm install && npm run build",
++  "outputDirectory": "build",
+   "rewrites": [
+-    { "source": "/api/(.*)", "destination": "/api/$1" },
+     { "source": "/(.*)", "destination": "/index.html" }
+   ]
+ }
