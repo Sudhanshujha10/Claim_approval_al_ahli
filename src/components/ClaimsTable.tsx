@@ -8,7 +8,7 @@ import {
 } from "./ui/table";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Trash2 } from "lucide-react";
 
 export interface Claim {
   id: string;
@@ -26,9 +26,10 @@ export interface Claim {
 interface ClaimsTableProps {
   claims: Claim[];
   onViewClaim: (claimId: string) => void;
+  onDeleteClaim?: (claimId: string) => void;
 }
 
-export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
+export function ClaimsTable({ claims, onViewClaim, onDeleteClaim }: ClaimsTableProps) {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "approved":
@@ -94,15 +95,33 @@ export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
                 <TableCell className="whitespace-nowrap">{claim.uploadedOn}</TableCell>
                 <TableCell className="whitespace-nowrap">{getChecklistBadge(claim)}</TableCell>
                 <TableCell className="whitespace-nowrap">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => onViewClaim(claim.id)}
-                    className="gap-1"
-                  >
-                    View Claim
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => onViewClaim(claim.id)}
+                      className="gap-1"
+                    >
+                      View Claim
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                    {onDeleteClaim && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (window.confirm(`Are you sure you want to delete claim ${claim.id}? This will permanently remove all data for this claim.`)) {
+                            onDeleteClaim(claim.id);
+                          }
+                        }}
+                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                        title="Delete Claim"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

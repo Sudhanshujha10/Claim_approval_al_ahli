@@ -1,0 +1,189 @@
+diff --git a/api/claims/[id].js b/api/claims/[id].js
+new file mode 100644
+index 0000000..fdafcf2
+--- /dev/null
++++ b/api/claims/[id].js
+@@ -0,0 +1,49 @@
++// api/claims/[id].js - Delete a specific claim
++import fs from 'fs';
++import path from 'path';
++import { fileURLToPath } from 'url';
++
++const __filename = fileURLToPath(import.meta.url);
++const __dirname = path.dirname(__filename);
++
++const CLAIMS_FILE = path.join(__dirname, '../_data/claims.json');
++
++export default async function handler(req, res) {
++  if (req.method !== 'DELETE') {
++    return res.status(405).json({ ok: false, error: 'Method not allowed' });
++  }
++
++  try {
++    const { id } = req.query;
++    
++    if (!id) {
++      return res.status(400).json({ ok: false, error: 'Claim ID is required' });
++    }
++
++    // Read current claims
++    let claimsData = { claims: [] };
++    if (fs.existsSync(CLAIMS_FILE)) {
++      const fileContent = fs.readFileSync(CLAIMS_FILE, 'utf8');
++      claimsData = JSON.parse(fileContent);
++    }
++
++    // Filter out the claim to delete
++    const initialLength = claimsData.claims.length;
++    claimsData.claims = claimsData.claims.filter(claim => claim.id !== id);
++
++    if (claimsData.claims.length === initialLength) {
++      return res.status(404).json({ ok: false, error: 'Claim not found' });
++    }
++
++    // Update lastUpdated timestamp
++    claimsData.lastUpdated = new Date().toISOString();
++
++    // Write back to file
++    fs.writeFileSync(CLAIMS_FILE, JSON.stringify(claimsData, null, 2));
++
++    return res.status(200).json({ ok: true, message: 'Claim deleted successfully' });
++  } catch (error) {
++    console.error('Error deleting claim:', error);
++    return res.status(500).json({ ok: false, error: 'Internal server error' });
++  }
++}
+diff --git a/src/App.tsx b/src/App.tsx
+index d08b0ce..e0ecf80 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -147,6 +147,28 @@ export default function App() {
+     setSelectedClaimId(c.id);
+   };
+ 
++  const handleDeleteClaim = async (claimId: string) => {
++    try {
++      const baseUrl = import.meta.env.VITE_API_URL || "";
++      const response = await fetch(`${baseUrl}/api/claims/${claimId}`, {
++        method: "DELETE",
++      });
++      
++      if (response.ok) {
++        setClaims((prev) => prev.filter((c) => c.id !== claimId));
++        // If we're viewing the deleted claim, go back to dashboard
++        if (selectedClaimId === claimId) {
++          setSelectedClaimId(null);
++        }
++      } else {
++        alert("Failed to delete claim");
++      }
++    } catch (error) {
++      console.error("Error deleting claim:", error);
++      alert("Error deleting claim");
++    }
++  };
++
+   // If viewing claim detail
+   if (selectedClaim) {
+     return (
+@@ -176,6 +198,7 @@ export default function App() {
+             onViewClaim={handleViewClaim}
+             onNavigate={handleNavigate}
+             onClaimCreated={handleClaimCreated}
++            onDeleteClaim={handleDeleteClaim}
+           />
+         )}
+         
+diff --git a/src/components/ClaimsTable.tsx b/src/components/ClaimsTable.tsx
+index bc9bcd3..0775388 100644
+--- a/src/components/ClaimsTable.tsx
++++ b/src/components/ClaimsTable.tsx
+@@ -8,7 +8,7 @@ import {
+ } from "./ui/table";
+ import { Badge } from "./ui/badge";
+ import { Button } from "./ui/button";
+-import { ChevronRight } from "lucide-react";
++import { ChevronRight, Trash2 } from "lucide-react";
+ 
+ export interface Claim {
+   id: string;
+@@ -26,9 +26,10 @@ export interface Claim {
+ interface ClaimsTableProps {
+   claims: Claim[];
+   onViewClaim: (claimId: string) => void;
++  onDeleteClaim?: (claimId: string) => void;
+ }
+ 
+-export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
++export function ClaimsTable({ claims, onViewClaim, onDeleteClaim }: ClaimsTableProps) {
+   const getStatusColor = (status: string) => {
+     switch (status.toLowerCase()) {
+       case "approved":
+@@ -94,15 +95,33 @@ export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
+                 <TableCell className="whitespace-nowrap">{claim.uploadedOn}</TableCell>
+                 <TableCell className="whitespace-nowrap">{getChecklistBadge(claim)}</TableCell>
+                 <TableCell className="whitespace-nowrap">
+-                  <Button
+-                    variant="ghost"
+-                    size="sm"
+-                    onClick={() => onViewClaim(claim.id)}
+-                    className="gap-1"
+-                  >
+-                    View Claim
+-                    <ChevronRight className="h-4 w-4" />
+-                  </Button>
++                  <div className="flex items-center gap-2">
++                    <Button
++                      variant="ghost"
++                      size="sm"
++                      onClick={() => onViewClaim(claim.id)}
++                      className="gap-1"
++                    >
++                      View Claim
++                      <ChevronRight className="h-4 w-4" />
++                    </Button>
++                    {onDeleteClaim && (
++                      <Button
++                        variant="ghost"
++                        size="sm"
++                        onClick={(e) => {
++                          e.stopPropagation();
++                          if (window.confirm(`Are you sure you want to delete claim ${claim.id}? This will permanently remove all data for this claim.`)) {
++                            onDeleteClaim(claim.id);
++                          }
++                        }}
++                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
++                        title="Delete Claim"
++                      >
++                        <Trash2 className="h-4 w-4" />
++                      </Button>
++                    )}
++                  </div>
+                 </TableCell>
+               </TableRow>
+             ))}
+diff --git a/src/components/Dashboard.tsx b/src/components/Dashboard.tsx
+index 03c4c5d..0e8ee3e 100644
+--- a/src/components/Dashboard.tsx
++++ b/src/components/Dashboard.tsx
+@@ -11,9 +11,10 @@ interface DashboardProps {
+   onViewClaim: (claimId: string) => void;
+   onNavigate: (page: string) => void;
+   onClaimCreated: (c: Claim) => void;
++  onDeleteClaim?: (claimId: string) => void;
+ }
+ 
+-export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: DashboardProps) {
++export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated, onDeleteClaim }: DashboardProps) {
+   const [activeFilter, setActiveFilter] = useState("All");
+   const [searchQuery, setSearchQuery] = useState("");
+   const [uploadModalOpen, setUploadModalOpen] = useState(false);
+@@ -90,7 +91,7 @@ export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: D
+ 
+       {/* Scrollable Claims Table */}
+       <div className="flex-1 overflow-auto min-w-0">
+-        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} />
++        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} onDeleteClaim={onDeleteClaim} />
+       </div>
+ 
+       {/* Fixed Footer Actions */}
