@@ -38,12 +38,19 @@ export function AdminConfig() {
   async function loadConfig() {
     try {
       setLoading(true);
+      console.log('Loading config from:', `${BASE_URL}/api/admin/config`);
       const response = await fetch(`${BASE_URL}/api/admin/config`);
+      console.log('Response status:', response.status);
       const data = await response.json();
+      console.log('Response data:', data);
       if (data.ok) {
+        console.log('Setting diagnosis codes:', data.config.diagnosisCodesRequiringApproval?.length);
+        console.log('Setting services:', data.config.servicesRequiringApproval?.length);
         setDiagnosisCodes(data.config.diagnosisCodesRequiringApproval || []);
         setServices(data.config.servicesRequiringApproval || []);
         setExceptions(data.config.coverageExceptions || []);
+      } else {
+        console.error('API returned ok: false');
       }
     } catch (e) {
       console.error('Error loading config:', e);

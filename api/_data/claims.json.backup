@@ -1,0 +1,2741 @@
+{
+  "lastUpdated": "2025-11-11T14:47:00Z",
+  "claims": [
+    {
+      "id": "OUT7619283",
+      "patientName": "SIFA LUTFI",
+      "doctor": "Dr. Hassan Abou Tafish",
+      "department": "Emergency Department",
+      "status": "Manual Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 16,
+      "checklistFailed": 3,
+      "checklistTotal": 19,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7619283",
+          "patientName": "SIFA LUTFI",
+          "guestFileNo": "ACP0905",
+          "qid": "28476000130",
+          "memberNo": "MEM24162433",
+          "dob": "28/08/1984",
+          "gender": "Female",
+          "telNo": "60004223",
+          "nationality": "Republic of Turkiye",
+          "doctor": "Dr. Hassan Abou Tafish",
+          "department": "Emergency Department",
+          "visitDate": "19/07/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000064",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - QATAR UNIVERSITY (P+)",
+          "diagnosis": "M54.6 Pain in thoracic spine",
+          "chiefComplaint": "right upper back pain, shortness of breath when moving, pain in right upper abdomen since 1 week on / off",
+          "clinicalFindings": "heart normal, chest clear, abdomen soft, pain in right upper abdomen",
+          "vitals": {
+            "bp": "112/79 mmHg",
+            "pulse": "79",
+            "respRate": "20",
+            "temperature": "37.4",
+            "painScale": "4"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Hussein AlHallak",
+          "regDateTime": "19/07/2025 12:23 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7619283",
+          "invoiceDate": "19/07/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 01:09 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "19/07/2025",
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "50.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "335.00"
+            },
+            {
+              "no": "2",
+              "date": "19/07/2025",
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1.00",
+              "dv": "140.00",
+              "ndv": "-",
+              "totalInvoice": "140.00",
+              "guestShare": "-",
+              "companyDiscount": "(32.20)",
+              "companyShare": "107.80"
+            },
+            {
+              "no": "3",
+              "date": "19/07/2025",
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1.00",
+              "dv": "115.00",
+              "ndv": "-",
+              "totalInvoice": "115.00",
+              "guestShare": "-",
+              "companyDiscount": "(26.45)",
+              "companyShare": "88.55"
+            },
+            {
+              "no": "4",
+              "date": "19/07/2025",
+              "code": "LAB00294",
+              "description": "Creatinine, Serum or Plasma",
+              "qty": "1.00",
+              "dv": "70.00",
+              "ndv": "-",
+              "totalInvoice": "70.00",
+              "guestShare": "-",
+              "companyDiscount": "(16.10)",
+              "companyShare": "53.90"
+            },
+            {
+              "no": "5",
+              "date": "19/07/2025",
+              "code": "LAB00230",
+              "description": "Liver Function Tests (Bili, ALP, TP, Alb, ALT, AST)",
+              "qty": "1.00",
+              "dv": "450.00",
+              "ndv": "-",
+              "totalInvoice": "450.00",
+              "guestShare": "-",
+              "companyDiscount": "(103.50)",
+              "companyShare": "346.50"
+            },
+            {
+              "no": "6",
+              "date": "19/07/2025",
+              "code": "USSX0002",
+              "description": "Radiology - U/S Abdomen & Pelvis",
+              "qty": "1.00",
+              "dv": "700.00",
+              "ndv": "-",
+              "totalInvoice": "700.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "539.00"
+            },
+            {
+              "no": "7",
+              "date": "19/07/2025",
+              "code": "USSX0042",
+              "description": "Radiology - U/S Soft Tissue",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "385.00"
+            },
+            {
+              "no": "8",
+              "date": "19/07/2025",
+              "code": "XRAY0015",
+              "description": "Radiology - Digital X-Ray Chest (Two Views)",
+              "qty": "1.00",
+              "dv": "320.00",
+              "ndv": "-",
+              "totalInvoice": "320.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "246.40"
+            },
+            {
+              "no": "9",
+              "date": "19/07/2025",
+              "code": "MED040217",
+              "description": "DICLOFENAC 2% (VOLTAREN) EMULGEL 100G - TB100",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "63.00",
+              "totalInvoice": "63.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "63.00"
+            },
+            {
+              "no": "10",
+              "date": "19/07/2025",
+              "code": "MED100025",
+              "description": "ORPHENADRINE35MG+ PARACETAMOL 450MG TAB ( MYOGESIC ) - BX20",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "8.00",
+              "totalInvoice": "8.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "8.00"
+            },
+            {
+              "no": "11",
+              "date": "19/07/2025",
+              "code": "MED100030",
+              "description": "CELECOXIB 200 MG CAP ( CELEBREX ) - BX30",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "79.00",
+              "totalInvoice": "79.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "79.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "2,945.00",
+            "grossAmount": "2,945.00",
+            "companyDiscount": "50.00",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "2,895.00",
+            "companyShare": "2,252.15"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090471336",
+          "preApprovalStatus": "Partial Approved",
+          "appliedDate": "19/07/2025 14:29",
+          "approvalDate": "19/07/2025 15:02",
+          "printDate": "19/07/2025 15:05",
+          "insuredName": "SIFA LUTFI",
+          "memberId": "MEM24162433",
+          "ageGender": "40 Y Female",
+          "medicalRecordNo": "ACP0905",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar University",
+          "policyNo": "P2409000064",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "19/07/2025",
+          "admissionType": "Illness",
+          "illness": "Acute",
+          "facility": "Emergency Medicine",
+          "doctor": "Dr. Hassan Abou Tafish",
+          "primaryDiagnosis": "Pain in thoracic spine",
+          "aboutPresentIllness": "right upper back pain, shortness of breath when moving, pain in right upper abdomen since 1 week on / off",
+          "currency": "QAR",
+          "benefit": "Basic",
+          "subBenefit": "Basic",
+          "coIns": "50",
+          "deductible": "50 QAR",
+          "totalEstimatedAmount": "2,945.00",
+          "totalApprovedAmount": "2,235.00",
+          "approvals": [
+            {
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1",
+              "estAmt": "115.00",
+              "apprAmt": "115.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00230",
+              "description": "Liver Function Tests (Bili, ALP, TP, Alb, ALT, AST)",
+              "qty": "1",
+              "estAmt": "450.00",
+              "apprAmt": "240.00",
+              "status": "Partial Approved",
+              "remarks": "Approved for LAB00231-Liver Enzymes Profile (ALT,AST,ALP) only"
+            },
+            {
+              "code": "XRAY0015",
+              "description": "Radiology - Digital X-Ray Chest (Two Views)",
+              "qty": "1",
+              "estAmt": "320.00",
+              "apprAmt": "320.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00294",
+              "description": "Creatinine, Serum or Plasma",
+              "qty": "1",
+              "estAmt": "70.00",
+              "apprAmt": "70.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1",
+              "estAmt": "140.00",
+              "apprAmt": "140.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "USSX0002",
+              "description": "Radiology - U/S Abdomen & Pelvis",
+              "qty": "1",
+              "estAmt": "700.00",
+              "apprAmt": "700.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "USSX0042",
+              "description": "Radiology - U/S Soft Tissue",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "0.00",
+              "status": "Rejected",
+              "remarks": "Non indicated service as per submitted data"
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED1940",
+              "description": "ORPHENADRINE35MG+ PARACETAMOL 450MG TAB ( MYOGESIC ) - BX20",
+              "qty": "1",
+              "estAmt": "8.00",
+              "apprAmt": "8.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED3911",
+              "description": "DICLOFENAC 2% (VOLTAREN) EMULGEL 100G - TB100",
+              "qty": "1",
+              "estAmt": "63.00",
+              "apprAmt": "63.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED2114",
+              "description": "CELECOXIB 200 MG CAP ( CELEBREX ) - BX30",
+              "qty": "1",
+              "estAmt": "79.00",
+              "apprAmt": "79.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "All patient demographics present: Name (SIFA LUTFI), DOB (28/08/1984), Member No (MEM24162433), File No (ACP0905), Provider (Al Ahli Hospital), Clinic (Emergency Department), Date (19/07/2025) and diagnosis (M54.6) clearly stated.",
+              "confidence": 0.95,
+              "manualOverride": false
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "Diagnosis code M54.6 is not in the list of codes requiring pre-approval.",
+              "confidence": 0.92,
+              "manualOverride": false
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "All service codes billed are either approved or not requiring approval as per the admin list.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "Total claim value of 2,945.00 is below the policy threshold.",
+              "confidence": 0.88,
+              "manualOverride": false
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "Approval document is present and valid.",
+              "confidence": 0.95,
+              "manualOverride": false
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Obtained Prior to Service Date",
+              "status": "pass",
+              "reason": "Approval date (19/07/2025 15:02) is on the same day as the service date (19/07/2025).",
+              "confidence": 0.93,
+              "manualOverride": false
+            },
+            {
+              "id": "ap2",
+              "title": "All Services Billed Are Approved",
+              "status": "fail",
+              "reason": "Service USSX0042 (Radiology - U/S Soft Tissue) is rejected and not approved.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "ap3",
+              "title": "Partial Approvals and Remarks Check",
+              "status": "pass",
+              "reason": "Partial approval for LAB00230 is noted with remarks indicating limited approval.",
+              "confidence": 0.85,
+              "manualOverride": false
+            },
+            {
+              "id": "ap4",
+              "title": "Co-pay/Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "Deductible of 50 QAR is reflected in the approval and invoice.",
+              "confidence": 0.89,
+              "manualOverride": false
+            },
+            {
+              "id": "ap5",
+              "title": "Approval Validity Period",
+              "status": "pass",
+              "reason": "All services are within the 21-day validity period from the approval date.",
+              "confidence": 0.92,
+              "manualOverride": false
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Services Only",
+              "status": "fail",
+              "reason": "Invoice includes USSX0042 which is not approved.",
+              "confidence": 0.9,
+              "manualOverride": false
+            },
+            {
+              "id": "inv2",
+              "title": "Approved vs Charged Amounts Match",
+              "status": "pass",
+              "reason": "Approved amounts match the billed amounts for all approved services.",
+              "confidence": 0.87,
+              "manualOverride": false
+            },
+            {
+              "id": "inv3",
+              "title": "Discounts and Company Share Accurate",
+              "status": "pass",
+              "reason": "Company discount applied correctly as per invoice.",
+              "confidence": 0.86,
+              "manualOverride": false
+            },
+            {
+              "id": "inv4",
+              "title": "Deductible Reflected in Invoice",
+              "status": "pass",
+              "reason": "Deductible of 50 QAR is reflected in the invoice.",
+              "confidence": 0.88,
+              "manualOverride": false
+            },
+            {
+              "id": "inv5",
+              "title": "Submission Within 60-day Limit",
+              "status": "pass",
+              "reason": "Invoice date (19/07/2025) is within the 60-day limit for submission.",
+              "confidence": 0.94,
+              "manualOverride": false
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "All Approved Investigations Billed",
+              "status": "pass",
+              "reason": "All approved investigations are included in the invoice.",
+              "confidence": 0.89,
+              "manualOverride": false
+            },
+            {
+              "id": "iv2",
+              "title": "No Unapproved Investigations Billed",
+              "status": "fail",
+              "reason": "Invoice includes USSX0042 which is unapproved.",
+              "confidence": 0.91,
+              "manualOverride": false
+            },
+            {
+              "id": "iv3",
+              "title": "Investigation Date Matches Service Date",
+              "status": "pass",
+              "reason": "All investigation dates match the service date (19/07/2025).",
+              "confidence": 0.87,
+              "manualOverride": false
+            },
+            {
+              "id": "iv4",
+              "title": "Investigation Cost Aligns with Contract",
+              "status": "pass",
+              "reason": "Investigation costs align with the agreed contract rates.",
+              "confidence": 0.82,
+              "manualOverride": false
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7619283 CF.pdf"
+        },
+        {
+          "name": "OUT7619283 Invoice.pdf"
+        },
+        {
+          "name": "OUT7619283  ACP0905 PArtial approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7617392",
+      "patientName": "FATIMA AUWIDHA A S ALAHBABI",
+      "doctor": "Dr. Ettihad Abbas",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7617392",
+          "patientName": "FATIMA AUWIDHA A S ALAHBABI",
+          "guestFileNo": "ABC8061",
+          "qid": "28678400040",
+          "memberNo": "MEM25001413",
+          "dob": "21/03/1986",
+          "gender": "Female",
+          "telNo": "55090212",
+          "nationality": "QATAR",
+          "doctor": "Dr. Ettihad Abbas",
+          "department": "Emergency Department",
+          "visitDate": "16/07/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000073-16",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - FAMILY CONSULTING CENTER (P)",
+          "diagnosis": "THREATENED ABORTION INJ.PROLUTION",
+          "chiefComplaint": "THREATENED ABORTION INJ.PROLUTION",
+          "clinicalFindings": "",
+          "vitals": {
+            "bp": "0/0 mmHg",
+            "pulse": "",
+            "respRate": "0",
+            "temperature": "",
+            "painScale": "0"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Ismaila Touray",
+          "regDateTime": "16/07/2025 08:41 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7617392",
+          "invoiceDate": "16/07/2025",
+          "dischargeDate": "-",
+          "printedBy": "KHALILS",
+          "printingDateTime": "09/10/2025 04:44 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "16/07/2025",
+              "code": "CON0087",
+              "description": "Procedure - consultation",
+              "qty": "1.00",
+              "dv": "-",
+              "ndv": "-",
+              "totalInvoice": "-",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            },
+            {
+              "no": "2",
+              "date": "16/07/2025",
+              "code": "SRV0043",
+              "description": "Injection - Intra Muscular",
+              "qty": "1.00",
+              "dv": "50.00",
+              "ndv": "-",
+              "totalInvoice": "50.00",
+              "guestShare": "(11.50)",
+              "companyDiscount": "-",
+              "companyShare": "38.50"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "50.00",
+            "grossAmount": "50.00",
+            "companyDiscount": "(11.50)",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "38.50",
+            "companyShare": "38.50"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090475196",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "21/07/2025 08:34",
+          "approvalDate": "21/07/2025 08:37",
+          "printDate": "21/07/2025 08:41",
+          "insuredName": "FATIMA AUWIDHA",
+          "memberId": "MEM25001413",
+          "ageGender": "39 Y Female",
+          "medicalRecordNo": "ABC8061",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Family Consulting Center",
+          "policyNo": "P2409000073-16",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "16/07/2025",
+          "admissionType": "",
+          "illness": "Acute",
+          "facility": "Emergency Medicine",
+          "doctor": "ETTIHAD ABBAS",
+          "primaryDiagnosis": "Threatened abortion",
+          "aboutPresentIllness": "THREATENED ABORTION INJ.PROLUTION",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "0%",
+          "deductible": "NA",
+          "totalEstimatedAmount": "50.00",
+          "totalApprovedAmount": "50.00",
+          "approvals": [
+            {
+              "code": "SRV0043",
+              "description": "Injection - Intra Muscular (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "50.00",
+              "apprAmt": "50.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "CON0087",
+              "description": "Procedure - consultation (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "0.00",
+              "apprAmt": "0.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": ""
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7617392-CLAIM FORM.pdf"
+        },
+        {
+          "name": "OUT7617392-INVOICE.pdf"
+        },
+        {
+          "name": "OUT7617392-APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7669005",
+      "patientName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+      "doctor": "Dr. Dalila Znimi",
+      "department": "Emergency Department",
+      "status": "Manual Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 9,
+      "checklistFailed": 4,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7669005",
+          "patientName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+          "guestFileNo": "ABD6457",
+          "qid": "28963402506",
+          "memberNo": "MEM22197281",
+          "dob": "25/11/1989",
+          "gender": "Female",
+          "telNo": "66737323",
+          "nationality": "QATAR",
+          "doctor": "Dr. Dalila Znimi",
+          "department": "Emergency Department",
+          "visitDate": "31/08/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2109000119-R3",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - ASPIRE ZONE (Premier Plus)",
+          "diagnosis": "O02.1 Missed abortion",
+          "chiefComplaint": "12 WEEKS BY EDD 16/3 was told that there was no fetal heart from private clinic came for confirmation no pain no bleeding p/v BG A POSITIVE",
+          "clinicalFindings": "TAS SLF 11W+5D by CRL NO FH NO FM",
+          "vitals": {
+            "bp": "105/83 mmHg",
+            "pulse": "92",
+            "respRate": "19",
+            "temperature": "36.5",
+            "painScale": "0"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Abdallah Ibrahim",
+          "regDateTime": "31/08/2025 08:47 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7669005",
+          "invoiceDate": "31/08/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 01:06 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "31/08/2025",
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "275.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "110.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "500.00",
+            "grossAmount": "275.00",
+            "companyDiscount": "-",
+            "finTRS": "-",
+            "guestPayments": "(400.00)",
+            "refunds": "-",
+            "amountDue": "(125.00)",
+            "companyShare": "225.00"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090560232",
+          "preApprovalStatus": "Rejected",
+          "appliedDate": "31/08/2025 21:37",
+          "approvalDate": "31/08/2025 21:55",
+          "printDate": "31/08/2025 22:00",
+          "insuredName": "MARYAM MOHAMMED R H AL-MUDAHKA",
+          "memberId": "MEM22197281",
+          "ageGender": "35 Y Female",
+          "medicalRecordNo": "ABD6457",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Aspire Zone",
+          "policyNo": "P2109000119-R3",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "31/08/2025",
+          "admissionType": "",
+          "illness": "Acute",
+          "facility": "Obstetrics and Gynecology",
+          "doctor": "Dr. Dalila Znimi",
+          "primaryDiagnosis": "Missed abortion",
+          "aboutPresentIllness": "12 WEEKS BY EDD 16/3 was told that there was no fetal heart from private clinic came for confirmation no pain no bleeding p/v BG A POSITIVE",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "30%",
+          "deductible": "NIL",
+          "totalEstimatedAmount": "500.00",
+          "totalApprovedAmount": "0.00",
+          "approvals": [
+            {
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics(Benefit Overall Limit Check)",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "0.00",
+              "status": "Rejected",
+              "remarks": "Benefit Overall Limit Check"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "fail",
+              "reason": "Claim value exceeds policy limits."
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "fail",
+              "reason": "Pre-approval was rejected."
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "fail",
+              "reason": "Approval document indicates rejection."
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "fail",
+              "reason": "Invoice reflects rejected services."
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": ""
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": ""
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7669005  CF.pdf"
+        },
+        {
+          "name": "OUT7669005  OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7669005  REJECTION.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7670993",
+      "patientName": "HEBAH ABUEITAH",
+      "doctor": "Dr. Ettihad Abbas",
+      "department": "Labor and Delivery",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7670993",
+          "patientName": "HEBAH ABUEITAH",
+          "guestFileNo": "AAU4700",
+          "qid": "QID-28540000753",
+          "memberNo": "MEM24217742",
+          "dob": "19/08/1985",
+          "gender": "Female",
+          "telNo": "66530588",
+          "nationality": "JORDAN",
+          "doctor": "Dr. Ettihad Abbas",
+          "department": "Labor and Delivery",
+          "visitDate": "02/09/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000073",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "Labor and Delivery",
+          "diagnosis": "O09.893 - Supervision of other high risk pregnancies, third trimester",
+          "chiefComplaint": "lady 40 years old , G6P2A3 at 37W6D of pregnancy with mild labor pain , decrease fetal movements since 4-5 days + minimal brown vaginal spotting today",
+          "clinicalFindings": "g/c stable vitals stable afebrile p/a soft abdomen , 38 weeks of pregnancy , no tenderness p/v no bleeding , no leaking PV: cx 1 cm . posterior and high , no effacement CTG reactive , no contractions",
+          "vitals": {
+            "bp": "121/76 mmHg",
+            "pulse": "70",
+            "respRate": "20",
+            "temperature": "36.6",
+            "painScale": "-"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "PILOTINB",
+          "regDateTime": "02/09/2025 10:50 AM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7670993",
+          "invoiceDate": "13/10/2025",
+          "dischargeDate": "-",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 12:52 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "02/09/2025",
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "-",
+              "companyDiscount": "(115.00)",
+              "companyShare": "500.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "500.00",
+            "grossAmount": "385.00",
+            "companyDiscount": "(115.00)",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "500.00",
+            "companyShare": "500.00",
+            "patientShare": "-"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090569215",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "04/09/2025 11:48",
+          "approvalDate": "04/09/2025 11:50",
+          "printDate": "04/09/2025 11:55",
+          "insuredName": "HIBA ABDEL RAHMAN ABU AITA",
+          "memberId": "MEM24217742",
+          "ageGender": "40 Y / Female",
+          "medicalRecordNo": "AAU4700",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar Foundation",
+          "policyNo": "P2409000073",
+          "type": "Out-Patient",
+          "priority": "NORMAL",
+          "admissionDate": "03/09/2025",
+          "admissionType": "-",
+          "illness": "Acute",
+          "facility": "Obstetrics and Gynecology",
+          "doctor": "Dr. Priyanka Shah",
+          "primaryDiagnosis": "Supervision of other high risk pregnancies, third trimester",
+          "aboutPresentIllness": "lady 40 years old , G6P2A3 at 37W6D of pregnancy with mild labor pain , decrease fetal movements since 4-5 days + minimal pink vaginal spotting today",
+          "currency": "QAR",
+          "benefit": "Maternity",
+          "subBenefit": "Maternity",
+          "coIns": "0%",
+          "deductible": "NA",
+          "totalEstimatedAmount": "500.00",
+          "totalApprovedAmount": "500.00",
+          "approvals": [
+            {
+              "code": "CON0018",
+              "description": "Consultation - Obstetrics (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": "-"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7670993 CF.pdf"
+        },
+        {
+          "name": "OUT7670993 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7670993 -Approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7234851",
+      "patientName": "AISHA ALI A A AL-MUHANNADI",
+      "doctor": "Dr. Fuad Hussain Yahya",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7234851",
+          "patientName": "AISHA ALI A A AL-MUHANNADI",
+          "guestFileNo": "ACJ7924",
+          "qid": "31963407118",
+          "memberNo": "MEM22016059",
+          "dob": "16/12/2019",
+          "gender": "Female",
+          "telNo": "66670216",
+          "nationality": "QATAR",
+          "doctor": "Dr. Fuad Hussain Yahya",
+          "department": "Emergency Department",
+          "visitDate": "09/10/2024",
+          "visitType": "Emergency",
+          "policyNo": "P2209000012-R2",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "diagnosis": "J11.8 Influenza with other manifestations, virus not identified",
+          "chiefComplaint": "URTI fever X days cough",
+          "clinicalFindings": "Unwell Afebrile no dyspnea no RD, head and neck....runny nose, congested throat and enlarged tonsils .. CHEST...GAEB.no wheezes no creps HERAT......regular s1-s2 no murmur ABDOMEN ....... no organo megaly, soft and lax CNS.......INACT",
+          "vitals": {
+            "bp": "0/0 mmHg",
+            "pulse": "82",
+            "respRate": "24",
+            "temperature": "36.7",
+            "painScale": "-"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Visal Vijayan Santha",
+          "regDateTime": "09/10/2024 08:01 AM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7234851",
+          "invoiceDate": "13/10/2025",
+          "dischargeDate": "09/10/2024",
+          "printedBy": "PILOTINB",
+          "printingDateTime": "13/10/2025 12:11 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "09/10/2024",
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1.00",
+              "dv": "500.00",
+              "ndv": "-",
+              "totalInvoice": "500.00",
+              "guestShare": "50.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "335.00"
+            },
+            {
+              "no": "2",
+              "date": "09/10/2024",
+              "code": "LAB00020",
+              "description": "Influenza A and B Viruses Ag, nasopharyngeal",
+              "qty": "1.00",
+              "dv": "200.00",
+              "ndv": "-",
+              "totalInvoice": "200.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "200.00"
+            },
+            {
+              "no": "3",
+              "date": "09/10/2024",
+              "code": "MED040006",
+              "description": "IBUPROFEN 100 MG/5ML SYRUP ( BRUFEN ) - B100m",
+              "qty": "1.00",
+              "dv": "12.00",
+              "ndv": "-",
+              "totalInvoice": "12.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "12.00"
+            },
+            {
+              "no": "4",
+              "date": "09/10/2024",
+              "code": "MED030143",
+              "description": "LINKUS COUGH SYRUP BOT-90ML",
+              "qty": "1.00",
+              "dv": "30.00",
+              "ndv": "-",
+              "totalInvoice": "30.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "30.00"
+            },
+            {
+              "no": "5",
+              "date": "09/10/2024",
+              "code": "MED050018",
+              "description": "CLARITHROMYCIN PAED SUSP 250 MG (KLACID) - B100m",
+              "qty": "1.00",
+              "dv": "81.00",
+              "ndv": "-",
+              "totalInvoice": "81.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "81.00"
+            },
+            {
+              "no": "6",
+              "date": "09/10/2024",
+              "code": "MED040090",
+              "description": "PARACETAMOL 240MG/5ML CHILD 5-12 YR. SUSP ( PANADOL ) - B100m",
+              "qty": "1.00",
+              "dv": "18.00",
+              "ndv": "-",
+              "totalInvoice": "18.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "18.00"
+            },
+            {
+              "no": "7",
+              "date": "09/10/2024",
+              "code": "MED030032",
+              "description": "DESLORATADINE SYRP (AERIUS) - B150m",
+              "qty": "1.00",
+              "dv": "26.00",
+              "ndv": "-",
+              "totalInvoice": "26.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "26.00"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "867.00",
+            "grossAmount": "867.00",
+            "companyDiscount": "(115.00)",
+            "finTRS": "-",
+            "guestPayments": "(50.00)",
+            "refunds": "-",
+            "amountDue": "200.00",
+            "companyShare": "200.00",
+            "patientShare": "-"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "24090755264",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "10/10/2024 06:58",
+          "approvalDate": "10/10/2024 07:00",
+          "printDate": "10/10/2024 07:03",
+          "insuredName": "AISHA ALI ALMUHANNADI",
+          "memberId": "MEM22016059",
+          "ageGender": "4 Y Female",
+          "medicalRecordNo": "ACJ7924",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar National Bank",
+          "policyNo": "P2209000012-R2",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "09/10/2024",
+          "admissionType": "-",
+          "illness": "Acute",
+          "facility": "Pediatrics",
+          "doctor": "DR.FUAD HUSSAIN YACOUB",
+          "primaryDiagnosis": "Influenza with other manifestations, virus not identified",
+          "aboutPresentIllness": "fever X days cough",
+          "currency": "QAR",
+          "benefit": "Basic",
+          "subBenefit": "Basic",
+          "coIns": "0%",
+          "deductible": "50 QAR",
+          "totalEstimatedAmount": "867.00",
+          "totalApprovedAmount": "867.00",
+          "approvals": [
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00020",
+              "description": "Influenza A and B Viruses Ag, nasopharyngeal (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "200.00",
+              "apprAmt": "200.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED030143",
+              "description": "LINKUS COUGH SYRUP BOT-90ML (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "30.00",
+              "apprAmt": "30.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED040006",
+              "description": "IBUPROFEN 100 MG/5ML SYRUP ( BRUFEN ) - B100m (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "12.00",
+              "apprAmt": "12.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED050018",
+              "description": "PARACETAMOL 240MG/5ML CHILD 5-12 YR. SUSP ( PANADOL ) - B100m (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "18.00",
+              "apprAmt": "18.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED040090",
+              "description": "DESLORATADINE SYRP (AERIUS) - B150m (Tooth No.0)",
+              "qty": "1",
+              "estAmt": "26.00",
+              "apprAmt": "26.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": "-"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7234851 CF.pdf"
+        },
+        {
+          "name": "OUT7234851 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7234851 approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7619463",
+      "patientName": "ALI ABDULAZIZ ALI YAHIA GHALEB",
+      "doctor": "Dr. Marwa Torky",
+      "department": "Emergency Department",
+      "status": "Manual Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 9,
+      "checklistFailed": 4,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7619463",
+          "patientName": "ALI ABDULAZIZ ALI YAHIA GHALEB",
+          "guestFileNo": "ACS4917",
+          "qid": "32188600257",
+          "memberNo": "MEM25039913",
+          "dob": "27/05/2021",
+          "gender": "Male",
+          "telNo": "33380600",
+          "nationality": "YEMEN",
+          "doctor": "Dr. Marwa Torky",
+          "department": "Emergency Department",
+          "visitDate": "19/07/2025",
+          "visitType": "Outpatient",
+          "policyNo": "P2409000073",
+          "insuranceCompany": "QLM Life & Medical Insurance Company",
+          "planName": "QATAR FOUNDATION",
+          "diagnosis": "Other gastroenteritis and colitis of infectious origin",
+          "chiefComplaint": "Not specified",
+          "clinicalFindings": "Not specified",
+          "vitals": {
+            "bp": "Not specified",
+            "pulse": "Not specified",
+            "respRate": "Not specified",
+            "temperature": "Not specified",
+            "painScale": "Not specified"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Generosa Cacas",
+          "regDateTime": "19/07/2025 01:42 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7619463",
+          "invoiceDate": "09/10/2025",
+          "dischargeDate": "19/07/2025",
+          "printedBy": "Not specified",
+          "printingDateTime": "Not specified",
+          "items": [
+            {
+              "no": "1",
+              "date": "19/07/2025",
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1.00",
+              "dv": "50.00",
+              "ndv": "500.00",
+              "totalInvoice": "500.00",
+              "guestShare": "50.00",
+              "companyDiscount": "(115.00)",
+              "companyShare": "425.00"
+            },
+            {
+              "no": "2",
+              "date": "19/07/2025",
+              "code": "MED040154",
+              "description": "PARACETAMOL KABI 10MG/ML IV, 100ML - V100C",
+              "qty": "1.00",
+              "dv": "10.10",
+              "ndv": "10.10",
+              "totalInvoice": "10.10",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "10.10"
+            },
+            {
+              "no": "3",
+              "date": "19/07/2025",
+              "code": "MED040108",
+              "description": "ONDANSETRON 4MG/2ML IM / IV AMP. - AMP-2",
+              "qty": "1.00",
+              "dv": "22.00",
+              "ndv": "22.00",
+              "totalInvoice": "22.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "22.00"
+            },
+            {
+              "no": "4",
+              "date": "19/07/2025",
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1.00",
+              "dv": "140.00",
+              "ndv": "140.00",
+              "totalInvoice": "140.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "140.00"
+            },
+            {
+              "no": "5",
+              "date": "19/07/2025",
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1.00",
+              "dv": "88.55",
+              "ndv": "88.55",
+              "totalInvoice": "88.55",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "88.55"
+            },
+            {
+              "no": "6",
+              "date": "19/07/2025",
+              "code": "LAB00227",
+              "description": "Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)",
+              "qty": "1.00",
+              "dv": "327.25",
+              "ndv": "327.25",
+              "totalInvoice": "327.25",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "327.25"
+            },
+            {
+              "no": "7",
+              "date": "19/07/2025",
+              "code": "MED090085",
+              "description": "SODIUM CHLORIDE 0.9% (NORMAL SALINE) 500ML - B500m",
+              "qty": "1.00",
+              "dv": "6.00",
+              "ndv": "6.00",
+              "totalInvoice": "6.00",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "6.00"
+            },
+            {
+              "no": "8",
+              "date": "19/07/2025",
+              "code": "LAB01171",
+              "description": "Stool, Routine Examination",
+              "qty": "1.00",
+              "dv": "61.60",
+              "ndv": "61.60",
+              "totalInvoice": "61.60",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "61.60"
+            },
+            {
+              "no": "9",
+              "date": "19/07/2025",
+              "code": "LAB01208",
+              "description": "Stool, Rotavirus Antigen",
+              "qty": "1.00",
+              "dv": "115.50",
+              "ndv": "115.50",
+              "totalInvoice": "115.50",
+              "guestShare": "-",
+              "companyDiscount": "-",
+              "companyShare": "115.50"
+            }
+          ],
+          "financialSummary": {
+            "totalInvoice": "2,198.10",
+            "grossAmount": "2,198.10",
+            "companyDiscount": "(496.80)",
+            "finTRS": "-",
+            "guestPayments": "-",
+            "refunds": "-",
+            "amountDue": "1,651.30",
+            "companyShare": "1,857.00",
+            "patientShare": "341.10"
+          }
+        },
+        "Approval": {
+          "preApprovalCode": "25090472809",
+          "preApprovalStatus": "Partial Approved",
+          "appliedDate": "20/07/2025 09:46",
+          "approvalDate": "20/07/2025 11:50",
+          "printDate": "20/07/2025 11:51",
+          "insuredName": "ALI ABDULAZIZ GHALEB",
+          "memberId": "MEM25039913",
+          "ageGender": "4 Y / Male",
+          "medicalRecordNo": "ACS4917",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar Foundation",
+          "policyNo": "P2409000073",
+          "type": "Out-Patient",
+          "priority": "ELECTIVE",
+          "admissionDate": "20/07/2025",
+          "admissionType": "Acute",
+          "illness": "Acute",
+          "facility": "Internal Medicine",
+          "doctor": "OTHERS",
+          "primaryDiagnosis": "Other gastroenteritis and colitis of infectious origin",
+          "aboutPresentIllness": "please see claim",
+          "currency": "QAR",
+          "benefit": "Basic",
+          "subBenefit": "Basic",
+          "coIns": "0%",
+          "deductible": "50 QAR",
+          "totalEstimatedAmount": "2,212.00",
+          "totalApprovedAmount": "1,857.00",
+          "approvals": [
+            {
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": "1",
+              "estAmt": "115.00",
+              "apprAmt": "115.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01198",
+              "description": "Stool, Ova & Parasite-Concentration Method",
+              "qty": "1",
+              "estAmt": "150.00",
+              "apprAmt": "150.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01179",
+              "description": "Stool, Routine Culture & Sensitivity",
+              "qty": "1",
+              "estAmt": "235.00",
+              "apprAmt": "235.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01171",
+              "description": "Stool, Routine Examination",
+              "qty": "1",
+              "estAmt": "80.00",
+              "apprAmt": "80.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01208",
+              "description": "Stool, Rotavirus Antigen",
+              "qty": "1",
+              "estAmt": "150.00",
+              "apprAmt": "150.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB00227",
+              "description": "Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)(Additional Info Required-- approved for creatinine)",
+              "qty": "1",
+              "estAmt": "425.00",
+              "apprAmt": "70.00",
+              "status": "Partial Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "SRV0095",
+              "description": "Injection - Simply I.V Injection",
+              "qty": "1",
+              "estAmt": "50.00",
+              "apprAmt": "50.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "SRV0094",
+              "description": "Injection - I.V Injection with fluid",
+              "qty": "1",
+              "estAmt": "75.00",
+              "apprAmt": "75.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": "1",
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "EMG0021",
+              "description": "Administration Of I/V Fluids",
+              "qty": "1",
+              "estAmt": "175.00",
+              "apprAmt": "175.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": "1",
+              "estAmt": "140.00",
+              "apprAmt": "140.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "LAB01293",
+              "description": "Urinalysis, Complete",
+              "qty": "1",
+              "estAmt": "65.00",
+              "apprAmt": "65.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED2796",
+              "description": "0.9% SODIUM CHLORIDE INTRAVENOUS INFUSION BP 9 MG/ML 500ML",
+              "qty": "1",
+              "estAmt": "6.00",
+              "apprAmt": "6.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED040108",
+              "description": "ONDANSETRON 4MG/2ML IM / IV AMP. - AMP-2",
+              "qty": "1",
+              "estAmt": "33.60",
+              "apprAmt": "33.60",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED040154",
+              "description": "PARACETAMOL KABI 10MG/ML IV, 100ML - V100C",
+              "qty": "1",
+              "estAmt": "12.40",
+              "apprAmt": "12.40",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "fail",
+              "reason": "Diagnosis requires approval but missing approval document"
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "fail",
+              "reason": "Missing pre-approval code"
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "fail",
+              "reason": "Service LAB00227 in claim but not in approval"
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "fail",
+              "reason": "Amount mismatch for service LAB00227"
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": "-"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7619463  CF.pdf"
+        },
+        {
+          "name": "OUT7619463 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7619463 partial approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7648797",
+      "patientName": "RAHMA NABEL MAHMOUD YOUNIS ELMASRY",
+      "doctor": "Dr. Tarek Al Shukor",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "10/11/2025",
+      "checklistPassed": 13,
+      "checklistFailed": 0,
+      "checklistTotal": 13,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7648797",
+          "patientName": "RAHMA NABEL MAHMOUD YOUNIS ELMASRY",
+          "guestFileNo": "ABM4835",
+          "qid": "30999900440",
+          "memberNo": "MEM24155694",
+          "dob": "29/12/2009",
+          "gender": "Female",
+          "telNo": "66061616",
+          "nationality": "PALESTINE",
+          "doctor": "Dr. Tarek Al Shukor",
+          "department": "Emergency Department",
+          "visitDate": "15/08/2025",
+          "visitType": "Emergency",
+          "policyNo": "P2409000064",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "planName": "QLM - QATAR UNIVERSITY (P+)",
+          "diagnosis": "S61.032A Puncture wound without foreign body of left thumb without damage to nail, initial encounter",
+          "chiefComplaint": "puncture wound on the left thumb x 30 minutes after using the scissor while using it at home",
+          "clinicalFindings": "1 mm puncture wound of the distal phalanx of the left thumb no bleeding no motor defect cleaning and dressing with FUCIDIN tetavax reassessment after 3 days",
+          "vitals": {
+            "bp": "130/70 mmHg",
+            "pulse": "80",
+            "respRate": "20",
+            "temperature": "36.3",
+            "painScale": "-"
+          },
+          "isAdmissionRequired": "No",
+          "registeredBy": "Yassin Rais",
+          "regDateTime": "09/10/2025 04:35 PM"
+        },
+        "Invoice": {
+          "invoiceNo": "OUT7648797",
+          "invoiceDate": "09/10/2025",
+          "dischargeDate": "15/08/2025",
+          "printedBy": "KHALILS",
+          "printingDateTime": "09/10/2025 04:36 PM",
+          "items": [
+            {
+              "no": "1",
+              "date": "15/08/2025",
+              "code": "SRG0001",
+              "description": "Initial Emergency Services",
+              "qty": 1,
+              "dv": "200.00",
+              "ndv": "50.00",
+              "totalInvoice": "500.00",
+              "guestShare": "200.00",
+              "companyDiscount": "50.00",
+              "companyShare": "350.00"
+            },
+            {
+              "no": "2",
+              "date": "15/08/2025",
+              "code": "VCN0015",
+              "description": "Dressing-Simple",
+              "qty": 1,
+              "dv": "150.00",
+              "ndv": "-",
+              "totalInvoice": "200.00",
+              "guestShare": "150.00",
+              "companyDiscount": "-",
+              "companyShare": "50.00"
+            },
+            {
+              "no": "3",
+              "date": "15/08/2025",
+              "code": "MED040057",
+              "description": "TETANUS VACCINE PREF.SYRINGE 0.5ML - (TETAVAX)",
+              "qty": 1,
+              "dv": "24.00",
+              "ndv": "-",
+              "totalInvoice": "24.00",
+              "guestShare": "24.00",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            },
+            {
+              "no": "4",
+              "date": "15/08/2025",
+              "code": "MED130069",
+              "description": "FUSIDIC ACID 2% CREAM 30g ( FUCIDIN ) - TB30G",
+              "qty": 1,
+              "dv": "34.00",
+              "ndv": "-",
+              "totalInvoice": "34.00",
+              "guestShare": "34.00",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            },
+            {
+              "no": "5",
+              "date": "15/08/2025",
+              "code": "MED050149",
+              "description": "IBUPROFEN 600MG / GRANULES (BRUFEN) - BX20",
+              "qty": 1,
+              "dv": "72.00",
+              "ndv": "-",
+              "totalInvoice": "72.00",
+              "guestShare": "72.00",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            },
+            {
+              "no": "6",
+              "date": "15/08/2025",
+              "code": "MED050211",
+              "description": "SEFARIN (CEFDINIR) 300MG CAP -BX10",
+              "qty": 1,
+              "dv": "34.00",
+              "ndv": "-",
+              "totalInvoice": "34.00",
+              "guestShare": "34.00",
+              "companyDiscount": "-",
+              "companyShare": "-"
+            }
+          ],
+          "totalInvoice": "980.00",
+          "grossAmount": "980.00",
+          "companyDiscount": "50.00",
+          "finTRS": "-",
+          "guestPayments": "-",
+          "refunds": "-",
+          "amountDue": "930.00",
+          "companyShare": "350.00",
+          "patientShare": "580.00"
+        },
+        "Approval": {
+          "preApprovalCode": "25090527564",
+          "preApprovalStatus": "Approved",
+          "appliedDate": "17/08/2025 15:48",
+          "approvalDate": "17/08/2025 17:17",
+          "printDate": "17/08/2025 17:19",
+          "insuredName": "RAHMA NABEL M Y ELMASRY",
+          "memberId": "MEM24155694",
+          "ageGender": "15 Y Female",
+          "medicalRecordNo": "ABM4835",
+          "providerName": "Al Ahli Hospital",
+          "policyHolder": "Qatar University",
+          "policyNo": "P2409000064",
+          "type": "Out-Patient",
+          "priority": "URGENT",
+          "admissionDate": "15/08/2025",
+          "admissionType": "-",
+          "illness": "Acute",
+          "facility": "Emergency Medicine",
+          "doctor": "Dr. Al-Shoker Tarek",
+          "primaryDiagnosis": "Pnctr w/o fb of left thumb w/o damage to nail, init",
+          "aboutPresentIllness": "puncture wound on the left thumb x 30 minutes after using the scissor while using it at home",
+          "currency": "QAR",
+          "benefit": "Basic",
+          "subBenefit": "Basic",
+          "coIns": "50",
+          "deductible": "QAR",
+          "totalEstimatedAmount": "980.00",
+          "totalApprovedAmount": "980.00",
+          "approvals": [
+            {
+              "code": "SRG0001",
+              "description": "Dressing-Simple",
+              "qty": 1,
+              "estAmt": "200.00",
+              "apprAmt": "200.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "VCN0015",
+              "description": "TETANUS VACCINE PREF.SYRINGE 0.5ML - (TETAVAX)",
+              "qty": 1,
+              "estAmt": "150.00",
+              "apprAmt": "150.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": 1,
+              "estAmt": "500.00",
+              "apprAmt": "500.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED040057",
+              "description": "FUSIDIC ACID 2% CREAM 30g ( FUCIDIN ) - TB30G",
+              "qty": 1,
+              "estAmt": "24.00",
+              "apprAmt": "24.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED130069",
+              "description": "IBUPROFEN 600MG / GRANULES (BRUFEN) - BX20",
+              "qty": 1,
+              "estAmt": "34.00",
+              "apprAmt": "34.00",
+              "status": "Approved",
+              "remarks": "-"
+            },
+            {
+              "code": "MED050211",
+              "description": "SEFARIN (CEFDINIR) 300MG CAP -BX10",
+              "qty": 1,
+              "estAmt": "72.00",
+              "apprAmt": "72.00",
+              "status": "Approved",
+              "remarks": "-"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR Details and Final Diagnosis Filled",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf2",
+              "title": "Diagnosis Requires Pre-Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf3",
+              "title": "Service Charges Require Approval",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf4",
+              "title": "Total Claim Value Above Policy Threshold",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "cf5",
+              "title": "Approval Availability",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Approval Document Present",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap2",
+              "title": "Approval Lines Match Claim Form",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "ap3",
+              "title": "Partial or Rejected Services Check",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Invoice Matches Approved Items and Amounts",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv2",
+              "title": "Discounts or Deductible Applied Correctly",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "inv3",
+              "title": "Submission Date Within 60-day Limit",
+              "status": "pass",
+              "reason": "-"
+            }
+          ],
+          "Investigation": [
+            {
+              "id": "iv1",
+              "title": "Investigations in Approval vs Invoice Match",
+              "status": "pass",
+              "reason": "-"
+            },
+            {
+              "id": "iv2",
+              "title": "No Duplicate or Missing Entries",
+              "status": "pass",
+              "reason": "-"
+            }
+          ]
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7648797-CLAIM FORM.pdf"
+        },
+        {
+          "name": "OUT7648797-INVOICE.pdf"
+        },
+        {
+          "name": "OUT7648797-APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT7206597",
+      "patientName": "NOOR YOUSSEF G H AL-ROMAIHI",
+      "doctor": "Dr. Ali Mohamed Eldamanhoury",
+      "department": "Emergency Department",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 3,
+      "checklistFailed": 0,
+      "checklistTotal": 3,
+      "aiData": {
+        "Claim": {
+          "claimId": "OUT7206597",
+          "patientName": "NOOR YOUSSEF G H AL-ROMAIHI",
+          "doctor": "Dr. Ali Mohamed Eldamanhoury",
+          "department": "Emergency Department",
+          "visitDate": "2024-09-19",
+          "policyNo": "P2209000046-R2",
+          "insuranceCompany": "Q LIFE & MEDICAL INSURANCE COMPANY (QLM)",
+          "status": "Pending Review"
+        },
+        "Invoice": {
+          "items": [
+            {
+              "code": "LAB01211",
+              "description": "Total-hCG, serum Quantitative",
+              "qty": 1,
+              "amount": 210
+            },
+            {
+              "code": "LAB01120",
+              "description": "C-Reactive Protein (Quantitative)",
+              "qty": 1,
+              "amount": 115
+            },
+            {
+              "code": "LAB00227",
+              "description": "Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)",
+              "qty": 1,
+              "amount": 425
+            },
+            {
+              "code": "SRV0095",
+              "description": "Injection - Simply I.V Injection",
+              "qty": 1,
+              "amount": 50
+            },
+            {
+              "code": "SRV0094",
+              "description": "Injection - I.V Injection with fluid",
+              "qty": 1,
+              "amount": 75
+            },
+            {
+              "code": "CON0065",
+              "description": "Initial Emergency Services",
+              "qty": 1,
+              "amount": 500
+            },
+            {
+              "code": "EMG0021",
+              "description": "Administration Of I/V Fluids",
+              "qty": 1,
+              "amount": 175
+            },
+            {
+              "code": "LAB01283",
+              "description": "CBC with Platelet Count & Automated Differential",
+              "qty": 1,
+              "amount": 140
+            },
+            {
+              "code": "MED040076",
+              "description": "PARACETAMOL KABI 10MG/ML IV, 100ML",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED090085",
+              "description": "SODIUM CHLORIDE 0.9% (NORMAL SALINE) 500ML",
+              "qty": 1,
+              "amount": 33.6
+            },
+            {
+              "code": "MED040108",
+              "description": "ONDANSETRON 4MG/2ML IM / IV AMP.",
+              "qty": 1,
+              "amount": 12.4
+            },
+            {
+              "code": "MED040154",
+              "description": "DEXLANSOPRAZOLE (DEXILANT) 60MG CAP 28'S",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED040208",
+              "description": "PANTOLOC (PANTOPRAZOLE) 40MG IV VIAL-40MG",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED010108",
+              "description": "PARACETAMOL (PANORIX) 500MG TAB, BOX-30",
+              "qty": 1,
+              "amount": 0
+            },
+            {
+              "code": "MED010117",
+              "description": "ITOPRIDE HCL (GANATON) 50MG TAB, 30'S",
+              "qty": 1,
+              "amount": 0
+            }
+          ],
+          "totalAmount": 1190
+        },
+        "Approval": {
+          "approvals": [
+            {
+              "code": "24090672625",
+              "status": "Approved",
+              "date": "2024-09-19"
+            }
+          ]
+        },
+        "Checklist": {
+          "ClaimForm": [
+            {
+              "id": "cf1",
+              "title": "EMR and Final to Wired",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Approval": [
+            {
+              "id": "ap1",
+              "title": "Diagnosis requiring approval",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Invoice": [
+            {
+              "id": "inv1",
+              "title": "Admission date recorded",
+              "status": "pass",
+              "reason": ""
+            }
+          ],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762695489647",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "raw": "{\n  \"Claim\": {\n    \"claimId\": \"OUT7206597\",\n    \"patientName\": \"NOOR YOUSSEF G H AL-ROMAIHI\",\n    \"doctor\": \"Dr. Ali Mohamed Eldamanhoury\",\n    \"department\": \"Emergency Department\",\n    \"visitDate\": \"2024-09-19\",\n    \"policyNo\": \"P2209000046-R2\",\n    \"insuranceCompany\": \"Q LIFE & MEDICAL INSURANCE COMPANY (QLM)\",\n    \"status\": \"Pending Review\"\n  },\n  \"Invoice\": {\n    \"items\": [\n      {\"code\": \"SRV0094\", \"description\": \"Injection - I.V Injection with fluid\", \"qty\": 1, \"amount\": 75.00},\n      {\"code\": \"CON0065\", \"description\": \"Initial Emergency Services\", \"qty\": 1, \"amount\": 500.00},\n      {\"code\": \"LAB01120\", \"description\": \"C-Reactive Protein (Quantitative)\", \"qty\": 1, \"amount\": 115.00},\n      {\"code\": \"SRV0095\", \"description\": \"Injection - Simply I.V Injection\", \"qty\": 1, \"amount\": 50.00},\n      {\"code\": \"LAB00227\", \"description\": \"Renal Profile 1 (Na,K,Cl, Bicab, U, Cr)\", \"qty\": 1, \"amount\": 425.00},\n      {\"code\": \"EMG0021\", \"description\": \"Administration Of I/V Fluids\", \"qty\": 1, \"amount\": 175.00},\n      {\"code\": \"LAB01283\", \"description\": \"CBC with Platelet Count & Automated Differential\", \"qty\": 1, \"amount\": 140.00},\n      {\"code\": \"LAB01211\", \"description\": \"Total-hCG, serum Quantitative\", \"qty\": 1, \"amount\": 210.00}\n    ],\n    \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"totalAmount\": 1,  \"total"
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694754242",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7206597",
+        "Invoice": "OUT7206597 INVOICE.pdf",
+        "Approval": "OUT7206597 OLD APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694533226",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7206597",
+        "Invoice": "OUT7206597 INVOICE.pdf",
+        "Approval": "OUT7206597 OLD APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762694374878",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": {
+            "FileName": "OUT7206597 CF.pdf",
+            "CreationDate": "2025-10-13T09:17:11"
+          },
+          "Invoice": {
+            "FileName": "OUT7206597 INVOICE.pdf",
+            "CreationDate": "2025-10-13T09:16:40"
+          },
+          "Approval": {
+            "FileName": "OUT7206597 OLD APPROVAL.pdf",
+            "CreationDate": "Unknown"
+          }
+        },
+        "Invoice": {
+          "InvoiceDetails": {
+            "FileName": "OUT7206597 INVOICE.pdf",
+            "CreationDate": "2025-10-13T09:16:40"
+          }
+        },
+        "Approval": {
+          "ApprovalDetails": {
+            "FileName": "OUT7206597 OLD APPROVAL.pdf",
+            "CreationDate": "Unknown"
+          }
+        },
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7206597 CF.pdf"
+        },
+        {
+          "name": "OUT7206597 INVOICE.pdf"
+        },
+        {
+          "name": "OUT7206597 OLD APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693977554",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Invoice": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Approval": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        },
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7670993 CF.pdf"
+        },
+        {
+          "name": "OUT7670993 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7670993 -Approval.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693516548",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": {
+          "ClaimForm": "OUT7637150-CLAIM FORM.pdf",
+          "Invoice": "OUT7637150-INVOICE.pdf",
+          "Approval": "OUT7637150-APPROVAL.pdf",
+          "Checklist": {
+            "ClaimForm": [],
+            "Approval": [],
+            "Invoice": [],
+            "Investigation": []
+          }
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7637150-CLAIM FORM.pdf"
+        },
+        {
+          "name": "OUT7637150-INVOICE.pdf"
+        },
+        {
+          "name": "OUT7637150-APPROVAL.pdf"
+        }
+      ]
+    },
+    {
+      "id": "OUT-1762693319390",
+      "patientName": "Unknown",
+      "doctor": "Unknown",
+      "department": "—",
+      "status": "Pending Review",
+      "uploadedBy": "Claims Processor",
+      "uploadedOn": "09/11/2025",
+      "checklistPassed": 0,
+      "checklistFailed": 0,
+      "checklistTotal": 0,
+      "aiData": {
+        "Claim": "OUT7316563",
+        "Invoice": "OUT7316563 OLD INVOICE.pdf",
+        "Approval": "OUT7316563 APPROVAL.pdf",
+        "Checklist": {
+          "ClaimForm": [],
+          "Approval": [],
+          "Invoice": [],
+          "Investigation": []
+        }
+      },
+      "files": [
+        {
+          "name": "OUT7316563 CF.pdf"
+        },
+        {
+          "name": "OUT7316563 OLD INVOICE.pdf"
+        },
+        {
+          "name": "OUT7316563 APPROVAL.pdf"
+        }
+      ]
+    }
+  ]
+}

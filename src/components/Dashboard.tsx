@@ -11,9 +11,10 @@ interface DashboardProps {
   onViewClaim: (claimId: string) => void;
   onNavigate: (page: string) => void;
   onClaimCreated: (c: Claim) => void;
+  onDeleteClaim?: (claimId: string) => void;
 }
 
-export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: DashboardProps) {
+export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated, onDeleteClaim }: DashboardProps) {
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
@@ -90,7 +91,7 @@ export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: D
 
       {/* Scrollable Claims Table */}
       <div className="flex-1 overflow-auto min-w-0">
-        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} />
+        <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} onDeleteClaim={onDeleteClaim} />
       </div>
 
       {/* Fixed Footer Actions */}
