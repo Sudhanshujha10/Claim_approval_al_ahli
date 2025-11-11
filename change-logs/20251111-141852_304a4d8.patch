@@ -1,0 +1,74 @@
+diff --git a/.env.production b/.env.production
+new file mode 100644
+index 0000000..1d15fec
+--- /dev/null
++++ b/.env.production
+@@ -0,0 +1 @@
++VITE_API_URL=https://claim-approval-al-ahli-1.onrender.com
+diff --git a/.gitignore b/.gitignore
+index 815da18..c784569 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -19,10 +19,11 @@ pnpm-debug.log*
+ .vscode/
+ .idea/
+ 
+-# Env (but allow .env.example)
++# Env (but allow .env.example and .env.production)
+ .env
+ .env.*
+ !.env.example
++!.env.production
+ 
+ # Husky
+ .husky/_/
+diff --git a/src/components/AdminConfig.tsx b/src/components/AdminConfig.tsx
+index 7d59c47..ebdd7a8 100644
+--- a/src/components/AdminConfig.tsx
++++ b/src/components/AdminConfig.tsx
+@@ -16,6 +16,9 @@ import { Input } from "./ui/input";
+ import { Label } from "./ui/label";
+ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+ 
++// Use environment variable for backend API URL
++const BASE_URL = import.meta.env.VITE_API_URL || "";
++
+ export function AdminConfig() {
+   const [addDialogOpen, setAddDialogOpen] = useState(false);
+   const [dialogType, setDialogType] = useState<"diagnosis" | "service" | "exception" | "contact">("diagnosis");
+@@ -35,7 +38,7 @@ export function AdminConfig() {
+   async function loadConfig() {
+     try {
+       setLoading(true);
+-      const response = await fetch('/api/admin/config');
++      const response = await fetch(`${BASE_URL}/api/admin/config`);
+       const data = await response.json();
+       if (data.ok) {
+         setDiagnosisCodes(data.config.diagnosisCodesRequiringApproval || []);
+@@ -51,7 +54,7 @@ export function AdminConfig() {
+ 
+   async function saveServices(updatedServices: any[]) {
+     try {
+-      const response = await fetch('/api/admin/services', {
++      const response = await fetch(`${BASE_URL}/api/admin/services`, {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ services: updatedServices })
+@@ -67,7 +70,7 @@ export function AdminConfig() {
+ 
+   async function saveDiagnosisCodes(updatedCodes: any[]) {
+     try {
+-      const response = await fetch('/api/admin/diagnosis-codes', {
++      const response = await fetch(`${BASE_URL}/api/admin/diagnosis-codes`, {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ codes: updatedCodes })
+@@ -83,7 +86,7 @@ export function AdminConfig() {
+ 
+   async function saveExceptions(updatedExceptions: any[]) {
+     try {
+-      const response = await fetch('/api/admin/coverage-exceptions', {
++      const response = await fetch(`${BASE_URL}/api/admin/coverage-exceptions`, {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ exceptions: updatedExceptions })

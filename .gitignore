@@ -19,10 +19,11 @@ pnpm-debug.log*
 .vscode/
 .idea/
 
-# Env (but allow .env.example)
+# Env (but allow .env.example and .env.production)
 .env
 .env.*
 !.env.example
+!.env.production
 
 # Husky
 .husky/_/
