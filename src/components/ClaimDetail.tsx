@@ -15,7 +15,6 @@ import {
   XCircle, 
   AlertTriangle, 
   Search,
-  FileText,
   Lightbulb,
   RefreshCw
 } from "lucide-react";
@@ -37,7 +36,6 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   const [showLowConfidence, setShowLowConfidence] = useState(false);
   const [isRevalidating, setIsRevalidating] = useState(false);
   const [localAiData, setLocalAiData] = useState((claim as any).aiData || {});
-  const [pdfPreview, setPdfPreview] = useState<string | null>(null);
   const [isApproving, setIsApproving] = useState(false);
 
   // Extract AI data - use local state for real-time updates
@@ -296,9 +294,9 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 min-h-0 flex overflow-hidden max-w-full">
-        {/* Left Side - Tabs Content with Scrolling */}
-        <div className="flex-1 overflow-auto min-w-0 max-w-full">
+      <div className="flex-1 min-h-0 overflow-hidden max-w-full">
+        {/* Full Width - Tabs Content with Scrolling */}
+        <div className="w-full overflow-auto min-w-0 max-w-full">
           <Tabs defaultValue="claim-form" className="p-6 max-w-full">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
@@ -879,128 +877,6 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
               </Card>
             </TabsContent>
           </Tabs>
-        </div>
-
-        {/* Right Side - Fixed Document Viewer Sidebar */}
-        <div className="w-96 border-l bg-white overflow-y-auto shrink-0">
-          <div className="p-4 space-y-4">
-            <div className="space-y-4">
-              <h3>Document Previewer</h3>
-              
-              {/* Claim Form PDF */}
-              <div className="border rounded-lg overflow-hidden">
-                <button 
-                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
-                  onClick={() => {
-                    const claimFormFile = (claim as any).files?.find((f: any) => 
-                      f.name?.toLowerCase().includes('claim') || f.name?.toLowerCase().includes('form')
-                    );
-                    if (claimFormFile?.filePath) {
-                      setPdfPreview(`http://localhost:3001${claimFormFile.filePath}`);
-                    } else {
-                      alert('Claim Form PDF not found');
-                    }
-                  }}
-                >
-                  <FileText className="h-4 w-4" />
-                  <span className="text-sm">Claim Form PDF</span>
-                </button>
-                {pdfPreview && pdfPreview.includes('claim') || pdfPreview?.includes('form') ? (
-                  <iframe 
-                    src={pdfPreview} 
-                    className="w-full h-96"
-                    title="Claim Form PDF"
-                  />
-                ) : (
-                  <div className="h-48 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <FileText className="h-12 w-12 mx-auto mb-2" />
-                      <div className="text-sm">Click to preview</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Invoice PDF */}
-              <div className="border rounded-lg overflow-hidden">
-                <button 
-                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
-                  onClick={() => {
-                    const invoiceFile = (claim as any).files?.find((f: any) => 
-                      f.name?.toLowerCase().includes('invoice')
-                    );
-                    if (invoiceFile?.filePath) {
-                      setPdfPreview(`http://localhost:3001${invoiceFile.filePath}`);
-                    } else {
-                      alert('Invoice PDF not found');
-                    }
-                  }}
-                >
-                  <FileText className="h-4 w-4" />
-                  <span className="text-sm">Invoice PDF</span>
-                </button>
-                {pdfPreview && pdfPreview.includes('invoice') ? (
-                  <iframe 
-                    src={pdfPreview} 
-                    className="w-full h-96"
-                    title="Invoice PDF"
-                  />
-                ) : (
-                  <div className="h-48 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <FileText className="h-12 w-12 mx-auto mb-2" />
-                      <div className="text-sm">Click to preview</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Approval PDF */}
-              <div className="border rounded-lg overflow-hidden">
-                <button 
-                  className="w-full bg-gray-100 p-2 flex items-center gap-2 hover:bg-gray-200 transition-colors"
-                  onClick={() => {
-                    const approvalFile = (claim as any).files?.find((f: any) => 
-                      f.name?.toLowerCase().includes('approval')
-                    );
-                    if (approvalFile?.filePath) {
-                      setPdfPreview(`http://localhost:3001${approvalFile.filePath}`);
-                    } else {
-                      alert('Approval PDF not found');
-                    }
-                  }}
-                >
-                  <FileText className="h-4 w-4" />
-                  <span className="text-sm">Approval PDF</span>
-                </button>
-                {pdfPreview && pdfPreview.includes('approval') ? (
-                  <iframe 
-                    src={pdfPreview} 
-                    className="w-full h-96"
-                    title="Approval PDF"
-                  />
-                ) : (
-                  <div className="h-48 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <FileText className="h-12 w-12 mx-auto mb-2" />
-                      <div className="text-sm">Click to preview</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <Separator />
-
-              <div className="flex items-center justify-between">
-                <Label htmlFor="low-confidence" className="text-sm">Show Low Confidence Fields</Label>
-                <Switch
-                  id="low-confidence"
-                  checked={showLowConfidence}
-                  onCheckedChange={setShowLowConfidence}
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
