@@ -19,8 +19,8 @@ const BASE_URL = import.meta.env.VITE_API_URL || "";
 export async function uploadClaimFiles(files: File[]): Promise<UploadResp> {
   const fd = new FormData();
   files.forEach((f) => fd.append("files", f, f.name));
-  // Use Docling endpoint for better table extraction with pdf-plumber
-  const r = await fetch(`${BASE_URL}/api/upload-docling`, { method: "POST", body: fd });
+  // Use Vision endpoint as fallback (Docling requires Python service)
+  const r = await fetch(`${BASE_URL}/api/upload-vision`, { method: "POST", body: fd });
   if (!r.ok) throw new Error(`Upload failed: ${r.status}`);
   return r.json();
 }
