@@ -1,0 +1,172 @@
+diff --git a/ADMIN_CONFIG_IMPLEMENTATION.md b/ADMIN_CONFIG_IMPLEMENTATION.md
+index 6b58bea..bfb8d21 100644
+--- a/ADMIN_CONFIG_IMPLEMENTATION.md
++++ b/ADMIN_CONFIG_IMPLEMENTATION.md
+@@ -1,35 +1,34 @@
+-# Admin Configuration Implementation
++# Admin Configuration Implementation - UPDATED Nov 11, 2025
+ 
+ ## ✅ Completed Features
+ 
+-### 1. **Backend API**
+-- Created `api/admin-config.js` with full CRUD operations
+-- Endpoints:
+-  - `GET /api/admin/config` - Get all configuration
+-  - `POST /api/admin/services` - Update services requiring approval
+-  - `POST /api/admin/diagnosis-codes` - Update diagnosis codes requiring approval
+-  - `POST /api/admin/coverage-exceptions` - Update coverage exceptions
++### 1. **Backend API Routes Created**
++- Created `api/admin/config.js` - GET endpoint for configuration
++- Created `api/admin/services.js` - POST endpoint for services
++- Created `api/admin/diagnosis-codes.js` - POST endpoint for diagnosis codes
++- Created `api/admin/coverage-exceptions.js` - POST endpoint for exceptions
++- Updated `api/admin-config.js` with pre-populated data from provided images
+ 
+ ### 2. **Data Storage**
+-- Created `data/admin-config.json` with real data:
+-  - **19 Services Requiring Approval** (PST0002, VCN0011, MRIX0018, etc.)
+-  - **14 Diagnosis Codes Requiring Approval** (Z00.00, O09.91, K02.62, etc.)
++- Pre-populated `data/admin-config.json` with real data from images:
++  - **19 Services Requiring Approval** (from SERVICE CODE table)
++  - **15 Diagnosis Codes Requiring Approval** (from Dx. Code table)
+   - Coverage exceptions (empty initially)
+ 
+-### 3. **AI Integration**
+-- Updated `api/validate-docling.js` to:
+-  - Load admin configuration on each validation
+-  - Pass services and diagnosis codes to OpenAI
+-  - Enhanced checklist validation rules:
++### 3. **AI Integration** ✅ ALREADY WORKING
++- `api/validate-docling.js` already configured to:
++  - Load admin configuration on each validation (lines 194-208)
++  - Pass services and diagnosis codes to OpenAI in the prompt
++  - AI validates checklist items:
+     - **CF2 (Diagnosis Requires Pre-Approval)**: Checks if diagnosis code is in admin list
+     - **CF3 (Service Charges Require Approval)**: Checks if service codes are in admin list
+ 
+-### 4. **Frontend Admin Page**
+-- Updated `src/components/AdminConfig.tsx`:
+-  - Loads real data from API on mount
+-  - Add new services/diagnosis codes
+-  - Delete existing entries
+-  - Real-time updates to backend
++### 4. **Frontend Admin Page** ✅ ALREADY WORKING
++- `src/components/AdminConfig.tsx` already has:
++  - Full CRUD functionality (Add, Edit, Delete)
++  - Real-time API integration
++  - Tables for Services and Diagnosis Codes
++  - Modal dialogs for adding/editing entries
+ 
+ ## 📊 Real Data Loaded
+ 
+diff --git a/api/admin-config.js b/api/admin-config.js
+index b6f188d..e824984 100644
+--- a/api/admin-config.js
++++ b/api/admin-config.js
+@@ -14,8 +14,44 @@ if (!fs.existsSync(dataDir)) {
+ function initConfig() {
+   if (!fs.existsSync(CONFIG_FILE)) {
+     const defaultConfig = {
+-      servicesRequiringApproval: [],
+-      diagnosisCodesRequiringApproval: [],
++      servicesRequiringApproval: [
++        { code: "PST0002", name: "Physiotherapy - Regular Visit at (AAH)" },
++        { code: "PST0001", name: "Physiotherapy - Initial Assessment at (AAH)" },
++        { code: "VCN0011", name: "M.M.R VAC. LIVE 0.5ML - (PRIORIX)" },
++        { code: "VCN0021", name: "Diphtheria/Pertussis/Tetanus+HepatitisB+Hib (Penta Vaccine)" },
++        { code: "ENT0004", name: "Ear Wash /Cleaning - two sides" },
++        { code: "SRG0023", name: "Ingrowing Toe nail removal under LA" },
++        { code: "CTSX0023", name: "Radiology - CT Brain + Sinuses (Without Contrast)" },
++        { code: "CTSX0003", name: "Radiology - CT Abdomen + Pelvis (Without Contrast)" },
++        { code: "CTSX0011", name: "Radiology - CT Angiogram Pulmonary" },
++        { code: "CTSX0020", name: "Radiology - CT Brain (Without Contrast)" },
++        { code: "CTSX0025", name: "Radiology - CT Cardiac" },
++        { code: "MRIX0018", name: "Radiology - MRI Brain" },
++        { code: "MRIX0081", name: "Radiology - MRI Spine (Lumbar)" },
++        { code: "MRIX0078", name: "Radiology - MRI Spine (Cervical)" },
++        { code: "MRIX0053", name: "Radiology - MRI Knee (Right + Left)" },
++        { code: "MRIX0022", name: "Radiology - MRI Cardiac (With Contrast)" },
++        { code: "DNT2000", name: "Removal of plaque and or stain" },
++        { code: "DNT1000", name: "Comprehensive Oral Examination" },
++        { code: "DNT1005", name: "Orthopantomographia - OPG" }
++      ],
++      diagnosisCodesRequiringApproval: [
++        { code: "Z00.00", description: "Encntr For General Adult Medical Exam W/O Abnormal Findings" },
++        { code: "O09.91", description: "Supervision Of High Risk Pregnancy, Unsp, First Trimester" },
++        { code: "O09.42", description: "Suprvsn Of Grand Multiparity, Second Trimester" },
++        { code: "O21.0", description: "Mild hyperemesis gravidarum" },
++        { code: "O60.02", description: "Preterm Labor Without Delivery, Second Trimester" },
++        { code: "Z3A.24", description: "24 Weeks Gestation Of Pregnancy" },
++        { code: "Z3A.36", description: "36 Weeks Gestation Of Pregnancy" },
++        { code: "F41.9", description: "Anxiety disorder, unspecified" },
++        { code: "F41.3", description: "Other mixed anxiety disorders" },
++        { code: "F32.1", description: "Moderate depressive episode" },
++        { code: "K02.62", description: "Dental Caries On Smooth Surface Penetrating Into Dentin" },
++        { code: "K02.9", description: "Dental caries, unspecified" },
++        { code: "K02.52", description: "Dental Caries On Pit And Fissure Surface Penetrating Into Dentin" },
++        { code: "K02.9", description: "Dental caries, unspecified" },
++        { code: "Z3A.36", description: "36 Weeks Gestation Of Pregnancy" }
++      ],
+       coverageExceptions: []
+     };
+     fs.writeFileSync(CONFIG_FILE, JSON.stringify(defaultConfig, null, 2));
+diff --git a/api/admin/config.js b/api/admin/config.js
+new file mode 100644
+index 0000000..40e8b86
+--- /dev/null
++++ b/api/admin/config.js
+@@ -0,0 +1,9 @@
++// api/admin/config.js - Get admin configuration
++import { getAdminConfig } from '../admin-config.js';
++
++export default async function handler(req, res) {
++  if (req.method !== 'GET') {
++    return res.status(405).json({ ok: false, error: 'Method not allowed' });
++  }
++  return getAdminConfig(req, res);
++}
+diff --git a/api/admin/coverage-exceptions.js b/api/admin/coverage-exceptions.js
+new file mode 100644
+index 0000000..7347f74
+--- /dev/null
++++ b/api/admin/coverage-exceptions.js
+@@ -0,0 +1,9 @@
++// api/admin/coverage-exceptions.js - Update coverage exceptions
++import { updateCoverageExceptions } from '../admin-config.js';
++
++export default async function handler(req, res) {
++  if (req.method !== 'POST') {
++    return res.status(405).json({ ok: false, error: 'Method not allowed' });
++  }
++  return updateCoverageExceptions(req, res);
++}
+diff --git a/api/admin/diagnosis-codes.js b/api/admin/diagnosis-codes.js
+new file mode 100644
+index 0000000..c549a51
+--- /dev/null
++++ b/api/admin/diagnosis-codes.js
+@@ -0,0 +1,9 @@
++// api/admin/diagnosis-codes.js - Update diagnosis codes requiring approval
++import { updateDiagnosisCodes } from '../admin-config.js';
++
++export default async function handler(req, res) {
++  if (req.method !== 'POST') {
++    return res.status(405).json({ ok: false, error: 'Method not allowed' });
++  }
++  return updateDiagnosisCodes(req, res);
++}
+diff --git a/api/admin/services.js b/api/admin/services.js
+new file mode 100644
+index 0000000..6c72f16
+--- /dev/null
++++ b/api/admin/services.js
+@@ -0,0 +1,9 @@
++// api/admin/services.js - Update services requiring approval
++import { updateServices } from '../admin-config.js';
++
++export default async function handler(req, res) {
++  if (req.method !== 'POST') {
++    return res.status(405).json({ ok: false, error: 'Method not allowed' });
++  }
++  return updateServices(req, res);
++}
