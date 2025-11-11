@@ -147,24 +147,6 @@ export default function App() {
     setSelectedClaimId(c.id);
   };
 
-  const handleDeleteClaim = async (claimId: string) => {
-    try {
-      const baseUrl = import.meta.env.VITE_API_URL || "";
-      const response = await fetch(`${baseUrl}/api/claims/${claimId}`, {
-        method: "DELETE",
-      });
-      
-      if (response.ok) {
-        setClaims((prev) => prev.filter((c) => c.id !== claimId));
-      } else {
-        alert("Failed to delete claim");
-      }
-    } catch (error) {
-      console.error("Error deleting claim:", error);
-      alert("Error deleting claim");
-    }
-  };
-
   // If viewing claim detail
   if (selectedClaim) {
     return (
@@ -194,7 +176,6 @@ export default function App() {
             onViewClaim={handleViewClaim}
             onNavigate={handleNavigate}
             onClaimCreated={handleClaimCreated}
-            onDeleteClaim={handleDeleteClaim}
           />
         )}
         

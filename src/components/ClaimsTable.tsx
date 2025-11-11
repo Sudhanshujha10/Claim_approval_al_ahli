@@ -8,7 +8,7 @@ import {
 } from "./ui/table";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ChevronRight, Trash2 } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export interface Claim {
   id: string;
@@ -26,10 +26,9 @@ export interface Claim {
 interface ClaimsTableProps {
   claims: Claim[];
   onViewClaim: (claimId: string) => void;
-  onDeleteClaim?: (claimId: string) => void;
 }
 
-export function ClaimsTable({ claims, onViewClaim, onDeleteClaim }: ClaimsTableProps) {
+export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case "approved":
@@ -95,32 +94,15 @@ export function ClaimsTable({ claims, onViewClaim, onDeleteClaim }: ClaimsTableP
                 <TableCell className="whitespace-nowrap">{claim.uploadedOn}</TableCell>
                 <TableCell className="whitespace-nowrap">{getChecklistBadge(claim)}</TableCell>
                 <TableCell className="whitespace-nowrap">
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => onViewClaim(claim.id)}
-                      className="gap-1"
-                    >
-                      View Claim
-                      <ChevronRight className="h-4 w-4" />
-                    </Button>
-                    {onDeleteClaim && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (window.confirm(`Are you sure you want to delete claim ${claim.id}?`)) {
-                            onDeleteClaim(claim.id);
-                          }
-                        }}
-                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    )}
-                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => onViewClaim(claim.id)}
+                    className="gap-1"
+                  >
+                    View Claim
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
