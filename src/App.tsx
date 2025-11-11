@@ -150,9 +150,9 @@ export default function App() {
   // If viewing claim detail
   if (selectedClaim) {
     return (
-      <div className="flex h-screen">
+      <div className="flex h-screen overflow-hidden">
         <NavigationSidebar currentPage={currentPage} onNavigate={handleNavigate} />
-        <div className="flex-1 flex flex-col min-h-0">
+        <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
           <ClaimDetail claim={selectedClaim} onBack={handleBackFromClaim} />
         </div>
       </div>
@@ -161,10 +161,10 @@ export default function App() {
 
   // Main app layout with sidebar
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
       <NavigationSidebar currentPage={currentPage} onNavigate={handleNavigate} />
       
-      <div className="flex-1 flex flex-col min-h-0">
+      <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
         {currentPage !== "dashboard" && (
           <AppHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
         )}

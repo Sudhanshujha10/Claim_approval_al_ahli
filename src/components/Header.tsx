@@ -14,8 +14,8 @@ export function Header({ activeFilter, onFilterChange, searchQuery, onSearchChan
   const filters = ["All", "Pending", "Approved", "Rejected"];
 
   return (
-    <div className="border-b bg-white">
-      <div className="flex items-center justify-between gap-4 px-6 py-4">
+    <div className="border-b bg-white overflow-x-hidden w-full">
+      <div className="flex items-center justify-between gap-4 px-6 py-4 max-w-full min-w-0">
         {/* Logo */}
         <div className="flex items-center gap-2 shrink-0">
           <div className="bg-blue-600 text-white px-3 py-2 rounded-lg">
@@ -27,7 +27,7 @@ export function Header({ activeFilter, onFilterChange, searchQuery, onSearchChan
         </div>
 
         {/* Search Bar */}
-        <div className="flex-1 max-w-xl relative">
+        <div className="flex-1 max-w-xl relative min-w-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           <Input
             type="text"
@@ -39,7 +39,7 @@ export function Header({ activeFilter, onFilterChange, searchQuery, onSearchChan
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex gap-2 shrink-0">
+        <div className="flex gap-2 shrink-0 flex-wrap">
           {filters.map((filter) => (
             <Button
               key={filter}

@@ -72,9 +72,9 @@ export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: D
   }, [claims]);
 
   return (
-    <div className="flex-1 flex flex-col bg-gray-50 h-screen overflow-hidden w-full">
+    <div className="flex-1 flex flex-col bg-gray-50 h-full overflow-hidden max-w-full">
       {/* Fixed Header */}
-      <div className="shrink-0">
+      <div className="shrink-0 overflow-x-hidden">
         <Header
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
@@ -84,17 +84,17 @@ export function Dashboard({ claims, onViewClaim, onNavigate, onClaimCreated }: D
       </div>
 
       {/* Fixed KPI Cards */}
-      <div className="shrink-0">
+      <div className="shrink-0 overflow-x-hidden">
         <KPICards data={kpiData} />
       </div>
 
       {/* Scrollable Claims Table */}
-      <div className="flex-1 overflow-auto">
+      <div className="flex-1 overflow-auto min-w-0">
         <ClaimsTable claims={filteredClaims} onViewClaim={onViewClaim} />
       </div>
 
       {/* Fixed Footer Actions */}
-      <div className="shrink-0 bg-white border-t p-4 flex gap-3">
+      <div className="shrink-0 bg-white border-t p-4 flex gap-3 overflow-x-hidden">
         <Button onClick={() => setUploadModalOpen(true)} className="gap-2">
           <FileUp className="h-4 w-4" />
           Upload New Claim

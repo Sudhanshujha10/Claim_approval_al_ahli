@@ -62,38 +62,38 @@ export function ClaimsTable({ claims, onViewClaim }: ClaimsTableProps) {
   };
 
   return (
-    <div className="p-4">
-      <div className="rounded-lg border bg-white overflow-x-auto">
-        <Table>
+    <div className="p-4 w-full max-w-full">
+      <div className="rounded-lg border bg-white overflow-x-auto w-full" style={{ scrollbarWidth: 'thin', scrollbarColor: '#cbd5e1 #f1f5f9' }}>
+        <Table className="min-w-max">
           <TableHeader className="sticky top-0 bg-white z-10">
             <TableRow>
-              <TableHead className="bg-white">Claim ID</TableHead>
-              <TableHead className="bg-white">Patient Name</TableHead>
-              <TableHead className="bg-white">Doctor</TableHead>
-              <TableHead className="bg-white">Department</TableHead>
-              <TableHead className="bg-white">Status</TableHead>
-              <TableHead className="bg-white">Uploaded By</TableHead>
-              <TableHead className="bg-white">Uploaded On</TableHead>
-              <TableHead className="bg-white">Checklist Status</TableHead>
-              <TableHead className="bg-white">Actions</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Claim ID</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Patient Name</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Doctor</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Department</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Status</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Uploaded By</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Uploaded On</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Checklist Status</TableHead>
+              <TableHead className="bg-white whitespace-nowrap">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {claims.map((claim) => (
               <TableRow key={claim.id} className="cursor-pointer hover:bg-gray-50">
-                <TableCell>{claim.id}</TableCell>
-                <TableCell>{claim.patientName}</TableCell>
-                <TableCell>{claim.doctor}</TableCell>
-                <TableCell>{claim.department}</TableCell>
-                <TableCell>
+                <TableCell className="whitespace-nowrap">{claim.id}</TableCell>
+                <TableCell className="whitespace-nowrap">{claim.patientName}</TableCell>
+                <TableCell className="whitespace-nowrap">{claim.doctor}</TableCell>
+                <TableCell className="whitespace-nowrap">{claim.department}</TableCell>
+                <TableCell className="whitespace-nowrap">
                   <Badge className={getStatusColor(claim.status)}>
                     {claim.status}
                   </Badge>
                 </TableCell>
-                <TableCell>{claim.uploadedBy}</TableCell>
-                <TableCell>{claim.uploadedOn}</TableCell>
-                <TableCell>{getChecklistBadge(claim)}</TableCell>
-                <TableCell>
+                <TableCell className="whitespace-nowrap">{claim.uploadedBy}</TableCell>
+                <TableCell className="whitespace-nowrap">{claim.uploadedOn}</TableCell>
+                <TableCell className="whitespace-nowrap">{getChecklistBadge(claim)}</TableCell>
+                <TableCell className="whitespace-nowrap">
                   <Button
                     variant="ghost"
                     size="sm"
