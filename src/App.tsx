@@ -171,13 +171,24 @@ export default function App() {
     }
   };
 
+  const handleClaimApproved = (claimId: string) => {
+    // Update the claim status in local state
+    setClaims((prev) => 
+      prev.map((claim) => 
+        claim.id === claimId 
+          ? { ...claim, status: "Approved" }
+          : claim
+      )
+    );
+  };
+
   // If viewing claim detail
   if (selectedClaim) {
     return (
       <div className="flex h-screen overflow-hidden">
         <NavigationSidebar currentPage={currentPage} onNavigate={handleNavigate} />
         <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
-          <ClaimDetail claim={selectedClaim} onBack={handleBackFromClaim} />
+          <ClaimDetail claim={selectedClaim} onBack={handleBackFromClaim} onClaimApproved={handleClaimApproved} />
         </div>
       </div>
     );

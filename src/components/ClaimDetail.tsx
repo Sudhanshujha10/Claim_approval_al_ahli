@@ -23,6 +23,7 @@ import type { Claim } from "./ClaimsTable";
 interface ClaimDetailProps {
   claim: Claim;
   onBack: () => void;
+  onClaimApproved?: (claimId: string) => void;
 }
 
 interface ChecklistItem {
@@ -31,7 +32,7 @@ interface ChecklistItem {
   action?: string;
 }
 
-export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
+export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [showLowConfidence, setShowLowConfidence] = useState(false);
   const [isRevalidating, setIsRevalidating] = useState(false);
@@ -98,7 +99,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
   async function handleApproveClaim() {
     setIsApproving(true);
     try {
-      const response = await fetch('http://localhost:3001/api/approve-claim', {
+      const baseUrl = import.meta.env.VITE_API_URL || "";
+      const response = await fetch(`${baseUrl}/api/approve-claim`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ claimId: claim.id })
@@ -106,8 +108,12 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       const data = await response.json();
       if (data.ok) {
         alert('Claim approved successfully!');
-        // Refresh page or go back to dashboard
-        window.location.reload();
+        // Update the claim status in parent component
+        if (onClaimApproved) {
+          onClaimApproved(claim.id);
+        }
+        // Go back to dashboard
+        onBack();
       } else {
         alert('Approval failed: ' + data.error);
       }
@@ -296,8 +302,8 @@ export function ClaimDetail({ claim, onBack }: ClaimDetailProps) {
       {/* Main Content Area */}
       <div className="flex-1 min-h-0 overflow-hidden max-w-full">
         {/* Full Width - Tabs Content with Scrolling */}
-        <div className="w-full overflow-auto min-w-0 max-w-full">
-          <Tabs defaultValue="claim-form" className="p-6 max-w-full">
+        <div className="w-full h-full overflow-y-auto min-w-0 max-w-full">
+          <Tabs defaultValue="claim-form" className="p-6 max-w-full h-full">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
               <TabsTrigger value="invoice">Invoice</TabsTrigger>
