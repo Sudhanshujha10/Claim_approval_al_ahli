@@ -1,0 +1,13 @@
+diff --git a/api/upload.js b/api/upload.js
+index 539cac3..b3ffd05 100644
+--- a/api/upload.js
++++ b/api/upload.js
+@@ -3,7 +3,7 @@ import formidable from "formidable";
+ import fs from "fs";
+ import path from "path";
+ import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+-
++// 
+ const UPLOADS_DIR = path.join(process.cwd(), 'api', '_data', 'uploads');
+ 
+ // Ensure uploads directory exists
