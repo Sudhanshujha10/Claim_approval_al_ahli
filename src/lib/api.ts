@@ -14,7 +14,7 @@ export interface ValidateResp {
 }
 
 // Use environment variable for production, local backend for dev
-const BASE_URL = import.meta.env.VITE_API_URL || "";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://claim-approval-al-ahli-1.onrender.com";
 
 export async function uploadClaimFiles(files: File[]): Promise<UploadResp> {
   const fd = new FormData();

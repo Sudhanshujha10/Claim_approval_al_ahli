@@ -118,7 +118,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
   async function handleRevalidate() {
     setIsRevalidating(true);
     try {
-      const response = await fetch('/api/revalidate', {
+      const response = await fetch('https://claim-approval-al-ahli-1.onrender.com/api/revalidate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ claimId: claim.id })
@@ -147,7 +147,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
   async function handleApproveClaim() {
     setIsApproving(true);
     try {
-      const baseUrl = import.meta.env.VITE_API_URL || "";
+      const baseUrl = import.meta.env.VITE_API_URL || "https://claim-approval-al-ahli-1.onrender.com";
       const response = await fetch(`${baseUrl}/api/approve-claim`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

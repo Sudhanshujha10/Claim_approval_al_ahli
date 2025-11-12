@@ -157,7 +157,7 @@ export default function App() {
       }
 
       // Try to delete from backend (may fail if endpoint not deployed yet)
-      const baseUrl = import.meta.env.VITE_API_URL || "";
+      const baseUrl = import.meta.env.VITE_API_URL || "https://claim-approval-al-ahli-1.onrender.com";
       const response = await fetch(`${baseUrl}/api/claims/${claimId}`, {
         method: "DELETE",
       });

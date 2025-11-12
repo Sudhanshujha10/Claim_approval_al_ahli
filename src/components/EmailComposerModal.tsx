@@ -164,7 +164,7 @@ Regards`;
     setError('');
 
     try {
-      const baseUrl = import.meta.env.VITE_API_URL || "";
+      const baseUrl = import.meta.env.VITE_API_URL || "https://claim-approval-al-ahli-1.onrender.com";
       
       // No attachments needed as per requirement
       const attachments: string[] = [];
