@@ -105,6 +105,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
 
   // Handle raising query for failed checklist item
   const handleRaiseQuery = (checklistItem: any) => {
+    console.log('Opening email composer for:', checklistItem.title);
     setSelectedChecklistItem(checklistItem);
     setEmailModalOpen(true);
   };
