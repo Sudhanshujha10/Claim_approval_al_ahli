@@ -1,0 +1,27 @@
+diff --git a/.vercelignore b/.vercelignore
+new file mode 100644
+index 0000000..6b62b94
+--- /dev/null
++++ b/.vercelignore
+@@ -0,0 +1,8 @@
++api/
++*.md
++change-logs/
++python-parser/
++.env
++.env.*
++!.env.example
++!.env.production
+diff --git a/vercel.json b/vercel.json
+index 14af8d5..af8fdf6 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -2,6 +2,8 @@
+   "version": 2,
+   "buildCommand": "npm install && npm run build",
+   "outputDirectory": "build",
++  "framework": "vite",
++  "functions": {},
+   "rewrites": [
+     { "source": "/(.*)", "destination": "/index.html" }
+   ]

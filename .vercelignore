@@ -1,0 +1,8 @@
+api/
+*.md
+change-logs/
+python-parser/
+.env
+.env.*
+!.env.example
+!.env.production
