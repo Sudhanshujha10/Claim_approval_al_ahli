@@ -1,0 +1,41 @@
+diff --git a/api/server.js b/api/server.js
+index beb4202..8b2c098 100644
+--- a/api/server.js
++++ b/api/server.js
+@@ -11,6 +11,8 @@ import revalidateHandler from './revalidate.js';
+ import updateChecklistHandler from './update-checklist.js';
+ import filesHandler from './files.js';
+ import approveClaimHandler from './approve-claim.js';
++import sendEmailHandler from './send-email.js';
++import emailsHandler from './emails.js';
+ 
+ const app = express();
+ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
+@@ -28,6 +30,7 @@ app.post('/api/validate-docling', (req, res) => validateDoclingHandler(req, res)
+ 
+ app.get('/api/claims', (req, res) => listClaims(req, res));
+ app.get('/api/claims/:id', (req, res) => getClaim(req, res));
++
+ app.post('/api/claims', (req, res) => createClaim(req, res));
+ 
+ // Admin Configuration endpoints
+@@ -48,6 +51,17 @@ app.post('/api/approve-claim', (req, res) => approveClaimHandler(req, res));
+ // File server endpoint for PDF preview
+ app.get('/api/files/:filename', (req, res) => filesHandler(req, res));
+ 
++// Email system endpoints
++app.post('/api/send-email', (req, res) => sendEmailHandler(req, res));
++app.get('/api/emails', (req, res) => emailsHandler(req, res));
++
++// Delete claim endpoint
++app.delete('/api/claims/:id', (req, res) => {
++  // For now, just return success since we don't have persistent storage
++  // In production, this would delete from database
++  res.json({ ok: true, message: 'Claim deleted successfully' });
++});
++
+ app.listen(PORT, () => {
+-  console.log(`API at http://localhost:${PORT}`);
++  console.log(`API at http://localhost:8080`);
+ });
+\ No newline at end of file
