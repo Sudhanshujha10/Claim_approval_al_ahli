@@ -19,6 +19,7 @@ import {
   RefreshCw
 } from "lucide-react";
 import type { Claim } from "./ClaimsTable";
+import { EmailComposerModal } from "./EmailComposerModal";
 
 interface ClaimDetailProps {
   claim: Claim;
@@ -38,6 +39,11 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
   const [isRevalidating, setIsRevalidating] = useState(false);
   const [localAiData, setLocalAiData] = useState((claim as any).aiData || {});
   const [isApproving, setIsApproving] = useState(false);
+  const [searchSuggestions, setSearchSuggestions] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [selectedChecklistItem, setSelectedChecklistItem] = useState<any>(null);
+  const [emailLog, setEmailLog] = useState<any[]>([]);
 
   // Extract AI data - use local state for real-time updates
   const aiData = localAiData;
@@ -46,11 +52,73 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
   const approvalData = aiData.Approval || {};
   const checklistData = aiData.Checklist || {};
 
+  // Generate search suggestions based on claim data
+  const generateSearchSuggestions = (query: string) => {
+    if (!query.trim()) return [];
+    
+    const searchableFields = [
+      // Claim data
+      claimData.patientName,
+      claimData.guestFileNo,
+      claimData.qid,
+      claimData.memberNo,
+      claimData.doctor,
+      claimData.department,
+      claimData.diagnosis,
+      claimData.chiefComplaint,
+      claimData.insuranceCompany,
+      claimData.planName,
+      // Invoice data
+      invoiceData.invoiceNo,
+      invoiceData.totalAmount,
+      invoiceData.approvedAmount,
+      // Approval data
+      approvalData.preApprovalCode,
+      approvalData.approvalStatus,
+      // Other fields
+      claim.id,
+      claim.patientName,
+      claim.doctor,
+      claim.department,
+      claim.status
+    ].filter(Boolean);
+
+    const suggestions = searchableFields
+      .filter(field => field && field.toString().toLowerCase().includes(query.toLowerCase()))
+      .slice(0, 5); // Limit to 5 suggestions
+
+    return [...new Set(suggestions)]; // Remove duplicates
+  };
+
+  // Handle search input change
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    if (value.trim()) {
+      const suggestions = generateSearchSuggestions(value);
+      setSearchSuggestions(suggestions);
+      setShowSuggestions(suggestions.length > 0);
+    } else {
+      setSearchSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  // Handle raising query for failed checklist item
+  const handleRaiseQuery = (checklistItem: any) => {
+    setSelectedChecklistItem(checklistItem);
+    setEmailModalOpen(true);
+  };
+
+  // Handle email sent callback
+  const handleEmailSent = (emailRecord: any) => {
+    setEmailLog(prev => [emailRecord, ...prev]);
+  };
+
   // Re-run AI validation
   async function handleRevalidate() {
     setIsRevalidating(true);
     try {
-      const response = await fetch('http://localhost:3001/api/revalidate', {
+      const response = await fetch('/api/revalidate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ claimId: claim.id })
@@ -71,28 +139,8 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
   }
 
   // Update checklist item manually
-  async function handleChecklistUpdate(checklistId: string, newStatus: string) {
-    try {
-      const response = await fetch('http://localhost:3001/api/update-checklist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          claimId: claim.id,
-          checklistId,
-          status: newStatus,
-          manualOverride: true
-        })
-      });
-      const data = await response.json();
-      if (data.ok) {
-        setLocalAiData(data.aiData);
-      } else {
-        alert('Update failed: ' + data.error);
-      }
-    } catch (e: any) {
-      console.error('Update error:', e);
-      alert('Error updating checklist');
-    }
+  function handleChecklistUpdate(checklistId: string, newStatus: string) {
+    alert("Update coming soon");
   }
 
   // Approve claim
@@ -182,7 +230,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
     remarks: item.remarks || "-"
   }));
 
-  const emailLog = [
+  const mockEmailLog = [
     { to: "gsd@insurance.com", cc: "claims@hospital.com", subject: "Query: Missing Approval Code", status: "Sent", date: "22/07/2025" },
     { to: "doctor@hospital.com", cc: "", subject: "Request: Additional Documentation", status: "Pending", date: "21/07/2025" },
     { to: "patient@email.com", cc: "", subject: "Claim Status Update", status: "Sent", date: "20/07/2025" },
@@ -253,7 +301,12 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </Button>
           )}
           {status === "fail" && (
-            <Button variant="destructive" size="sm" className="text-xs h-7">
+            <Button 
+              variant="destructive" 
+              size="sm" 
+              className="text-xs h-7"
+              onClick={() => handleRaiseQuery(item)}
+            >
               Raise Query
             </Button>
           )}
@@ -291,19 +344,39 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
                 type="text"
                 placeholder="Search in claim details..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                onFocus={() => searchQuery && setShowSuggestions(searchSuggestions.length > 0)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                 className="pl-10"
               />
+              
+              {/* Search Suggestions Dropdown */}
+              {showSuggestions && searchSuggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-md shadow-lg z-50 mt-1">
+                  {searchSuggestions.map((suggestion, index) => (
+                    <div
+                      key={index}
+                      className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm border-b border-gray-100 last:border-b-0"
+                      onClick={() => {
+                        setSearchQuery(suggestion);
+                        setShowSuggestions(false);
+                      }}
+                    >
+                      {suggestion}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 min-h-0 overflow-hidden max-w-full">
-        {/* Full Width - Tabs Content with Scrolling */}
+      {/* Main Content Area - More space for tabs */}
+      <div className="flex-1 min-h-0 overflow-hidden max-w-full pb-4">
+        {/* Full Width - Tabs Content with More Scrolling Space */}
         <div className="w-full h-full overflow-y-auto min-w-0 max-w-full">
-          <Tabs defaultValue="claim-form" className="p-6 max-w-full h-full">
+          <Tabs defaultValue="claim-form" className="p-6 max-w-full h-full flex flex-col">
             <TabsList className="mb-6">
               <TabsTrigger value="claim-form">Claim Form</TabsTrigger>
               <TabsTrigger value="invoice">Invoice</TabsTrigger>
@@ -313,7 +386,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </TabsList>
 
             {/* Claim Form Tab */}
-            <TabsContent value="claim-form" className="space-y-6">
+            <TabsContent value="claim-form" className="space-y-6 flex-1 overflow-y-auto pb-8 min-h-96">
               <Card>
                 <CardHeader>
                   <CardTitle>Guest Information</CardTitle>
@@ -473,7 +546,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </TabsContent>
 
             {/* Invoice Tab */}
-            <TabsContent value="invoice" className="space-y-6 overflow-x-hidden max-w-full">
+            <TabsContent value="invoice" className="space-y-6 flex-1 overflow-y-auto pb-8 min-h-96 overflow-x-hidden max-w-full">
               <Card className="overflow-x-hidden">
                 <CardHeader>
                   <CardTitle>Invoice Summary</CardTitle>
@@ -597,7 +670,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </TabsContent>
 
             {/* Approval Tab */}
-            <TabsContent value="approval" className="space-y-6">
+            <TabsContent value="approval" className="space-y-6 flex-1 overflow-y-auto pb-8 min-h-96">
               <Card>
                 <CardHeader>
                   <CardTitle>Pre-Approval Information</CardTitle>
@@ -772,7 +845,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </TabsContent>
 
             {/* Unified Checklist Tab */}
-            <TabsContent value="checklist" className="space-y-6">
+            <TabsContent value="checklist" className="space-y-6 flex-1 overflow-y-auto pb-8 min-h-96">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader>
@@ -817,7 +890,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
             </TabsContent>
 
             {/* Emails Tab */}
-            <TabsContent value="emails" className="space-y-6">
+            <TabsContent value="emails" className="space-y-6 flex-1 overflow-y-auto pb-8 min-h-96">
               <Card>
                 <CardHeader>
                   <CardTitle>Email Log</CardTitle>
@@ -835,7 +908,7 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {emailLog.map((email, index) => (
+                      {[...emailLog, ...mockEmailLog].map((email, index) => (
                         <TableRow key={index}>
                           <TableCell>{email.to}</TableCell>
                           <TableCell>{email.cc || "-"}</TableCell>
@@ -886,9 +959,9 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
         </div>
       </div>
 
-      {/* Footer - Summary & Actions - Fixed */}
+      {/* Footer - Compact Summary & Actions */}
       <div className="bg-white border-t shrink-0 w-full overflow-x-hidden">
-        <div className="p-4 space-y-4 max-w-full overflow-x-hidden">
+        <div className="p-3 space-y-3 max-w-full overflow-x-hidden">
           {/* Progress Bar - Real Stats */}
           <div className="space-y-2">
             {(() => {
@@ -936,14 +1009,15 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
 
           <Separator />
 
-          {/* AI Suggestions & Actions */}
-          <div className="flex flex-col lg:flex-row gap-4 lg:items-center max-w-full">
-            <div className="flex-1 bg-blue-50 rounded-lg p-4 min-w-0 max-w-full">
-              <div className="flex items-start gap-3">
-                <Lightbulb className="h-5 w-5 text-blue-600 mt-0.5 shrink-0" />
+          {/* AI Suggestions & Actions - Separated Layout */}
+          <div className="flex justify-between items-end">
+            {/* AI Suggestions Box - Bottom Left */}
+            <div className="bg-blue-50 rounded-lg p-3 max-w-xs">
+              <div className="flex items-start gap-2">
+                <Lightbulb className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium mb-2">AI Suggestions</div>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <div className="text-xs font-medium mb-1">AI Suggestions</div>
+                  <ul className="text-xs text-gray-700 space-y-0.5">
                     <li>• Check partial approvals vs invoice total</li>
                     <li>• Send query to GSD for missing info</li>
                     <li>• Flag claim for reapproval follow-up</li>
@@ -951,21 +1025,28 @@ export function ClaimDetail({ claim, onBack, onClaimApproved }: ClaimDetailProps
                 </div>
               </div>
             </div>
-
-            {/* Action Buttons - Always Visible */}
-            <div className="flex gap-2 shrink-0">
-              <Button 
-                variant="default" 
-                onClick={handleApproveClaim}
-                disabled={isApproving}
-                className="whitespace-nowrap bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 h-10"
-              >
-                {isApproving ? 'Approving...' : 'Approve Claim'}
-              </Button>
-            </div>
+            
+            {/* Action Button - Bottom Right */}
+            <Button 
+              variant="default" 
+              onClick={handleApproveClaim}
+              disabled={isApproving}
+              className="whitespace-nowrap bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 h-10"
+            >
+              {isApproving ? 'Approving...' : 'Approve Claim'}
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Email Composer Modal */}
+      <EmailComposerModal
+        isOpen={emailModalOpen}
+        onClose={() => setEmailModalOpen(false)}
+        claim={claim}
+        checklistItem={selectedChecklistItem}
+        onEmailSent={handleEmailSent}
+      />
     </div>
   );
 }

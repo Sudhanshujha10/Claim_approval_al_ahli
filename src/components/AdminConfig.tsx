@@ -19,6 +19,20 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 // Use environment variable for backend API URL
 const BASE_URL = import.meta.env.VITE_API_URL || "";
 
+// Default contact matrix data
+function getDefaultContactMatrix() {
+  return [
+    { department: "Emergency Department", primary: "emergency@alahli.com", cc: "nursing.ed@alahli.com,admin.ed@alahli.com" },
+    { department: "Radiology", primary: "radiology@alahli.com", cc: "tech.radiology@alahli.com" },
+    { department: "Laboratory", primary: "lab@alahli.com", cc: "pathology@alahli.com" },
+    { department: "Pharmacy", primary: "pharmacy@alahli.com", cc: "clinical.pharmacy@alahli.com" },
+    { department: "Finance", primary: "finance@alahli.com", cc: "billing@alahli.com,accounts@alahli.com" },
+    { department: "GSD", primary: "gsd@alahli.com", cc: "support.gsd@alahli.com" },
+    { department: "Claims Processing", primary: "claims@alahli.com", cc: "claims.supervisor@alahli.com" },
+    { department: "User", primary: "user@domain.com", cc: "" }
+  ];
+}
+
 export function AdminConfig() {
   const [addDialogOpen, setAddDialogOpen] = useState(false);
   const [dialogType, setDialogType] = useState<"diagnosis" | "service" | "exception" | "contact">("diagnosis");
@@ -26,7 +40,9 @@ export function AdminConfig() {
   const [diagnosisCodes, setDiagnosisCodes] = useState<any[]>([]);
   const [services, setServices] = useState<any[]>([]);
   const [exceptions, setExceptions] = useState<any[]>([]);
+  const [contactMatrix, setContactMatrix] = useState<any[]>([]);
   const [newItem, setNewItem] = useState({ code: "", name: "", description: "" });
+  const [newContact, setNewContact] = useState({ department: "", primary: "", cc: "" });
   const [editMode, setEditMode] = useState(false);
   const [editIndex, setEditIndex] = useState<number>(-1);
 
@@ -44,9 +60,12 @@ export function AdminConfig() {
         setDiagnosisCodes(data.config.diagnosisCodesRequiringApproval || []);
         setServices(data.config.servicesRequiringApproval || []);
         setExceptions(data.config.coverageExceptions || []);
+        setContactMatrix(data.config.departmentContactMatrix || getDefaultContactMatrix());
       }
     } catch (e) {
       console.error('Error loading config:', e);
+      // Load default contact matrix on error
+      setContactMatrix(getDefaultContactMatrix());
     } finally {
       setLoading(false);
     }

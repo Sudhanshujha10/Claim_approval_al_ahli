@@ -13,7 +13,7 @@ export interface ValidateResp {
   error?: string;
 }
 
-// Use environment variable for production, empty string for dev (Vite proxy)
+// Use environment variable for production, local backend for dev
 const BASE_URL = import.meta.env.VITE_API_URL || "";
 
 export async function uploadClaimFiles(files: File[]): Promise<UploadResp> {
