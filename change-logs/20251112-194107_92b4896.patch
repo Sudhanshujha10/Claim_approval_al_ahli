@@ -1,0 +1,12 @@
+diff --git a/vercel.json b/vercel.json
+index af8fdf6..17e534a 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -3,7 +3,6 @@
+   "buildCommand": "npm install && npm run build",
+   "outputDirectory": "build",
+   "framework": "vite",
+-  "functions": {},
+   "rewrites": [
+     { "source": "/(.*)", "destination": "/index.html" }
+   ]
